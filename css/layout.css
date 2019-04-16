@@ -1,13 +1,89 @@
 @charset "utf-8";
 
 @font-face {
-	font-family: 'PTSans-Bold';
-	src: url('../fonts/PTSans-Bold.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/PTSans-Bold.woff') format('woff'),
-		 url('../fonts/PTSans-Bold.ttf')  format('truetype'),
-		 url('../fonts/PTSans-Bold.svg#PTSans-Bold') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'DINPro-Regular';
+    src: url('../fonts/DINPro-Regular.eot');
+    src: url('../fonts/DINPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DINPro-Regular.woff2') format('woff2'),
+        url('../fonts/DINPro-Regular.woff') format('woff'),
+        url('../fonts/DINPro-Regular.ttf') format('truetype'),
+        url('../fonts/DINPro-Regular.svg#DINPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINPro-Medium';
+    src: url('../fonts/DINPro-Medium.eot');
+    src: url('../fonts/DINPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DINPro-Medium.woff2') format('woff2'),
+        url('../fonts/DINPro-Medium.woff') format('woff'),
+        url('../fonts/DINPro-Medium.ttf') format('truetype'),
+        url('../fonts/DINPro-Medium.svg#DINPro-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ael9xc');
+  src:  url('../fonts/icomoon.eot?ael9xc#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ael9xc') format('truetype'),
+    url('../fonts/icomoon.woff?ael9xc') format('woff'),
+    url('../fonts/icomoon.svg?ael9xc#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-im:before {
+  content: "\e908";
+}
+.icon-yt:before {
+  content: "\e909";
+}
+.icon-arrow-left:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-cart:before {
+  content: "\e902";
+  color: #564531;
+}
+.icon-login:before {
+  content: "\e903";
+  color: #564531;
+}
+.icon-search:before {
+  content: "\e904";
+}
+.icon-viber:before {
+  content: "\e905";
+}
+.icon-vk:before {
+  content: "\e906";
+}
+.icon-whatsapp:before {
+  content: "\e907";
+}
+.icon-star:before {
+  content: "\e90a";
 }
 
 html,
@@ -15,16 +91,22 @@ body {
 	position: relative;
 }
 body {
-	min-width: 1000px;
-	text-align: center;
-	font-family: 'PTSans-Bold';
-	overflow-x: hidden;
-	-webkit-text-size-adjust: none;
-	color: #472275;
+	min-width: 1140px;
+	font-family: DINPro-Regular;
+	font-size: 16px;
+	color: #564531;
+	text-align: left;
 }
 a{
 	text-decoration: none;
-	color: #472275;
+	color: #564531;
+	-webkit-transition: color 150ms ease-in-out;
+	   -moz-transition: color 150ms ease-in-out;
+	     -o-transition: color 150ms ease-in-out;
+	        transition: color 150ms ease-in-out;
+}
+a:hover{
+	color: #5F9828;
 }
 label.error{
 	display: none !important;
@@ -33,28 +115,150 @@ input.error,textarea.error{
 	border: 1px solid #F00 !important;
 	box-shadow: 0 0px 0px 1px #F00;
 }
-.ps-lines{
+
+.b-header{
 
 }
-	.ps-lines li.v{
-		position: fixed;
-		left: 50%;
-		height: 100%;
-		width: 1px;
-		top: 0px;
-		background-color: #00ffff;
-		opacity: 0.8;
-		z-index: 9999;
+	.b-top{
+		background: rgba(86,69,49,0.02);
+		padding-top: 9px;
+		padding-bottom: 12px;
 	}
-	.ps-lines li.g{
+		.b-top .b-block{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.b-city{
+			
+		}
+		.b-top-menu{
+			min-width: 582px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			position: relative;
+    		left: -14px;
+		}
+		.b-phone{
+
+		}
+.b-bottom{
+	padding-top: 29px;
+	padding-bottom: 32px;
+}
+	.b-logo{
+		background-image: url(../i/main-logo.svg);
+		width: 274px;
+		height: 89px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 2px;
+	}
+	.b-search{
+		border: 1px solid rgba(86,69,49,0.50);
+		border-radius: 30px;
+		padding-top: 9px;
+		padding-bottom: 15px;
+		padding-left: 24px;
+		width: 555px;
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+		margin-left: 9.7%;
+		margin-top: 10px;
+	}
+		.b-search:after{
+			content: "\e904";
+			font-family: "icomoon";
+			display: inline-block;
+			position: absolute;
+			right: 24px;
+			top: calc(50% - 8px);
+		}
+			.b-search:hover, .b-search:hover:after{
+				color: #5F9828;
+			}
+	.b-control{
 		position: absolute;
-		left: 0px;
-		width: 100%;
-		height: 1px;
-		background-color: #00ffff;
-		opacity: 0.8;
-		z-index: 9999;
+		right: 3px;
+		top: calc(50% - 14px);
 	}
+		.b-profile{
+			font-size: 35px;
+			margin-right: 32px;
+		}
+		.b-fav{font-size: 32px;
+				position: relative;
+				top: -2px;
+		}
+			.b-fav:after{
+				content: " ";
+				position: absolute;
+				font-size: 0px;
+				line-height: 0px;
+				border: 1px solid #564531;
+				border-radius: 50%;
+				background-color: #FFF;
+				width: 16px;
+				height: 16px;
+				right: -4px;
+				bottom: -2px;
+			}
+	.b-main-menu{
+		background-color: #5F9828;
+	}
+		.b-menu-items{
+			display: inline-block;
+		}
+			.b-menu-item{
+				padding: 22px 49px 22px 55px;
+				display: inline-block;
+			}
+			.b-menu-item a{
+				color: #FFF;
+				font-family: DINPro-Medium;
+				font-size: 18px;
+				letter-spacing: 0.4px;
+			}
+				.b-menu-item:hover,
+				.b-menu-item a:hover{
+					background-color: #D4EABF;
+					color: #564531;
+				}
+		.b-price-button{
+			padding: 7px 16px 8px 62px;
+			background-color: #D4EABF;
+			border-radius: 3px;
+			display: inline-block;
+			font-size: 24px;
+			color: #564531;
+			letter-spacing: 0;
+			float: right;
+			position: relative;
+			top: 10px;
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .fancybox-inner{
 	overflow: visible !important;
 }
@@ -72,7 +276,7 @@ input.error,textarea.error{
 }
 .b-block{
 	position: relative;
-	width: 1000px;
+	width: 1140px;
 	margin: 0px auto;
 }
 .b-absolute{
