@@ -41,6 +41,13 @@ $(document).ready(function(){
     }
     $.fn.placeholder();
 
+    $('.b-main-slider').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false
+    });
+
     // $(".b-step-slider").slick({
     //     dots: true,
     //     slidesToShow: 1,

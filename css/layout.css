@@ -25,6 +25,18 @@
 }
 
 @font-face {
+    font-family: 'DINPro-Light';
+    src: url('../fonts/DINPro-Light.eot');
+    src: url('../fonts/DINPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DINPro-Light.woff2') format('woff2'),
+        url('../fonts/DINPro-Light.woff') format('woff'),
+        url('../fonts/DINPro-Light.ttf') format('truetype'),
+        url('../fonts/DINPro-Light.svg#DINPro-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
   font-family: 'icomoon';
   src:  url('../fonts/icomoon.eot?ael9xc');
   src:  url('../fonts/icomoon.eot?ael9xc#iefix') format('embedded-opentype'),
@@ -97,16 +109,18 @@ body {
 	color: #564531;
 	text-align: left;
 }
-a{
+a, a:after{
 	text-decoration: none;
 	color: #564531;
-	-webkit-transition: color 150ms ease-in-out;
-	   -moz-transition: color 150ms ease-in-out;
-	     -o-transition: color 150ms ease-in-out;
-	        transition: color 150ms ease-in-out;
+	-webkit-transition: color 150ms ease-in-out, border-color 150ms ease-in-out;
+	   -moz-transition: color 150ms ease-in-out, border-color 150ms ease-in-out;
+	     -o-transition: color 150ms ease-in-out, border-color 150ms ease-in-out;
+	        transition: color 150ms ease-in-out, border-color 150ms ease-in-out;
 }
-a:hover{
-	color: #5F9828;
+a:hover,
+a:hover:after{
+	color: #5F9828; 
+	border-color: #5F9828;
 }
 label.error{
 	display: none !important;
@@ -145,7 +159,7 @@ input.error,textarea.error{
 		}
 .b-bottom{
 	padding-top: 29px;
-	padding-bottom: 32px;
+	padding-bottom: 33px;
 }
 	.b-logo{
 		background-image: url(../i/main-logo.svg);
@@ -188,6 +202,7 @@ input.error,textarea.error{
 			font-size: 35px;
 			margin-right: 32px;
 		}
+
 		.b-fav{font-size: 32px;
 				position: relative;
 				top: -2px;
@@ -212,7 +227,7 @@ input.error,textarea.error{
 			display: inline-block;
 		}
 			.b-menu-item{
-				padding: 22px 49px 22px 55px;
+				padding: 18px 49px 22px 55px;
 				display: inline-block;
 			}
 			.b-menu-item a{
@@ -222,12 +237,12 @@ input.error,textarea.error{
 				letter-spacing: 0.4px;
 			}
 				.b-menu-item:hover,
-				.b-menu-item a:hover{
+				.b-menu-item:hover a{
 					background-color: #D4EABF;
 					color: #564531;
 				}
 		.b-price-button{
-			padding: 7px 16px 8px 62px;
+			padding: 4px 15px 7px 63px;
 			background-color: #D4EABF;
 			border-radius: 3px;
 			display: inline-block;
@@ -237,7 +252,51 @@ input.error,textarea.error{
 			float: right;
 			position: relative;
 			top: 10px;
-
+		}
+			.b-price-button:before{
+				content: "\e902";
+				font-family: "icomoon";
+				position: absolute;
+				left: 17px;
+				bottom: 7px;
+				font-size: 29px;
+			}
+			.b-price-button:after{
+				content: " ";
+				position: absolute;
+				font-size: 0px;
+				line-height: 0px;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				background-color: #FFF;
+				width: 15px;
+				height: 15px;
+				left: 34px;
+				bottom: 6px;
+			}
+			.b-price-button:hover{
+				color: #564531;
+			}
+.b-main-slider{
+	position: relative;
+}
+	.b-main-slide{
+		background-image: url(../i/slide-1.jpg);
+		min-height: 373px;
+		background-repeat: no-repeat;
+		background-position: 50% 39%;
+		text-align: center;
+		padding-top: 58px;
+	}
+		.b-main-slide h2{
+			font-family: DINPro-Light;
+			font-size: 52px;
+			color: #564531;
+			letter-spacing: 0;
+			max-width: 783px;
+			text-align: center;
+			display: inline-block;
+			line-height: 64px;
 		}
 
 
