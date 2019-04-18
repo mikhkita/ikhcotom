@@ -355,6 +355,8 @@ h2{
 			}
 .b-item-cards{
 	margin-top: 32px;
+	flex-wrap: wrap;
+	display: flex;
 }
 	.b-item-card{
 		display: inline-block;
@@ -364,6 +366,13 @@ h2{
 		padding: 10px;
 		overflow: hidden;
 	}
+		.b-item-card:nth-child(1),
+		.b-item-card:nth-child(2){
+			border-right: none;
+		}
+		.b-item-card:nth-child(4n){
+			border-left: none;
+		}
 		.b-card-top{
 			display: inline-block;
 			width: 100%;
@@ -385,13 +394,16 @@ h2{
 				right: 0px;
 			}
 		.b-card-bottom{
-
+			text-align: left;
 		}
 			.b-item-name{
-				text-align: left;
+				
 			}
 			.b-price{
-
+				margin-top: 16px;
+				font-size: 24px;
+				color: #3E3224;
+				letter-spacing: 0;
 			}
 			.b-discount-price{
 
