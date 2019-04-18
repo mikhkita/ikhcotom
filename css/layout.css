@@ -353,60 +353,84 @@ h2{
 				margin-top: 6px;
 				margin-left: 20px;
 			}
-.b-item-cards{
-	margin-top: 32px;
-	flex-wrap: wrap;
-	display: flex;
+.b-stock{
+	text-align: center;
 }
-	.b-item-card{
-		display: inline-block;
-		width: calc(100% / 4 - 1px);
-		border: 1px #E6E6E6 solid;
-		text-align: center;
-		padding: 10px;
-		overflow: hidden;
+	.b-item-cards{
+		margin-top: 32px;
+		flex-wrap: wrap;
+		display: flex;
+		margin-bottom: 50px;
 	}
-		.b-item-card:nth-child(1),
-		.b-item-card:nth-child(2){
-			border-right: none;
-		}
-		.b-item-card:nth-child(4n){
-			border-left: none;
-		}
-		.b-card-top{
+		.b-item-card{
 			display: inline-block;
-			width: 100%;
-			position: relative;
+			width: calc(100% / 4);
+			border: 1px #E6E6E6 solid;
+			text-align: center;
+			padding: 10px;
+			overflow: hidden;
 		}
-			.b-discount{
-				position: absolute;
-				top: 0px;
-				left: 0px;
+			.b-item-card:nth-child(1),
+			.b-item-card:nth-child(2){
+				border-right: none;
 			}
-			.b-card-fav{
-				position: absolute;
-				top: 0px;
-				right: 0px;
+			.b-item-card:nth-child(4n){
+				border-left: none;
 			}
-			.b-in-stock{
-				position: absolute;
-				bottom: 0px;
-				right: 0px;
+			.b-card-top{
+				display: inline-block;
+				width: 100%;
+				position: relative;
 			}
-		.b-card-bottom{
-			text-align: left;
-		}
-			.b-item-name{
-				
+				.b-discount{
+					position: absolute;
+					top: 0px;
+					left: 0px;
+				}
+				.b-card-fav{
+					position: absolute;
+					top: 0px;
+					right: 0px;
+				}
+				.b-in-stock{
+					position: absolute;
+					bottom: 0px;
+					right: 0px;
+				}
+			.b-card-bottom{
+				text-align: left;
 			}
-			.b-price{
-				margin-top: 16px;
-				font-size: 24px;
-				color: #3E3224;
-				letter-spacing: 0;
-			}
-			.b-discount-price{
+				.b-item-name{
+					
+				}
+				.b-price{
+					margin-top: 16px;
+					font-size: 24px;
+					color: #3E3224;
+					letter-spacing: 0;
+				}
+				.b-discount-price{
 
+				}
+		.b-btn{
+			padding: 17px 40px 20px 40px;
+			border: 2px rgba(86, 69, 49, 0.5) solid;
+			border-radius: 3px;
+			display: inline-block;
+			font-family: DINPro-Medium;
+			font-size: 20px;
+			color: #564531;
+			letter-spacing: 0;
+			cursor: pointer;
+			text-align: center;
+			-webkit-transition: border-color 150ms ease-in-out;
+			   -moz-transition: border-color 150ms ease-in-out;
+			     -o-transition: border-color 150ms ease-in-out;
+			        transition: border-color 150ms ease-in-out;
+
+		}
+			.b-btn:hover{
+				border-color: #77BE32;
 			}
 
 
