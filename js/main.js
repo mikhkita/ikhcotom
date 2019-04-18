@@ -42,11 +42,18 @@ $(document).ready(function(){
     $.fn.placeholder();
 
     $('.b-main-slider').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false
+        dots: true,
+        dotsClass: "my-dots",
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 5000
     });
+
+    $(".b-card-top").height($(".b-card-top").width());
+
 
     // $(".b-step-slider").slick({
     //     dots: true,
