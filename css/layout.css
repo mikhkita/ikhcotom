@@ -167,6 +167,10 @@ h2{
 .b-bottom{
 	padding-top: 29px;
 	padding-bottom: 33px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 }
 	.b-logo{
 		background-image: url(../i/main-logo.svg);
@@ -186,8 +190,9 @@ h2{
 		display: inline-block;
 		position: relative;
 		vertical-align: middle;
-		margin-left: 9.7%;
+		margin-left: 18px;
 		margin-top: 10px;
+		max-height: 49px;
 	}
 		.b-search:after{
 			content: "\e904";
@@ -201,18 +206,24 @@ h2{
 				color: #5F9828;
 			}
 	.b-control{
-		position: absolute;
-		right: 3px;
-		top: calc(50% - 14px);
+		position: relative;
+		/* right: 3px; */
+		/* top: calc(50% - 14px); */
+		display: inline-block;
+		vertical-align: middle;
 	}
 		.b-profile{
 			font-size: 35px;
-			margin-right: 32px;
+			margin-right: 34px;
+			position: relative;
+			top: 6px;
 		}
 
-		.b-fav{font-size: 32px;
+		.b-fav{
+				font-size: 32px;
 				position: relative;
-				top: -2px;
+				top: 4px;
+				right: 2px;
 		}
 			.b-fav:after{
 				content: " ";
@@ -227,6 +238,25 @@ h2{
 				right: -4px;
 				bottom: -2px;
 			}
+		.b-fav-number{
+			position: absolute;
+			font-family: DINPro-Regular;
+			font-size: 10px;
+			letter-spacing: 0;
+			right: 0px;
+			bottom: 3px;
+			z-index: 10;
+			color: #564531;
+		}
+		.b-price-button .b-cart-number{
+			position: absolute;
+			font-family: DINPro-Regular;
+			font-size: 10px;
+			letter-spacing: 0;
+			left: 37px;
+			bottom: 9px;
+			z-index: 10;
+		}
 	.b-main-menu{
 		background-color: #5F9828;
 	}
@@ -311,7 +341,7 @@ h2{
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-top: 58px;
-	margin-bottom: 68px;
+	margin-bottom: 62px;
 }
 	.b-advantage{
 		display: inline-block;
@@ -357,7 +387,7 @@ h2{
 	text-align: center;
 }
 	.b-item-cards{
-		margin-top: 32px;
+		margin-top: 31px;
 		flex-wrap: wrap;
 		display: flex;
 		margin-bottom: 50px;
@@ -384,8 +414,15 @@ h2{
 			}
 				.b-discount{
 					position: absolute;
-					top: 0px;
-					left: 0px;
+					top: 0;
+					left: 0;
+					font-family: DINPro-Light;
+					font-size: 16px;
+					color: #564531;
+					letter-spacing: 0;
+					padding: 2px 13px;
+					/* padding-top: 2px; */
+					/* border: 1px black solid; */
 				}
 				.b-card-fav{
 					position: absolute;
@@ -396,12 +433,19 @@ h2{
 					position: absolute;
 					bottom: 0px;
 					right: 0px;
+					font-family: DINPro-Light;
+					font-size: 16px;
+					color: #564531;
 				}
 			.b-card-bottom{
 				text-align: left;
 			}
 				.b-item-name{
-					
+					font-family: DINPro;
+					font-size: 18px;
+					color: #3E3224;
+					letter-spacing: 0;
+				    margin-top: 12px;
 				}
 				.b-price{
 					margin-top: 16px;
