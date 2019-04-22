@@ -52,7 +52,7 @@ $(document).ready(function(){
         autoplaySpeed: 5000
     });
 
-    $(".b-card-top").height($(".b-card-top").width());
+    // $(".b-card-top").height($(".b-card-top").width());
 
 
     // $(".b-step-slider").slick({
