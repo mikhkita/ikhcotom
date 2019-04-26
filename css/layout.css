@@ -420,19 +420,10 @@ h2{
 		.b-item-card{
 			display: inline-block;
 			width: calc(100% / 4);
-			border: 1px #E6E6E6 solid;
 			text-align: center;
 			padding: 10px;
-			overflow: hidden;
 			position: relative;
-		}
-			.b-item-card:nth-child(1),
-			.b-item-card:nth-child(2){
-				border-right: none;
-			}
-			.b-item-card:nth-child(4n){
-				border-left: none;
-			}
+		}	
 			.b-card-top{
 				display: inline-block;
 				width: 100%;
@@ -446,10 +437,10 @@ h2{
 				line-height: 17px;
 				border: 1px solid #FFF;
 				position: absolute;
-				left: calc(50% - 62px);
-				top: 50%;
+				left: calc(50% - 79px);
+				top: calc(50% - 75px);
 				opacity: 0;
-
+				padding: 10px 18px 10px 20px;
 			}
 				.b-card-top-dark{
 					background-color: rgba(0,0,0,0.5);
@@ -460,10 +451,33 @@ h2{
 					top: 0px;
 					opacity: 0;
 				}
+			.b-item-card:hover{
+				z-index: 10;
+				cursor: pointer;
+			}
 			.b-item-card:hover .b-card-top-hover,
 			.b-item-card:hover .b-card-top-dark{
 				opacity: 1;
 			}
+			.b-card-hover-frame{
+				position: absolute;
+				width: calc(100% + 1px);
+				height: 100%;
+				content: " ";
+				border: 1px #E6E6E6 solid;
+				left: 0%;
+				top: 0%;
+
+			}
+				.b-item-card:hover .b-card-hover-frame{
+					left: -10px;
+					top: -10px;
+					width: calc(100% + 20px);
+					height: calc(100% + 20px);
+					border-radius: 3px;
+					background-color: #FFF;
+					box-shadow: 3px 5px 20px 5px rgba(230,230,230,0.50);
+				}	
 				.b-discount{
 					position: absolute;
 					top: 0;
@@ -491,6 +505,8 @@ h2{
 				}
 			.b-card-bottom{
 				text-align: left;
+				z-index: 20;
+				position: relative;
 			}
 				.b-item-name{
 					font-family: DINPro;
@@ -498,6 +514,7 @@ h2{
 					color: #3E3224;
 					letter-spacing: 0;
 				    margin-top: 12px;
+				    z-index: 30;
 				}
 				.b-price{
 					margin-top: 16px;
