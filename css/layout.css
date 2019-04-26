@@ -186,11 +186,11 @@ h2{
 		padding-top: 9px;
 		padding-bottom: 15px;
 		padding-left: 24px;
-		width: 555px;
+		width: 363px;
 		display: inline-block;
 		position: relative;
 		vertical-align: middle;
-		margin-left: 18px;
+		margin-left: -3px;
 		margin-top: 10px;
 		max-height: 49px;
 	}
@@ -205,6 +205,30 @@ h2{
 			.b-search:hover, .b-search:hover:after{
 				color: #5F9828;
 			}
+	.b-header-catalogue{
+		position: relative;
+		font-family: DINPro-Medium;
+		font-size: 24px;
+		margin-left: 44px;
+		margin-top: 10px;
+	}
+		.b-header-catalogue:before{
+			content: " ";
+			width: 30px;
+			height: 21px;
+			position: absolute;
+			left: -47px;
+			top: 8px;
+			background-image: url("../i/header-catalogue-black.svg");
+			-webkit-transition: background-image 150ms ease-in-out;
+			-moz-transition: background-image 150ms ease-in-out;
+			-o-transition: background-image 150ms ease-in-out;
+			transition: background-image 150ms ease-in-out;
+		}
+			.b-header-catalogue:hover:before{
+			content: " ";
+			background-image: url("../i/header-catalogue-green.svg");
+		}
 	.b-control{
 		position: relative;
 		/* right: 3px; */
@@ -355,11 +379,12 @@ h2{
 			letter-spacing: 0;
 			line-height: 29px;
 		}
-/*		.b-advantage p{
-			max-width: 239px;
-			display: inline-block;
-			float: right;
-		}*/
+		.b-advantage p{
+			font-family: DINPro-Regular;
+			font-size: 18px;
+			letter-spacing: 0;
+			line-height: 22px;
+		}
 		.b-advantage-img-wrapper{
 			height: 100%;
 			display: inline-block;
@@ -399,6 +424,7 @@ h2{
 			text-align: center;
 			padding: 10px;
 			overflow: hidden;
+			position: relative;
 		}
 			.b-item-card:nth-child(1),
 			.b-item-card:nth-child(2){
@@ -411,6 +437,32 @@ h2{
 				display: inline-block;
 				width: 100%;
 				position: relative;
+			}
+			.b-card-top-hover{
+				font-family: DINPro-Regular;
+				font-size: 14px;
+				color: #FFFFFF;
+				letter-spacing: 0;
+				line-height: 17px;
+				border: 1px solid #FFF;
+				position: absolute;
+				left: calc(50% - 62px);
+				top: 50%;
+				opacity: 0;
+
+			}
+				.b-card-top-dark{
+					background-color: rgba(0,0,0,0.5);
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					opacity: 0;
+				}
+			.b-item-card:hover .b-card-top-hover,
+			.b-item-card:hover .b-card-top-dark{
+				opacity: 1;
 			}
 				.b-discount{
 					position: absolute;
@@ -431,10 +483,10 @@ h2{
 				}
 				.b-in-stock{
 					position: absolute;
-					bottom: 0px;
-					right: 0px;
+					bottom: 10px;
+					right: 18px;
 					font-family: DINPro-Light;
-					font-size: 16px;
+					font-size: 14px;
 					color: #564531;
 				}
 			.b-card-bottom{
@@ -766,65 +818,64 @@ h2{
 
 
 .my-dots {
-  position: absolute;
-  display: block;
-  width: 100%;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  bottom: 15px;
+  	position: absolute;
+  	display: block;
+  	width: 100%;
+  	padding: 0;
+  	list-style: none;
+  	text-align: center;
+  	bottom: 15px;
 }
 
 .my-dots li {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: 0 8px;
-  padding: 0;
-  cursor: pointer;
+  	position: relative;
+  	display: inline-block;
+  	width: 20px;
+  	height: 20px;
+  	margin: 0 8px;
+  	padding: 0;
+  	cursor: pointer;
 }
 
 .my-dots li button {
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  padding: 5px;
-  cursor: pointer;
-  color: transparent;
-  border: 0;
-  outline: none;
-  background: transparent;
+  	font-size: 0;
+  	line-height: 0;
+  	display: block;
+  	width: 20px;
+  	height: 20px;
+ 	padding: 5px;
+  	cursor: pointer;
+  	color: transparent;
+  	border: 0;
+  	outline: none;
+ 	background: transparent;
 }
 
 .my-dots li button:hover,
 .my-dots li button:focus {
-  outline: none;
+  	outline: none;
 }
 
 .my-dots li button:hover:before,
 .my-dots li button:focus:before {
-  opacity: 1;
+  	opacity: 1;
 }
 
 .my-dots li button:before {
-  font-family: 'slick';
-  font-size: 6px;
-  line-height: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  content: url("../i/oval.svg");
-  text-align: center;
-  opacity: .25;
-  color: black;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-   
+  	font-family: 'slick';
+  	font-size: 6px;
+  	line-height: 20px;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 20px;
+  	height: 20px;
+ 	 content: url("../i/oval.svg");
+  	text-align: center;
+  	opacity: .25;
+  	color: black;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
 }
 
 .my-dots li.slick-active button:before {
