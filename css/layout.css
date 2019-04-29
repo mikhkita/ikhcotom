@@ -97,6 +97,15 @@
 .icon-star:before {
   content: "\e90a";
 }
+.icon-ruble{
+  position: relative;
+}
+.icon-ruble:before {
+  content: "\e90b";
+}
+.icon-update:before {
+  content: "\e90c";
+}
 
 html,
 body {
@@ -129,12 +138,26 @@ input.error,textarea.error{
 	border: 1px solid #F00 !important;
 	box-shadow: 0 0px 0px 1px #F00;
 }
-h2{
+h1.b-title{
+
+}
+h2.b-title{
 	font-family: DINPro-Medium;
 	font-size: 42px;
+	line-height: 50px;
+	padding-top: 40px;
+	margin-bottom: 32px;
 	color: #564531;
 	letter-spacing: 0;
 	text-align: center;
+}
+
+.hide{
+	display: none !important;
+}
+
+.b-content-inner h2.b-title{
+	text-align: left;
 }
 
 .b-header{
@@ -365,7 +388,7 @@ h2{
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-top: 58px;
-	margin-bottom: 62px;
+	margin-bottom: 22px;
 }
 	.b-advantage{
 		display: inline-block;
@@ -410,9 +433,9 @@ h2{
 			}
 .b-stock{
 	text-align: center;
+	margin-bottom: 56px;
 }
 	.b-item-cards{
-		margin-top: 31px;
 		flex-wrap: wrap;
 		display: flex;
 		margin-bottom: 50px;
@@ -547,7 +570,6 @@ h2{
 
 .b-footer{
 	background-color: #F3F3F3;
-	margin-top: 56px;
 }
 	.b-footer-top{
 		border-bottom: 1px solid #D8D8D8;
@@ -802,18 +824,510 @@ h2{
 
 
 
+/*=======Личный кабинет========*/
 
+.b-breadcrumbs{
+	padding-top: 40px;
+}
+	.b-breadcrumbs li{
+		line-height: 24px;
+		float: left;
+	}
+		.b-breadcrumbs li:after {
+			content: " ";
+			width: 6px;
+			height: 6px;
+			display: inline-block;
+			vertical-align: top;
+			border-radius: 100px;
+		    background-color: #564531;
+		    margin: 11px 16px 0 12px;
 
+		}
+		.b-breadcrumbs li:last-child:after{
+			display: none;
+		}
+		.b-breadcrumbs li a{
+			border-bottom: 1px solid #564531;
+		}
+		.b-breadcrumbs li a:hover{
+			border-bottom: 1px solid transparent;
+			text-decoration: none;
+		}
+		.b-breadcrumbs li span{
 
+		}
 
+.b-cabinet{
+	margin-bottom: 56px;
+}
+	.b-cabinet-profile{
+		display: inline-block;
+		vertical-align: top;
+		width: 267px;
+		margin-right: 24px;
+	}
+		.b-profile-photo{
+			width: 267px;
+			height: 267px;
+			border-radius: 3px;
+			overflow: hidden;
+		}
+			.empty-photo{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				background-color: #EEE;
+				cursor: pointer;
+				-webkit-transition: background-color 150ms ease-in-out;
+				-moz-transition: background-color 150ms ease-in-out;
+				-o-transition: background-color 150ms ease-in-out;
+				transition: background-color 150ms ease-in-out;
+			}
+			.empty-photo:hover{
+				background-color: #DDD;
+			}
+				.empty-photo-icon{
+					width: 102px;
+					height: 80px;
+					position: absolute;
+					top: 87px;
+					left: 90px;
+					background-image: url(../i/photo-add.svg);
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+				}
+			.current-photo{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+				.current-photo img{
+					width: 100%;
+					height: 100%;
+				}
+				.background-photo{
+					cursor: pointer;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0,0,0,0.3);
+					-webkit-transition: background-color 150ms ease-in-out;
+					-moz-transition: background-color 150ms ease-in-out;
+					-o-transition: background-color 150ms ease-in-out;
+					transition: background-color 150ms ease-in-out;
+				}
+				.current-photo:hover .background-photo{
+					background: rgba(0,0,0,0.5);
+				}
+					.current-photo .photo-update-icon{
+						width: 102px;
+						height: 80px;
+						position: absolute;
+						top: 87px;
+						left: 90px;
+						background-image: url(../i/photo-update.svg);
+						background-repeat: no-repeat;
+						background-position: 50% 50%;
+					}
 
+		.b-btn-edit{
+			padding: 17px 0px 20px 0px;
+			width: 100%;
+		}
+		.b-btn-logout{
+			padding: 17px 70px 20px 70px;
+		}
 
+		.b-profile-name{
+			font-size: 18px;
+			line-height: 22px;
+			font-family: 'DINPro-Medium';
+			margin-top: 24px;
+		}
+		.b-profile-phone{
+			padding-left: 40px;
+			margin-top: 26px;
+			position: relative;
+			
+		}
+			.b-profile-phone-icon{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 25px;
+				height: 25px;
+				background-image: url(../i/call-icon.svg);
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+		.b-profile-email{
+			padding-left: 40px;
+			margin-top: 26px;
+			position: relative;
+		}
+			.b-profile-phone-email{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 25px;
+				height: 25px;
+				background-image: url(../i/email-icon.svg);
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+		.b-cabinet-profile .b-btn{
+			margin-top: 32px;
+		}
+	.b-cabinet-content{
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100% - 295px);
+	}
+		.b-cabinet-tabs{
+			margin-bottom: 27px;
+		}
+			.b-cabinet-tabs .b-btn-tab{
+				padding: 10px 26px 12px 26px;
+				font-size: 18px;
+				border: 1px rgb(119, 190, 50) solid;
+				font-family: 'DINPro-Light';
+				margin-right: 20px;
+			}
+			.b-cabinet-tabs .b-btn-tab.active{
+				background-color: #D4EABF;
+				color: #77BE32;
+				font-family: 'DINPro-Medium';
+			}
+			.b-cabinet-tabs .b-btn-tab:last-child{
+				margin-right: 0;
+			}
+	.b-cabinet-orders{
 
+	}
+		.b-cabinet-order{
+			margin-bottom: 64px;
+		}
+			.b-order-header{
+				margin-bottom: 24px;
+			}
+				.order-header-left{
+					float: left;
+				}
+					.order-header-left h3{
+						display: inline-block;
+						margin-right: 20px;
+						font-family: 'DINPro-Medium';
+						font-size: 24px;
+						line-height: 30px;
+					}
+					.order-date{
+						display: inline-block;
+						color: rgba(86, 69, 49, 0.5);
+						font-family: 'DINPro-Light';
+						font-size: 24px;
+						line-height: 30px;
+					}
+				.order-header-right{
+					position: relative;
+					float: right;
+					padding-right: 177px;
+				}
+					.order-header-right p{
+						font-family: 'DINPro-Light';
+						font-size: 24px;
+						line-height: 30px;
+					}
+					.order-status{
+						position: absolute;
+						top: 0;
+						right: 0;
+						font-family: 'DINPro-Regular';
+						font-size: 24px;
+						line-height: 30px;
+					}
+					.order-status.status-wait-pay{
+						color: #CB6163;
+					}
+					.order-status.status-wait-send{
+						color: #32B2BE;
+					}
+					.order-status.status-success{
+						color: #77BE32;
+					}
+			.b-order-list{
+				
+			}
+				.b-order-item{
+					margin-bottom: 24px;
+				}
+					.b-order-item-left{
+						float: left;
+					}
+						.b-order-item img{
+							display: inline-block;
+							width: 73px;
+							height: 73px;
+							margin-right: 20px;
+						}
+						.b-order-item-name{
+							display: inline-block;
+							vertical-align: top;
+							padding-top: 12px;
+						}
+							.b-order-item-name a{
+								display: inline-block;
+								font-size: 18px;
+								line-height: 22px;
+								margin-bottom: 8px;
+							}
+							.b-order-item-name .meters{
+								color: rgba(62, 50, 36, 0.5);
+							}
+					.b-order-item-right{
+						float: right;
+					}
+						.b-order-item-price{
+							display: inline-block;
+							vertical-align: top;
+							position: relative;
+							margin-right: 60px
+						}
+							.has-discount .price-total{
+								color: #CB6163;
+							}
+							.price-base{
+								position: absolute;
+								top: 0;
+								right: 0;
+								color: #9E9891;
+							}
+								.price-base:before{
+									content: " ";
+									position: absolute;
+									top: 11px;
+									left: 0;
+									height: 1px;
+									width: 100%;
+									background-color: #9E9891;
+								}
+							.price-total{
+								padding-top: 20px;
+								font-family: 'DINPro-Regular';
+								font-size: 24px;
+								line-height: 30px;
+							}
+						.b-order-item-update,
+						.b-order-item-buy{
+							display: inline-block;
+							vertical-align: top;
+							padding-top: 27px;
+						}
+		.price-base .icon-ruble:before {
+			font-size: 12px;
+			margin-left: 4px;
+		}
+		.price-total .icon-ruble:before,
+		.total .icon-ruble:before{
+			font-size: 18px;
+			margin-left: 6px;
+		}
+		.b-cabinet-orders .icon-update:before{
+		    font-size: 16px;
+		}
+		.b-cabinet-orders .icon-cart:before{
+			font-size: 20px;
+		}
 
+		.b-order-total{
+			width: 282px;
+			float: right;
+		}
+			.total-border{
+				width: 100%;
+				border-bottom: 1px #D8D8D8 solid;
+			}
+			.b-order-total-inner{
+				position: relative;
+				margin-top: 24px;
+				padding-left: 10px;
+			}
+				.b-order-total-inner p{
+					display: inline-block;
+					font-family: 'DINPro-Medium';
+					font-size: 24px;
+					line-height: 30px;
 
+				}
+				.b-order-total-inner .total{
+					position: absolute;
+				    top: 0;
+				    right: 83px;
+				    display: inline-block;
+				    font-family: 'DINPro-Regular';
+				    font-size: 24px;
+				    line-height: 30px;
+				}
 
+	.b-nav{
+		text-align: center;
+	}
+		.b-nav-left,
+		.b-nav-right{
+			display: inline-block;
+			vertical-align: top;
+			padding: 8px 10px;
+		}
+		.b-nav-left.icon-arrow-left:before,
+		.b-nav-right.icon-arrow-right:before{
+			font-size: 20px;
+		}
+		.b-nav-pages{
+			display: inline-block;
+			margin: 0 8px;
+		}
+			.b-nav-pages li{
+				display: inline-block;
+				margin-right: 2px;
+			}
+			.b-nav-pages li:last-child{;
+				margin-right: 0;
+			}
+				.b-nav-pages li a{
+					display: block;
+					padding: 6px 12px;
+					border: 1px solid #E6E6E6;
+					border-radius: 3px;
+				}
+				.b-nav-pages li a.active{
+					border: 1px solid #77BE32;
+					background-color: #77BE32;
+					color: #FFF;
+				}
+				.b-nav-pages li:hover a{
+					border: 1px solid #77BE32;
+				}
 
+	.b-cabinet-profile a:hover,
+	.b-order-item-name a:hover,
+	.b-nav a:hover{
+		color: inherit;
+	}
 
+.b-cabinet .b-btn-save{
+	padding: 17px 29px 20px 29px;
+}
+
+/*=======Детальная======*/
+
+.b-detail{
+	margin-top: 42px;
+}
+	.b-product{
+
+	}
+		.b-product-photo{
+			display: inline-block;
+			vertical-align: top;
+			width: 461px;
+			margin-right: 24px;
+		}
+			.main-photo{
+				position: relative;
+				width: 100%;
+				height: 461px;
+				margin-bottom: 15px;
+			}
+				.main-photo .zoom{
+					position: absolute;
+					right: 25px;
+					bottom: 25px;
+				}
+				.main-photo img{
+
+				}
+			.b-product-photo-slider{
+
+			}
+				.b-product-photo-slider img{
+
+				}
+		.b-product-content{
+			display: inline-block;
+			vertical-align: top;
+			width: calc(100% - 490px);
+		}
+
+			.b-product-name{
+				font-family: 'DINPro-Medium';
+				font-size: 32px;
+				line-height: 40px;
+				margin-bottom: 24px;
+			}
+			.b-product-actions-wrap{
+				padding-right: 54px;
+				padding-bottom: 17px;
+				border-bottom: 1px solid #D8D8D8;
+			}
+				.b-product-actions{
+					width: 100%;
+				}
+					.b-product-actions li{
+						position: relative;
+						float: left;
+						width: calc(100%/3);
+						padding-left: 33px;
+					}
+						.b-product-actions li a{
+							font-size: 18px;
+							line-height: 22px;
+
+						}
+						.b-product-actions li .icon{
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+			.b-product-params{
+				padding-top: 16px;
+			}
+				.b-product-params-left{
+
+				}
+					.b-product-colors{
+						margin-bottom: 24px;
+					}
+						.b-product-colors span{
+
+						}
+						.b-product-colors .chosen-container{
+							margin-left: 28px;
+						}
+						.b-product-colors .chosen-container-single .chosen-single{
+							background: transparent;
+							padding: 5px 16px 7px 16px;
+							height: 34px;
+							font-size: 16px;
+    						line-height: 20px;
+						}
+					.b-product-texture{
+
+					}
+						.b-product-texture img{
+							float: left;
+							width: 50px;
+							height: 50px;
+							border-radius: 100px;
+							margin-right: 10px;
+							margin-bottom: 15px;
+						}
+				.b-product-params-right{
+
+				}
+
+/*=============================*/
 
 
 .slick-dots li:after{
@@ -933,7 +1447,7 @@ input::-webkit-input-placeholder {
 input:-moz-placeholder {
 	color: #777;
 }
-input[type=text], textarea[type=text], input[type=tel], input[type=submit] {
+input[type=text], input[type=tel], input[type=submit], textarea{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -975,6 +1489,45 @@ textarea:-moz-placeholder {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.b-input{
+	float: left;
+	margin-right: 24px;
+	margin-bottom: 32px;
+}
+	.b-input p{
+		font-family: 'DINPro-Medium';
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 8px;
+	}
+
+	.b-input input{
+		width: 100%;
+		border-radius: 5px;
+		padding: 14px 18px 15px 18px;
+	}
+
+/*===2 инпута в строке===*/
+.b-inputs-2 .b-input{
+	width: calc(50% - 12px);
+}
+.b-inputs-2 .b-input:nth-child(2n){
+	margin-right: 0;
+}
+/*===3 инпута в строке===*/
+.b-inputs-3 .b-input{
+	width: calc(100%/3 - 16px);
+}
+.b-inputs-3 .b-input:nth-child(3n){
+	margin-right: 0;
+}
+/*===4 инпута в строке===*/
+.b-inputs-4 .b-input{
+	width: calc(25% - 24px);
+}
+.b-inputs-4 .b-input:nth-child(4n){
+	margin-right: 0;
+}
 
 
 @media (-webkit-min-device-pixel-ratio: 1.5) {

@@ -52,6 +52,32 @@ $(document).ready(function(){
         autoplaySpeed: 5000
     });
 
+    $(".b-btn-tab").click(function() {
+        var $this = $(this);
+        $(".b-btn-tab.active").removeClass("active");
+        $this.addClass("active");
+        $(".b-cabinet-orders").each(function(){
+            $(this).addClass("hide");
+        });
+        $($this.attr("data-block")).removeClass("hide");
+        return false;
+    });
+
+    $('.b-product-photo-slider').slick({
+        dots: true,
+        dotsClass: "my-dots",
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: false,
+    });
+
+    $(".colors-select").chosen({
+        width: "193px",
+        disable_search_threshold: 10000
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 
