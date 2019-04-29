@@ -64,13 +64,13 @@ $(document).ready(function(){
     });
 
     $('.b-product-photo-slider').slick({
-        dots: true,
-        dotsClass: "my-dots",
+        dots: false,
         infinite: true,
-        slidesToShow: 1,
+        slidesToShow: 4,
         slidesToScroll: 1,
         arrows: false,
         autoplay: false,
+        variableWidth: true
     });
 
     $(".colors-select").chosen({
