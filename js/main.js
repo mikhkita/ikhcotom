@@ -78,6 +78,16 @@ $(document).ready(function(){
         disable_search_threshold: 10000
     });
 
+    function preloadImages()
+    {
+      for(var i = 0; i<arguments.length; i++)
+        $("<img />").attr("src", arguments[i]);
+    }
+
+    preloadImages  ("i/header-catalogue-green.svg",
+                    
+                   );
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 
