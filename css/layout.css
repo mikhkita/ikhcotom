@@ -146,7 +146,7 @@ h2.b-title{
 	font-size: 42px;
 	line-height: 50px;
 	padding-top: 40px;
-	margin-bottom: 32px;
+	margin-bottom: 34px;
 	color: #564531;
 	letter-spacing: 0;
 	text-align: center;
@@ -395,7 +395,7 @@ h2.b-title{
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-top: 58px;
-	margin-bottom: 22px;
+	margin-bottom: 28px;
 }
 	.b-advantage{
 		display: inline-block;
@@ -440,7 +440,7 @@ h2.b-title{
 			}
 .b-stock{
 	text-align: center;
-	margin-bottom: 56px;
+	margin-bottom: 25px;
 }
 	.b-item-cards{
 		flex-wrap: wrap;
@@ -516,7 +516,9 @@ h2.b-title{
 					font-size: 16px;
 					color: #564531;
 					letter-spacing: 0;
-					padding: 2px 13px;
+					padding: 3px 13px;
+					background-color: rgba(255, 255, 255, 0.7);
+					z-index: 100;
 					/* padding-top: 2px; */
 					/* border: 1px black solid; */
 				}
@@ -526,17 +528,22 @@ h2.b-title{
 					right: 0px;
 				}
 				.b-in-stock{
+					padding: 7px 21px;
 					position: absolute;
-					bottom: 10px;
-					right: 18px;
+					bottom: 0px;
+					right: 0px;
 					font-family: DINPro-Light;
 					font-size: 14px;
 					color: #564531;
+					z-index: 100;
+					background-color: rgba(255,255,255,0.7);
+					padding-right: 18px;
 				}
 			.b-card-bottom{
 				text-align: left;
 				z-index: 20;
 				position: relative;
+				margin-bottom: 46px;
 			}
 				.b-item-name{
 					font-family: DINPro;
@@ -547,10 +554,12 @@ h2.b-title{
 				    z-index: 30;
 				}
 				.b-price{
-					margin-top: 16px;
+					/* margin-top: 16px; */
 					font-size: 24px;
 					color: #3E3224;
 					letter-spacing: 0;
+					position: absolute;
+					bottom: 11px;
 				}
 				.b-discount-price{
 
@@ -571,8 +580,72 @@ h2.b-title{
 			-o-transition: border-color 150ms ease-in-out;
 			transition: border-color 150ms ease-in-out;
 		}
+			.b-stock .b-btn{
+				padding: 14px 38px;
+			}
 			.b-btn:hover{
 				border-color: #77BE32;
+			}
+
+.b-choose-type .b-block{
+	max-width: 945px;
+	text-align: center;
+}
+	.b-choose-type h3{
+		font-family: DINPro-Regular;
+		font-size: 32px;
+		color: #564531;
+		letter-spacing: 0;
+		text-align: center;
+		line-height: 39px;
+		margin-bottom: 24px;
+	}
+	.b-choose-type .b-product-texture{
+
+	}
+	.b-choose-type .b-product-texture img{
+		width: 67px;
+		height: 67px;
+		margin-right: 0px;
+	}
+		.b-choose-type .b-product-texture img:last-child{
+			
+		}
+		.b-choose-type .texture-list{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	
+	.b-main-tabs{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+		.b-main-tabs h3{
+			width: 100%;
+		}
+		.b-wool-tabs, .b-lenght-tabs{
+			width: calc(100% / 2 - 82px);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+			.b-tab-wool{
+				font-family: DINPro-Regular;
+				font-size: 18px;
+				color: #564531;
+				letter-spacing: 0;
+				text-align: center;
+				line-height: 22px;
+				width: 121px;
+				display: inline-block;
+				margin-bottom: 13px;
+				padding: 8px 20px;
+				height: 41px;
+			}
+			.b-tab-wool.active{
+				color:#77BE32;
 			}
 
 .b-footer{

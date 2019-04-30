@@ -80,40 +80,15 @@ $(document).ready(function(){
         disable_search_threshold: 10000
     });
 
-    $(".more-colors").click(function() {
-        if($(".texture-list").hasClass("open")){
-            $(".texture-list").removeClass("open");
-            $(this).text("Другие цвета");
-        }else{
-            $(".texture-list").addClass("open");
-            $(this).text("Скрыть");
-        }
-        return false;
-    });
+    function preloadImages()
+    {
+      for(var i = 0; i<arguments.length; i++)
+        $("<img />").attr("src", arguments[i]);
+    }
 
-    var maxBasketCount = 99;
-    //увеличить количество
-    $('.quantity-add').on('click', function(){
-        var $input = $('.quantity-input');
-        var count = parseInt($input.val()) + 1;
-            count = (count > maxBasketCount || isNaN(count) === true) ? maxBasketCount : count;
-        $input.val(count).change();
-        return false;
-    });
-    //уменьшить количество
-    $('.quantity-reduce').on('click', function(){
-        var $input = $('.quantity-input');
-        var count = parseInt($input.val()) - 1; 
-            count = (count < 1 || isNaN(count) === true) ? 1 : count;
-        $input.val(count).change();
-        return false;
-    });
-    $('.quantity-input').on('change', function(){
-        var count = $(this).val()*1;
-        count = (count < 1)? 1 : count;
-        count = (count > maxBasketCount) ? maxBasketCount : count;
-        $(this).val(count);
-    });
+    preloadImages  ("i/header-catalogue-green.svg",
+                    
+                   );
 
     // $(".b-card-top").height($(".b-card-top").width());
 
