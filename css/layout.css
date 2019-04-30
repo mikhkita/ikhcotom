@@ -855,6 +855,7 @@ h2.b-title{
 			display: none;
 		}
 		.b-breadcrumbs li a{
+			font-size: 18px;
 			border-bottom: 1px solid #564531;
 		}
 		.b-breadcrumbs li a:hover{
@@ -862,7 +863,7 @@ h2.b-title{
 			text-decoration: none;
 		}
 		.b-breadcrumbs li span{
-
+			font-size: 18px;
 		}
 
 .b-cabinet{
@@ -1230,7 +1231,7 @@ h2.b-title{
 /*=======Детальная======*/
 
 .b-detail{
-	margin-top: 42px;
+	margin-top: 40px;
 }
 	.b-product{
 		margin-bottom: 60px;
@@ -1273,11 +1274,11 @@ h2.b-title{
 				font-family: 'DINPro-Medium';
 				font-size: 32px;
 				line-height: 40px;
-				margin-bottom: 24px;
+				margin-bottom: 20px;
 			}
 			.b-product-actions-wrap{
 				padding-right: 54px;
-				padding-bottom: 17px;
+				padding-bottom: 14px;
 				border-bottom: 1px solid #D8D8D8;
 			}
 				.b-product-actions{
@@ -1328,25 +1329,38 @@ h2.b-title{
 							height: 34px;
 							font-size: 16px;
     						line-height: 20px;
+    						box-shadow: none;
+    						border: 1px solid #E6E6E6;
 						}
 					.b-product-texture{
 						margin-bottom: 32px;
 					}
-						.b-product-texture img{
-							float: left;
-							width: 45px;
-							height: 45px;
-							border: 2px solid transparent;
-							border-radius: 100px;
-							margin-right: 6px;
-							margin-bottom: 15px;
+						.texture-list{
+							max-height: 120px;
+    						overflow: hidden;
+    						-webkit-transition: max-height 150ms ease-in-out;
+							-moz-transition: max-height 150ms ease-in-out;
+							-o-transition: max-height 150ms ease-in-out;
+							transition: max-height 150ms ease-in-out;
 						}
-						.b-product-texture img:nth-child(5n){
-							margin-right: 0;
+						.texture-list.open{
+							max-height: 500px;
 						}
-						.b-product-texture img.active{
-							border: 2px solid #77BE32;
-						}
+							.b-product-texture img{
+								float: left;
+								width: 49px;
+								height: 49px;
+								border: 2px solid transparent;
+								border-radius: 100px;
+								margin-right: 5px;
+								margin-bottom: 10px;
+							}
+							.b-product-texture img:nth-child(5n){
+								margin-right: 0;
+							}
+							.b-product-texture img.active{
+								border: 2px solid #77BE32;
+							}
 					.b-product-info{
 						font-size: 18px;
 						line-height: 22px;
@@ -1398,6 +1412,109 @@ h2.b-title{
 						    font-size: 32px;
     						margin-left: 12px;
 						}
+					.b-product-quantity{
+						margin-bottom: 35px;
+					}
+						.b-product-quantity span{
+							font-size: 18px;
+							line-height: 22px;
+							font-family: 'DINPro-Medium';
+						}
+						.product-quantity{
+							position: relative;
+							display: inline-block;
+							width: 124px;
+							padding: 0 32px;
+							margin-left: 22px;
+						}
+							.product-quantity a{
+								position: absolute;
+								top: 4px;
+								width: 25px;
+								height: 25px;
+								border-radius: 100px;
+								border: 1px solid #E6E6E6;
+								-webkit-transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+								-moz-transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+								-o-transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+								transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+							}
+							.product-quantity a:hover{
+								background-color: #77BE32;
+								border: 1px solid #77BE32;
+							}
+							.product-quantity a.icon-minus:hover:before{
+								background-color: #FFF;
+							}
+							.product-quantity .icon-minus{
+								left: 0;
+							}
+							.product-quantity .icon-plus{
+								right: 0;
+							}
+							.product-quantity input[type=text]{
+								padding: 5px 0 6px 0;
+								width: 60px;
+								text-align: center;
+								font-size: 16px;
+								line-height: 20px;
+								border: 1px solid #E6E6E6;
+							}
+							.icon-minus:before {
+							    content: " ";
+							    display: block;
+							    height: 1px;
+							    width: 9px;
+							    background-color: #c4c4c4;
+							    position: absolute;
+							    top: 11px;
+    							left: 7px;
+							}
+					.b-product-params-right .b-btn{
+						position: relative;
+						margin-bottom: 42px;
+						font-family: 'DINPro-Regular';
+						line-height: 24px;
+    					padding: 12px 17px 16px 55px;
+    					color: #FFF;
+    					background-color: #77BE32;
+    					border: none;
+					}
+					.b-btn .icon-cart{
+						position: absolute;
+						top: 12px;
+						left: 15px;
+					}
+					.b-btn .icon-cart:before{
+						font-size: 28px;
+						color: #FFF;
+					}
+					.b-product-advantages{
+
+					}
+						.b-product-advantages li{
+							position: relative;
+							padding-left: 55px;
+							margin-bottom: 16px;
+						}
+						.b-product-advantages li:last-child{
+							margin-bottom: 0;
+						}
+							.b-product-advantages li img{
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 35px;
+							}
+							.b-product-advantages li:nth-child(2) img{
+								top: 10px;
+							}
+							.b-product-advantages li a{
+								display: inline-block;
+								line-height: 18px;
+								border-bottom: 1px solid #564531;
+							}
+
 
 /*=============================*/
 
@@ -1485,6 +1602,26 @@ h2.b-title{
   opacity: .75;
   color: black;
 }
+
+.b-product-arrows{
+	position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+}
+	.b-product-arrows.icon-arrow-left{
+		top: 12px;
+		left: 2px;
+	}
+	.b-product-arrows.icon-arrow-right{
+		top: 12px;
+		right: 2px;
+	}
+		.b-product-arrows.icon-arrow-left:before,
+		.b-product-arrows.icon-arrow-right:before{
+		    font-size: 30px;
+		    color: #979797;
+		}
 
 
 .fancybox-inner{

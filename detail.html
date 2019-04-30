@@ -16,10 +16,10 @@
 	<link rel="stylesheet" href="css/chosen.min.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
-	<link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1024px)" href="css/layout-tablet.css">
-	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 767px)" href="css/layout-mobile.css">
+	<!-- <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1024px)" href="css/layout-tablet.css">
+	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 767px)" href="css/layout-mobile.css"> -->
 
-	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+	<!-- <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico"> -->
 </head>
 <body>
 	<div class="b b-header">
@@ -133,7 +133,7 @@
 										<img src="i/color-7.jpg">
 										<img src="i/color-8.jpg">
 									</div>
-									<div class="center"><a href="#" class="dashed">Другие цвета</a></div>
+									<div class="center"><a href="#" class="dashed more-colors">Другие цвета</a></div>
 								</div>
 								<div class="b-product-info">
 									<p><span>Артикул:</span> 040100410</p>
@@ -148,10 +148,17 @@
 								<div class="b-product-price-total">1 800<span class="icon-ruble"></span></div>
 								<div class="b-product-quantity">
 									<span>Количество:</span>
-									<div class="quantity-input">
-										
+									<div class="product-quantity">
+										<a href="#" class="icon-minus quantity-reduce"></a>
+										<input type="text" name="count" class="quantity-input" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="1">
+										<a href="#" class="icon-plus quantity-add"></a>
 									</div>
 								</div>
+								<a href="#" class="b-btn"><span class="icon-cart"></span>Добавить в корзину</a>
+								<ul class="b-product-advantages">
+									<li><img src="i/icon-delivery.svg">Быстрая доставка.</li>
+									<li><img src="i/icon-pay.svg">Оплата банковской картой без комиссии. <a href="#">Подробнее...</a></li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -274,7 +281,7 @@
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
-	<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script>
+	<!-- <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script> -->
 	<script type="text/javascript" src="js/jquery.touch.min.js"></script>
 	<script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>

@@ -65,10 +65,12 @@ $(document).ready(function(){
 
     $('.b-product-photo-slider').slick({
         dots: false,
+        arrows: true,
+        prevArrow: '<div class="b-product-arrows icon-arrow-left"></div>',
+        nextArrow: '<div class="b-product-arrows icon-arrow-right"></div>',
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
-        arrows: false,
         autoplay: false,
         variableWidth: true
     });
@@ -76,6 +78,41 @@ $(document).ready(function(){
     $(".colors-select").chosen({
         width: "193px",
         disable_search_threshold: 10000
+    });
+
+    $(".more-colors").click(function() {
+        if($(".texture-list").hasClass("open")){
+            $(".texture-list").removeClass("open");
+            $(this).text("Другие цвета");
+        }else{
+            $(".texture-list").addClass("open");
+            $(this).text("Скрыть");
+        }
+        return false;
+    });
+
+    var maxBasketCount = 99;
+    //увеличить количество
+    $('.quantity-add').on('click', function(){
+        var $input = $('.quantity-input');
+        var count = parseInt($input.val()) + 1;
+            count = (count > maxBasketCount || isNaN(count) === true) ? maxBasketCount : count;
+        $input.val(count).change();
+        return false;
+    });
+    //уменьшить количество
+    $('.quantity-reduce').on('click', function(){
+        var $input = $('.quantity-input');
+        var count = parseInt($input.val()) - 1; 
+            count = (count < 1 || isNaN(count) === true) ? 1 : count;
+        $input.val(count).change();
+        return false;
+    });
+    $('.quantity-input').on('change', function(){
+        var count = $(this).val()*1;
+        count = (count < 1)? 1 : count;
+        count = (count > maxBasketCount) ? maxBasketCount : count;
+        $(this).val(count);
     });
 
     // $(".b-card-top").height($(".b-card-top").width());
