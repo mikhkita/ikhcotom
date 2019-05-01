@@ -52,17 +52,6 @@ $(document).ready(function(){
         autoplaySpeed: 5000
     });
 
-    $(".b-btn-tab").click(function() {
-        var $this = $(this);
-        $(".b-btn-tab.active").removeClass("active");
-        $this.addClass("active");
-        $(".b-cabinet-orders").each(function(){
-            $(this).addClass("hide");
-        });
-        $($this.attr("data-block")).removeClass("hide");
-        return false;
-    });
-
     $('.b-product-photo-slider').slick({
         dots: false,
         arrows: true,
@@ -75,10 +64,12 @@ $(document).ready(function(){
         variableWidth: true
     });
 
-    $(".colors-select").chosen({
-        width: "193px",
-        disable_search_threshold: 10000
-    });
+    if($(".colors-select").length){
+        $(".colors-select").chosen({
+            width: "193px",
+            disable_search_threshold: 10000
+        });
+    }
 
     function preloadImages()
     {
@@ -106,7 +97,7 @@ $(document).ready(function(){
     $('.quantity-add').on('click', function(){
         var $input = $('.quantity-input');
         var count = parseInt($input.val()) + 1;
-            count = (count > maxBasketCount || isNaN(count) === true) ? maxBasketCount : count;
+        count = (count > maxBasketCount || isNaN(count) === true) ? maxBasketCount : count;
         $input.val(count).change();
         return false;
     });
@@ -114,15 +105,52 @@ $(document).ready(function(){
     $('.quantity-reduce').on('click', function(){
         var $input = $('.quantity-input');
         var count = parseInt($input.val()) - 1; 
-            count = (count < 1 || isNaN(count) === true) ? 1 : count;
+        count = (count < 1 || isNaN(count) === true) ? 1 : count;
         $input.val(count).change();
         return false;
     });
+
     $('.quantity-input').on('change', function(){
         var count = $(this).val()*1;
         count = (count < 1)? 1 : count;
         count = (count > maxBasketCount) ? maxBasketCount : count;
         $(this).val(count);
+    });
+
+    //табы
+    $(".tab").click(function(){
+        var $this = $(this);
+        $this.parent().find(".tab.active").removeClass("active");
+        $this.addClass("active");
+        $(".tabs-content").each(function(){
+            $(this).addClass("hide");
+        });
+        $($this.attr("data-block")).removeClass("hide");
+        return false;
+    });
+
+    $(".rating").hover(function() {
+        $(this).addClass("now-hover");
+    }, function() {
+        $(this).removeClass("now-hover");
+    });
+
+    $(".rating-star").hover(function() {
+        $(this).addClass("highlight-h");
+        $(this).prevAll(".rating-star").addClass("highlight-h");
+    }, function() {
+        $(this).removeClass("highlight-h");
+        $(this).prevAll(".rating-star").removeClass("highlight-h");
+    });
+
+    $(".rating-star").click(function(event) {
+        var $this = $(this);
+        //здесь будет ajax-запрос
+        $this.parent().find(".rating-star").each(function() {
+            $(this).removeClass("highlight");
+        });
+        $this.addClass("highlight");
+        $this.prevAll(".rating-star").addClass("highlight");
     });
 
     // $(".b-card-top").height($(".b-card-top").width());
