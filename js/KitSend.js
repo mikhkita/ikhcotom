@@ -163,7 +163,13 @@ $(document).ready(function(){
 	});
 
 	$(".fancy-img").fancybox({
-		padding : 0
+		padding : 0,
+		hash : false,
+		clickContent : false,
+		buttons : [
+	        'fullScreen',
+	        'close'
+	    ],
 	});
 
 	$(".goal-click").click(function(){

@@ -1,26 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="25px" height="27px" viewBox="0 0 25 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
-    <title>share</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Детальная" transform="translate(-835.000000, -467.000000)">
-            <g id="Group-35" transform="translate(635.000000, 368.000000)">
-                <g id="Group-34" transform="translate(0.000000, 94.000000)">
-                    <g id="Group-2">
-                        <g id="share" transform="translate(201.000000, 0.000000)">
-                            <g transform="translate(-0.000000, 6.000000)">
-                                <circle id="Oval" stroke="#FFFFFF" fill="#77BE32" cx="19.0789474" cy="3.94736842" r="3.94736842"></circle>
-                                <circle id="Oval" stroke="#FFFFFF" fill="#77BE32" cx="19.0789474" cy="21.0526316" r="3.94736842"></circle>
-                                <circle id="Oval" stroke="#FFFFFF" fill="#77BE32" cx="3.94736842" cy="12.5" r="3.94736842"></circle>
-                                <path d="M7.51751494,10.8718629 L15.7335372,6.09353654" id="Path-18" stroke="#77BE32" fill="#77BE32"></path>
-                                <path d="M7.4028801,14.4601206 L15.5446849,19.1823695" id="Path-19" stroke="#77BE32" fill="#77BE32"></path>
-                                <path d="M1.97368421,11.9413677 C2.06391038,11.4051948 2.19328491,11.0500055 2.3618078,10.8757999 C2.53033069,10.7015943 2.85725351,10.5850996 3.34257624,10.5263158" id="Path-20" stroke="#FFFFFF" stroke-linecap="round"></path>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="34" height="37" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.7104 12.0526C30.7625 12.0526 33.2367 9.57842 33.2367 6.52632C33.2367 3.47422 30.7625 1 27.7104 1C24.6583 1 22.1841 3.47422 22.1841 6.52632C22.1841 9.57842 24.6583 12.0526 27.7104 12.0526Z" stroke="#564531"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.7104 36C30.7625 36 33.2367 33.5258 33.2367 30.4737C33.2367 27.4216 30.7625 24.9474 27.7104 24.9474C24.6583 24.9474 22.1841 27.4216 22.1841 30.4737C22.1841 33.5258 24.6583 36 27.7104 36Z" stroke="#564531"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.52632 24.0263C9.57842 24.0263 12.0526 21.5521 12.0526 18.5C12.0526 15.4479 9.57842 12.9737 6.52632 12.9737C3.47422 12.9737 1 15.4479 1 18.5C1 21.5521 3.47422 24.0263 6.52632 24.0263Z" stroke="#564531"/>
+<path d="M11.5244 16.2206L23.0268 9.53094" stroke="#564531"/>
+<path d="M11.3643 21.2441L22.7628 27.8553" stroke="#564531"/>
+<path d="M3.76318 17.7179C3.76318 17.7179 3.95266 16.592 4.30656 16.2261C4.66045 15.8603 5.67963 15.7368 5.67963 15.7368" stroke="#564531" stroke-linecap="round"/>
 </svg>

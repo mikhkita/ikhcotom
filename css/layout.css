@@ -115,6 +115,9 @@
 .icon-zoom:before {
   content: "\e90f";
 }
+.icon-select:before {
+  content: "\e910";
+}
 
 html,
 body {
@@ -1394,7 +1397,58 @@ h2.b-title{
 							position: absolute;
 							top: 0;
 							left: 0;
+							width: 22px;
+							height: 24px;
 						}
+						.b-product-actions li .icon-star:before{
+							font-size: 22px;
+							color: #564531;
+						}
+						.b-product-actions li .icon-star-green{
+							left: 1px;
+							background-image: url(../i/icon-star-fill.svg);
+							background-repeat: no-repeat;
+							background-position: 50% 50%;
+							background-size: 22px;
+							display: none;
+						}
+						/*.b-product-actions li a:hover .icon-star-green{
+							display: block;
+						}*/
+						.b-product-actions li .icon-share{
+							background-image: url(../i/icon-share.svg);
+							background-repeat: no-repeat;
+							background-position: 50% 50%;
+							background-size: 22px;
+						}
+						.b-product-actions li .icon-share-green{
+							background-image: url(../i/icon-share-green.svg);
+							background-repeat: no-repeat;
+							background-position: 50% 50%;
+							background-size: 22px;
+							display: none;
+						}
+						/*.b-product-actions li a:hover .icon-share-green{
+							display: block;
+						}*/
+						.b-product-actions li .icon-reviews{
+							top: 3px;
+							background-image: url(../i/icon-review.svg);
+							background-repeat: no-repeat;
+							background-position: 50% 50%;
+							background-size: 22px;
+						}
+						.b-product-actions li .icon-reviews-green{
+							top: 3px;
+							background-image: url(../i/icon-review-green.svg);
+							background-repeat: no-repeat;
+							background-position: 50% 50%;
+							background-size: 22px;
+							display: none;
+						}
+						/*.b-product-actions li a:hover .icon-reviews-green{
+							display: block;
+						}*/
 			.b-product-params{
 				padding-top: 16px;
 			}
@@ -1427,19 +1481,31 @@ h2.b-title{
     						box-shadow: none;
     						border: 1px solid #E6E6E6;
 						}
+						.b-product-colors .chosen-container-single .chosen-single div:before{
+							position: absolute;
+						    top: 14px;
+						    right: 15px;
+						    display: inline-block;
+						    content: "\e910";
+						    font-size: 9px;
+						    color: #564531;
+						}
+						.b-product-colors .chosen-container .chosen-drop{
+							border: 1px solid #E6E6E6;
+						}
 					.b-product-texture{
 						margin-bottom: 32px;
 					}
 						.texture-list{
 							max-height: 120px;
     						overflow: hidden;
-    						-webkit-transition: max-height 150ms ease-in-out;
+    						/*-webkit-transition: max-height 150ms ease-in-out;
 							-moz-transition: max-height 150ms ease-in-out;
 							-o-transition: max-height 150ms ease-in-out;
-							transition: max-height 150ms ease-in-out;
+							transition: max-height 150ms ease-in-out;*/
 						}
 						.texture-list.open{
-							max-height: 500px;
+							max-height: 1000px;
 						}
 							.b-product-texture img{
 								cursor: pointer;
@@ -1823,6 +1889,7 @@ h2.b-title{
 						display: inline-block;
 					    border-bottom: 1px solid #564531;
 					    line-height: 18px;
+					    margin-left: 24px;
 					}
 					.b-detail-feedback .b-detail-register:hover{
 					    border-bottom: 1px solid transparent;
@@ -1835,6 +1902,44 @@ h2.b-title{
 						font-size: 20px;
 						line-height: 24px;
 					}
+
+			.models-block{
+
+			}
+				.models-item{
+					float: left;
+					width: calc(100%/3 - 16px);
+					margin-right: 24px;
+				}
+				.models-item:nth-child(3n){
+					margin-right: 0;
+				}
+					.models-img{
+						position: relative;
+						width: 100%;
+						height: 313px;
+						margin-bottom: 10px;
+					}
+						.models-img .icon-zoom{
+							pointer-events: none;
+							font-size: 42px;
+							position: absolute;
+							right: 16px;
+							bottom: 16px;
+						}
+						.models-img img{
+							width: 100%;
+							height: 100%;
+						}
+					.models-item p{
+						margin-bottom: 8px;
+					}
+					.models-item p:last-child{
+						margin-bottom: 0;
+					}
+						.models-item p span{
+							font-family: 'DINPro-Medium';
+						}
 
 
 /*=============================*/
@@ -2010,7 +2115,8 @@ textarea:-moz-placeholder {
 	font-family: DINPro-Light;
 }
 [class^="icon-"]:before, 
-[class*=" icon-"]:before  {
+[class*=" icon-"]:before,
+.b-product-colors .chosen-container-single .chosen-single div:before{
 	font-family: 'icomoon' !important;
 	speak: none;
 	font-style: normal;
