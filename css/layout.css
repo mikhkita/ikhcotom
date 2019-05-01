@@ -106,6 +106,15 @@
 .icon-update:before {
   content: "\e90c";
 }
+/*.icon-minus:before {
+  content: "\e90d";
+}*/
+.icon-plus:before {
+  content: "\e90e";
+}
+.icon-zoom:before {
+  content: "\e90f";
+}
 
 html,
 body {
@@ -1329,18 +1338,23 @@ h2.b-title{
 				height: 461px;
 				margin-bottom: 15px;
 			}
-				.main-photo .zoom{
+				.main-photo .icon-zoom{
+					pointer-events: none;
+					font-size: 42px;
 					position: absolute;
 					right: 25px;
 					bottom: 25px;
 				}
-				.main-photo img{
-
+				.main-photo a, .main-photo a img{
+					width: 100%;
+				    height: 100%;
+				    display: block;
 				}
 			.b-product-photo-slider{
 				padding: 0 48px;
 			}
 				.b-product-photo-slider img{
+					cursor: pointer;
 					width: 73px;
 					height: 73px;
 					margin: 0 12px;
@@ -1428,6 +1442,7 @@ h2.b-title{
 							max-height: 500px;
 						}
 							.b-product-texture img{
+								cursor: pointer;
 								float: left;
 								width: 49px;
 								height: 49px;
@@ -1527,11 +1542,25 @@ h2.b-title{
 							.product-quantity a.icon-minus:hover:before{
 								background-color: #FFF;
 							}
+							.product-quantity a.icon-plus:hover:before{
+								color: #FFF;
+							}
 							.product-quantity .icon-minus{
 								left: 0;
 							}
 							.product-quantity .icon-plus{
 								right: 0;
+							}
+							.product-quantity .icon-plus:before {
+							    position: absolute;
+							    font-size: 12px;
+							    top: 6px;
+							    left: 5px;
+							    color: #564531;
+							    -webkit-transition: color 150ms ease-in-out;
+								-moz-transition: color 150ms ease-in-out;
+								-o-transition: color 150ms ease-in-out;
+								transition: color 150ms ease-in-out;
 							}
 							.product-quantity input[type=text]{
 								padding: 5px 0 6px 0;
@@ -1546,10 +1575,14 @@ h2.b-title{
 							    display: block;
 							    height: 1px;
 							    width: 9px;
-							    background-color: #c4c4c4;
+							    background-color: #564531;
 							    position: absolute;
 							    top: 11px;
     							left: 7px;
+    							-webkit-transition: background-color 150ms ease-in-out;
+								-moz-transition: background-color 150ms ease-in-out;
+								-o-transition: background-color 150ms ease-in-out;
+								transition: background-color 150ms ease-in-out;
 							}
 					.b-product-params-right .b-btn{
 						position: relative;
