@@ -153,6 +153,9 @@ $(document).ready(function(){
         $this.prevAll(".rating-star").addClass("highlight");
     });
 
+    if( typeof autosize == "function" )
+        autosize(document.querySelectorAll('textarea'));
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 

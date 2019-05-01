@@ -1647,7 +1647,7 @@ h2.b-title{
 				}
 
 		.b-detail-tabs-content{
-			padding-top: 18px;
+			padding-top: 26px;
 		}
 			.desc-block{
 				max-width: 848px;
@@ -1675,7 +1675,9 @@ h2.b-title{
 							margin-bottom: 8px;
 						}
 							.spec-block-right ul li a{
+								display: inline-block;
 								border-bottom: 1px solid #564531;
+								line-height: 18px;
 							}
 							.spec-block-right ul li a:hover {
 							    border-bottom: 1px solid transparent;
@@ -1730,18 +1732,76 @@ h2.b-title{
 							margin-bottom: 16px;
 						}
 						.b-detail-review-text .rating{
-							margin-left: 5px;
+							display: inline-block;
 						}
-							.b-detail-review-text .rating .rating-star{
+							.rating .rating-star{
+								position: relative;
 								cursor: pointer;
-								padding: 0 2px;
+								padding: 0 3px;
 								float: left;
+								width: 16px;
+								height: 16px;
+								box-sizing: content-box;
 							}
-							.rating .rating-star.highlight-h,
-							.rating:not(.now-hover) .rating-star.highlight{
-								background-color: #ccc;
+							.rating .icon-star{
+								position: absolute;
+								top: 0;
+								left: 3px;
 							}
+							.rating .icon-star:before{
+								font-size: 16px;
+							}
+							.rating .icon-star-fill{
+								width: 18px;
+								height: 17px;
+								position: absolute;
+								top: 0;
+								left: 3px;
+								display: none;
+								background-image: url(../i/icon-star-fill.svg);
+								background-repeat: no-repeat;
+								background-position: 50% 50%;
+								background-size: 18px;
+							}
+							.rating .rating-star.highlight-h .icon-star-fill,
+							.rating:not(.now-hover) .rating-star.highlight .icon-star-fill{
+								display: block;
+							}
+							
+			.b-detail-feedback{
+				max-width: 753px;
+				margin: 0 auto;
+			}
+				.b-detail-feedback h3{
+					font-family: 'DINPro-Medium';
+					font-size: 26px;
+					line-height: 32px;
+					margin-bottom: 15px;
+				}
+				.b-detail-feedback form{
 
+				}
+					.b-detail-feedback .b-textarea{
+						width: 100%;
+						margin-bottom: 4px;
+					}
+					.b-detail-feedback .b-detail-register{
+						float: left;
+						display: inline-block;
+					    border-bottom: 1px solid #564531;
+					    line-height: 18px;
+					}
+					.b-detail-feedback .b-detail-register:hover{
+					    border-bottom: 1px solid transparent;
+						text-decoration: none;
+					}
+					.b-detail-feedback .b-btn{
+						float: right;
+						padding: 10px 29px 13px 29px;
+						font-family: 'DINPro-Regular';
+						font-size: 20px;
+						line-height: 24px;
+					}
 
 
 /*=============================*/
@@ -1908,9 +1968,13 @@ input:-moz-placeholder {
 }
 textarea::-webkit-input-placeholder {
 	color: rgba(86,69,49,0.50);
+	font-size: 16px;
+	font-family: DINPro-Light;
 }
 textarea:-moz-placeholder {
 	color: rgba(86,69,49,0.50);
+	font-size: 16px;
+	font-family: DINPro-Light;
 }
 [class^="icon-"]:before, 
 [class*=" icon-"]:before  {
@@ -1931,7 +1995,7 @@ textarea:-moz-placeholder {
 	margin-right: 24px;
 	margin-bottom: 32px;
 }
-	.b-input p{
+	.b-input p, .b-textarea p{
 		font-family: 'DINPro-Medium';
 		font-size: 18px;
 		line-height: 22px;
@@ -1943,6 +2007,19 @@ textarea:-moz-placeholder {
 		border-radius: 5px;
 		padding: 14px 18px 15px 18px;
 	}
+
+.b-textarea{
+
+}
+	.b-textarea textarea{
+		width: 100%;
+		border-radius: 3px;
+		padding: 14px 24px 20px 24px;
+		font-size: 16px;
+		font-family: DINPro-Light;
+		resize: none;
+	}
+
 
 /*===2 инпута в строке===*/
 .b-inputs-2 .b-input{
