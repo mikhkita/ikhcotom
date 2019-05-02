@@ -52,6 +52,15 @@ $(document).ready(function(){
         autoplaySpeed: 5000
     });
 
+    $('.b-product-main').slick({
+        dots: false,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.b-product-photo-slider',
+        swipe: false
+    });
     $('.b-product-photo-slider').slick({
         dots: false,
         arrows: true,
@@ -61,7 +70,9 @@ $(document).ready(function(){
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
-        variableWidth: true
+        variableWidth: true,
+        asNavFor: '.b-product-main',
+        focusOnSelect: true
     });
 
     if($(".colors-select").length){
