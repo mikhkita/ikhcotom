@@ -52,6 +52,8 @@ $(document).ready(function(){
         autoplaySpeed: 5000
     });
 
+    $(".after-load").removeClass("after-load");
+
     $('.b-product-main').slick({
         dots: false,
         arrows: false,
@@ -64,8 +66,8 @@ $(document).ready(function(){
     $('.b-product-photo-slider').slick({
         dots: false,
         arrows: true,
-        prevArrow: '<div class="b-product-arrows icon-arrow-left"></div>',
-        nextArrow: '<div class="b-product-arrows icon-arrow-right"></div>',
+        prevArrow: '<div class="b-product-arrows icon-arrow-left-bold"></div>',
+        nextArrow: '<div class="b-product-arrows icon-arrow-right-bold"></div>',
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -154,7 +156,7 @@ $(document).ready(function(){
         $(this).prevAll(".rating-star").removeClass("highlight-h");
     });
 
-    $(".rating-star").click(function(event) {
+    $(".rating-star").click(function() {
         var $this = $(this);
         //здесь будет ajax-запрос
         $this.parent().find(".rating-star").each(function() {
@@ -166,6 +168,12 @@ $(document).ready(function(){
 
     if( typeof autosize == "function" )
         autosize(document.querySelectorAll('textarea'));
+
+    $(".all-specifications").click(function() {
+        $(".tab-spec").click();
+        $("body, html").animate({scrollTop : $(".b-detail-tabs").offset().top-20}, 300);
+        return false;
+    });
 
     // $(".b-card-top").height($(".b-card-top").width());
 

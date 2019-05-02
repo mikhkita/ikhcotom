@@ -74,6 +74,12 @@
 .icon-arrow-right:before {
   content: "\e901";
 }
+.icon-arrow-left-bold:before {
+  content: "\e911";
+}
+.icon-arrow-right-bold:before {
+  content: "\e912";
+}
 .icon-cart:before {
   content: "\e902";
   color: #564531;
@@ -167,7 +173,9 @@ h2.b-title{
 .hide{
 	display: none !important;
 }
-
+.after-load{
+	display: none !important;
+}
 .center{
 	text-align: center;
 }
@@ -1281,8 +1289,8 @@ h2.b-title{
 			vertical-align: top;
 			padding: 8px 10px;
 		}
-		.b-nav-left.icon-arrow-left:before,
-		.b-nav-right.icon-arrow-right:before{
+		.b-nav-left.icon-arrow-left-bold:before,
+		.b-nav-right.icon-arrow-right-bold:before{
 			font-size: 20px;
 		}
 		.b-nav-pages{
@@ -2038,20 +2046,24 @@ h2.b-title{
 	position: absolute;
     cursor: pointer;
     z-index: 1;
-    padding: 10px;
+    padding: 10px 6px;
 }
-	.b-product-arrows.icon-arrow-left{
+	.b-product-arrows.icon-arrow-left-bold{
 		top: 12px;
-		left: 2px;
+		left: 0;
 	}
-	.b-product-arrows.icon-arrow-right{
+	.b-product-arrows.icon-arrow-right-bold{
 		top: 12px;
-		right: 2px;
+		right: 0;
 	}
-		.b-product-arrows.icon-arrow-left:before,
-		.b-product-arrows.icon-arrow-right:before{
+		.b-product-arrows.icon-arrow-left-bold:before,
+		.b-product-arrows.icon-arrow-right-bold:before{
 		    font-size: 30px;
 		    color: #979797;
+		}
+		.b-product-arrows.icon-arrow-left-bold:hover:before,
+		.b-product-arrows.icon-arrow-right-bold:hover:before{
+		    color: #564531;
 		}
 
 
