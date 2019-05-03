@@ -175,6 +175,26 @@ $(document).ready(function(){
         return false;
     });
 
+    $(".b-filter-item-params").slideUp(0);
+    $(".filter-toggle").click(function() {
+        if(!$(this).hasClass("sliding")){
+            var $this = $(this);
+            $this.addClass("sliding");
+            if($this.hasClass("open")){
+                $this.removeClass("open");
+                $this.parents(".b-filter-item").find(".b-filter-item-params").slideUp(300, function(){
+                    $this.removeClass("sliding");
+                });
+            }else{
+                $this.addClass("open");
+                $this.parents(".b-filter-item").find(".b-filter-item-params").slideDown(300, function(){
+                    $this.removeClass("sliding");
+                });
+            }
+        }  
+        return false;
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 
