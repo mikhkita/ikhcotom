@@ -175,24 +175,67 @@ $(document).ready(function(){
         return false;
     });
 
-    $(".b-filter-item-params").slideUp(0);
+    $(".b-filter-toggle").slideUp(0);
     $(".filter-toggle").click(function() {
         if(!$(this).hasClass("sliding")){
             var $this = $(this);
             $this.addClass("sliding");
             if($this.hasClass("open")){
                 $this.removeClass("open");
-                $this.parents(".b-filter-item").find(".b-filter-item-params").slideUp(300, function(){
+                $this.parents(".b-filter-item").find(".b-filter-toggle").slideUp(300, function(){
                     $this.removeClass("sliding");
                 });
             }else{
                 $this.addClass("open");
-                $this.parents(".b-filter-item").find(".b-filter-item-params").slideDown(300, function(){
+                $this.parents(".b-filter-item").find(".b-filter-toggle").slideDown(300, function(){
                     $this.removeClass("sliding");
                 });
             }
         }  
         return false;
+    });
+
+    $( function() {
+        $(".slider-range").each(function() {
+            var $this = $(this),
+                from = Number($(this).attr("data-range-from")),
+                to = Number($(this).attr("data-range-to"));
+            $this.slider({
+                range: true,
+                min: from,
+                max: to,
+                values: [from, to],
+                slide: function( event, ui ) {
+                    $this.parent().find(".range-from").val(ui.values[0]);
+                    $this.parent().find(".range-to").val(ui.values[1]);
+                }
+            });
+            $this.parent().find(".range-from").val(from);
+            $this.parent().find(".range-to").val(to);
+        });
+    });
+
+    $('.range-from, .range-to').on('change', function(){
+        var count = $(this).val()*1,
+            $slider = $(this).parents(".b-filter-item-range").find(".slider-range");
+            from = Number($slider.attr("data-range-from"));
+            to = Number($slider.attr("data-range-to"));
+        if($(this).hasClass("range-from")){
+            var inputTo = $(this).siblings(".range-to").val()*1;
+            count = (count > inputTo) ? inputTo : count;
+        }else{
+            var inputFrom = $(this).siblings(".range-from").val()*1;
+            count = (count < inputFrom) ? inputFrom : count;
+        }
+        count = (count < from)? from : count;
+        count = (count > to) ? to : count;
+        $(this).val(count);
+        var valCurrent =  $slider.slider( "option", "values" );
+        if($(this).hasClass("range-from")){
+            $slider.slider("option", "values", [count, valCurrent[1]]).trigger('slidechange');
+        }else{
+            $slider.slider("option", "values", [valCurrent[0], count]).trigger('slidechange');
+        }
     });
 
     // $(".b-card-top").height($(".b-card-top").width());

@@ -2148,12 +2148,90 @@ h2.b-title{
 					.filter-toggle.open .icon-plus{
 						display: none;
 					}
-			.b-filter-item-params{
+			.b-filter-checkbox-list{
 
 			}
-				.b-filter-item-params li{
+				.b-filter-checkbox-list li{
 					margin-bottom: 10px;
 				}
+			.b-filter-item-range{
+				padding-bottom: 16px;
+			}
+				.slider-range{
+					/*margin: 0 8px;*/
+				}
+				.range-inputs{
+					margin-bottom: 14px;
+				}
+				.range-inputs input[type=text]{
+					display: inline-block;
+					width: 116px;
+					padding: 12px 0 15px 0;
+					font-size: 16px;
+					line-height: 20px;
+					text-align: center;
+				}
+					.range-inputs .range-to{
+
+					}
+					.range-inputs .range-from{
+
+					}
+					.range-inputs .icon-minus{
+						display: inline-block;
+						vertical-align: top;
+						padding: 24px 5px 0 5px;
+					}
+					.range-inputs .icon-minus:before{
+						width: 13px;
+					}
+
+/*=======ui-slider=======*/
+
+.ui-slider .ui-slider-handle {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    border: 2px solid #78C032;
+    background: #FFF;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus{
+	border: 2px solid #78C032;
+	background: #FFF;
+}
+
+.ui-slider-horizontal {
+    height: 7px;
+}
+.ui-widget.ui-widget-content {
+    border: 1px solid #78C032;
+}
+.ui-slider-horizontal .ui-slider-range {
+    top: 0;
+}
+.ui-widget-header{
+	background: #78C032;
+}
+.ui-slider-horizontal .ui-slider-handle {
+    top: -7px;
+}
 
 /*=============================*/
 

@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="css/slick.css" type="text/css">
 	<link rel="stylesheet" href="css/chosen.min.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
 	<!-- <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1024px)" href="css/layout-tablet.css">
@@ -85,7 +86,7 @@
 								<div class="icon-plus"></div>
 							</div>
 						</div>
-						<ul class="b-filter-item-params">
+						<ul class="b-filter-toggle b-filter-checkbox-list">
 							<li class="b-checkbox">
 								<input id="label-1-1" type="checkbox" name="">
 								<label for="label-1-1">
@@ -131,7 +132,7 @@
 								<div class="icon-plus"></div>
 							</div>
 						</div>
-						<ul class="b-filter-item-params">
+						<ul class="b-filter-toggle b-filter-checkbox-list">
 							<li class="b-checkbox">
 								<input id="label-2-1" type="checkbox" name="">
 								<label for="label-2-1">
@@ -177,7 +178,7 @@
 								<div class="icon-plus"></div>
 							</div>
 						</div>
-						<ul class="b-filter-item-params">
+						<ul class="b-filter-toggle b-filter-checkbox-list">
 							<li class="b-checkbox">
 								<input id="label-3-1" type="checkbox" name="">
 								<label for="label-3-1">
@@ -223,7 +224,7 @@
 								<div class="icon-plus"></div>
 							</div>
 						</div>
-						<ul class="b-filter-item-params">
+						<ul class="b-filter-toggle b-filter-checkbox-list">
 							<li class="b-checkbox">
 								<input id="label-4-1" type="checkbox" name="">
 								<label for="label-4-1">
@@ -260,6 +261,72 @@
 								</label>
 							</li>
 						</ul>
+					</div>
+					<div class="b-filter-item">
+						<div class="b-filter-item-name">
+							<h3>Рекомендуемый размер спиц</h3>
+							<div class="filter-toggle">
+								<div class="icon-minus"></div>
+								<div class="icon-plus"></div>
+							</div>
+						</div>
+						<div class="b-filter-toggle b-filter-item-range">
+							<div class="range-inputs">
+								<input class="range-from" type="text" name="" oninput="this.value = this.value.replace(/\D/g, '')">
+								<div class="icon-minus"></div>
+								<input class="range-to" type="text" name="" oninput="this.value = this.value.replace(/\D/g, '')">
+							</div>
+							<div class="slider-range" data-range-from="0" data-range-to="15"></div>
+						</div>
+					</div>
+					<div class="b-filter-item">
+						<div class="b-filter-item-name">
+							<h3>Сезон</h3>
+							<div class="filter-toggle">
+								<div class="icon-minus"></div>
+								<div class="icon-plus"></div>
+							</div>
+						</div>
+						<ul class="b-filter-toggle b-filter-checkbox-list">
+							<li class="b-checkbox">
+								<input id="label-5-1" type="checkbox" name="">
+								<label for="label-5-1">
+									<div class="b-checked icon-checked"></div>
+									<p>Зима</p>
+								</label>
+							</li>
+							<li class="b-checkbox">
+								<input id="label-5-2" type="checkbox" name="">
+								<label for="label-5-2">
+									<div class="b-checked icon-checked"></div>
+									<p>Лето</p>
+								</label>
+							</li>
+							<li class="b-checkbox">
+								<input id="label-5-3" type="checkbox" name="">
+								<label for="label-5-3">
+									<div class="b-checked icon-checked"></div>
+									<p>Демисезонная</p>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<div class="b-filter-item">
+						<div class="b-filter-item-name">
+							<h3>Метраж</h3>
+							<div class="filter-toggle">
+								<div class="icon-minus"></div>
+								<div class="icon-plus"></div>
+							</div>
+						</div>
+						<div class="b-filter-toggle b-filter-item-range">
+							<div class="range-inputs">
+								<input class="range-from" type="text" name="" oninput="this.value = this.value.replace(/\D/g, '')">
+								<div class="icon-minus"></div>
+								<input class="range-to" type="text" name="" oninput="this.value = this.value.replace(/\D/g, '')">
+							</div>
+							<div class="slider-range" data-range-from="0" data-range-to="900"></div>
+						</div>
 					</div>
 				</div>
 				<div class="b-catalog-list">
@@ -393,6 +460,7 @@
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
 	<script type="text/javascript" src="js/autosize.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
