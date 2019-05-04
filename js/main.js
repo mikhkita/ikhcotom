@@ -105,6 +105,18 @@ $(document).ready(function(){
         return false;
     });
 
+    $(".show-more").click(function() {
+        var $block = $(this).parents(".b-filter-toggle").find(".b-filter-checkbox-list");
+        if($block.hasClass("open")){
+            $block.removeClass("open");
+            $(this).text("смотреть больше");
+        }else{
+            $block.addClass("open");
+            $(this).text("скрыть");
+        }
+        return false;
+    });
+
     var maxBasketCount = 99;
     //увеличить количество
     $('.quantity-add').on('click', function(){

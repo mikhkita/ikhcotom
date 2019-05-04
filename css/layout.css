@@ -2149,10 +2149,18 @@ h2.b-title{
 						display: none;
 					}
 			.b-filter-checkbox-list{
-
+				max-height: 155px;
+    			overflow: hidden;
+    			margin-bottom: 10px;
+			}
+			.b-filter-checkbox-list.open{
+				max-height: 1000px;
 			}
 				.b-filter-checkbox-list li{
 					margin-bottom: 10px;
+				}
+				.b-filter-checkbox-list li:last-child{
+					margin-bottom: 0;
 				}
 			.b-filter-item-range{
 				padding-bottom: 16px;
@@ -2170,13 +2178,8 @@ h2.b-title{
 					font-size: 16px;
 					line-height: 20px;
 					text-align: center;
+					font-family: 'DINPro-Regular';
 				}
-					.range-inputs .range-to{
-
-					}
-					.range-inputs .range-from{
-
-					}
 					.range-inputs .icon-minus{
 						display: inline-block;
 						vertical-align: top;
@@ -2185,6 +2188,11 @@ h2.b-title{
 					.range-inputs .icon-minus:before{
 						width: 13px;
 					}
+
+			.b-filter-toggle .show-more{
+				display: inline-block;
+    			margin-bottom: 12px;
+			}
 
 /*=======ui-slider=======*/
 
