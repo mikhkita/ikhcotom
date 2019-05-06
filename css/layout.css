@@ -1623,10 +1623,20 @@ h2.b-title{
 						color: #CB6163;
 						margin-bottom: 24px;
 					}
+					.b-product-price-total.gram{
+						color: #564531;
+					}
+					.b-product-price-total.gram small{
+						padding-left: 15px;
+						font-family: 'DINPro-Regular';
+						font-size: 24px;
+						line-height: 30px;
+						color: #564531;
+					}
 						.b-product-price-total .icon-ruble-bold:before {
-						    position: absolute;
-						    top: 9px;
-						    font-size: 29px;
+						    position: relative;
+						    top: -2px;
+						    font-size: 30px;
 						    margin-left: 14px;
 						}
 					.b-product-quantity{
@@ -2112,13 +2122,16 @@ h2.b-title{
 		width: 269px;
 	}
 		.b-filter-item{
-			padding-top: 15px;
-			padding-bottom: 5px;
 			border-bottom: 1px solid #EEE;
 		}
 		.b-filter-item:first-child{
 			padding-top: 0;
 		}
+			.b-filter-tab{
+				cursor: pointer;
+				padding-top: 15px;
+				padding-bottom: 5px;
+			}
 			.b-filter-item-name{
 				position: relative;
 				margin-bottom: 16px;
@@ -2130,7 +2143,6 @@ h2.b-title{
 					padding-right: 35px;
 				}
 				.filter-toggle{
-					cursor: pointer;
 					position: absolute;
 					top: 50%;
 	    			right: 0;
@@ -2177,7 +2189,7 @@ h2.b-title{
 			.b-filter-checkbox-list{
 				max-height: 155px;
     			overflow: hidden;
-    			margin-bottom: 10px;
+    			margin-bottom: 12px;
 			}
 			.b-filter-checkbox-list.open{
 				max-height: 1000px;

@@ -82,6 +82,12 @@ $(document).ready(function(){
         $(".b-product-main-color").removeClass("show");
     });
 
+    function showPhotoColor(id) {
+        $(".b-product-main-color a.show").removeClass("show");
+        $(".b-product-main-color").addClass("show");
+        $(".b-product-main-color a[data-color-id='"+id+"']").addClass("show");
+    }
+
     if($(".colors-select").length){
         $(".colors-select").chosen({
             width: "193px",
@@ -94,6 +100,7 @@ $(document).ready(function(){
             if(id > 10 && !$(".texture-list").hasClass("open")){
                 $(".more-colors").click();
             }
+            showPhotoColor(id);
         });
     }
 
@@ -103,10 +110,7 @@ $(document).ready(function(){
         $(this).addClass("active");
         $(".colors-select option[data-color-id='"+id+"']").prop('selected', true);
         $('.colors-select').change().trigger('chosen:updated');
-
-        $(".b-product-main-color a.show").removeClass("show");
-        $(".b-product-main-color").addClass("show");
-        $(".b-product-main-color a[data-color-id='"+id+"']").addClass("show");
+        showPhotoColor(id);
     });
 
     function preloadImages()
@@ -142,7 +146,7 @@ $(document).ready(function(){
         return false;
     });
 
-    var maxBasketCount = 99;
+    var maxBasketCount = 999;
     //увеличить количество
     $('.quantity-add').on('click', function(){
         var $input = $('.quantity-input');
@@ -212,8 +216,12 @@ $(document).ready(function(){
         return false;
     });
 
-    $(".b-filter-toggle").slideUp(0);
-    $(".filter-toggle").click(function() {
+    $(".b-filter-tab").each(function() {
+        if(!$(this).hasClass("open")){
+            $(this).siblings(".b-filter-toggle").slideUp(0);
+        }
+    });
+    $(".b-filter-tab").click(function() {
         if(!$(this).hasClass("sliding")){
             var $this = $(this);
             $this.addClass("sliding");
