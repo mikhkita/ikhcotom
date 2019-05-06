@@ -204,8 +204,28 @@ h2.b-title{
 	font-size: 16px;
 	line-height: 24px;
 }
+	.b-text h2, .b-text h3{
+		font-family: 'DINPro-Medium';
+		font-size: 24px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
 	.b-text p{
-		margin-bottom: 8px;
+		margin-bottom: 16px;
+	}
+	.b-text p:last-child{
+		margin-bottom: 0;
+	}
+	.b-text b{
+		font-family: 'DINPro-Medium';
+	}
+	.b-text a{
+		display: inline-block;
+		line-height: 18px;
+		border-bottom: 1px solid #564531;
+	}
+	.b-text a:hover{
+		border-bottom: 1px solid #5F9828;
 	}
 
 .b-content-inner{
@@ -2257,6 +2277,72 @@ h2.b-title{
 				display: inline-block;
     			margin-bottom: 12px;
 			}
+
+/*=======Контакты=======*/
+
+.b-contacts{
+
+}
+	.b-contacts-left{
+		width: 50%;
+		float: left;
+	}
+		.b-contacts-list{
+			max-width: 346px;
+		}
+			.b-contacts-list li{
+				position: relative;
+				padding-left: 46px;
+				margin-bottom: 24px;
+				font-size: 18px;
+				line-height: 22px;
+			}
+			.b-contacts-list li:last-child{
+				margin-bottom: 0;
+			}
+				.b-contacts-list li > img{
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+				.b-contacts-list li.contacts-map > img{
+					top: 6px;
+					width: 24px;
+				}
+				.b-contacts-list li.contacts-phone > img{
+					top: 11px;
+					width: 36px;
+				}
+					.b-contacts-list li.contacts-phone .telephone img{
+						margin-left: 16px;
+					}
+					.b-contacts-list li.contacts-phone .telephone-1{
+						margin-bottom: 6px;
+					}
+				.b-contacts-list li.contacts-email > img{
+					width: 36px;
+				}
+				.b-contacts-list li.contacts-vk > img{
+					width: 36px;
+				}
+				.b-contacts-list li.contacts-insta > img{
+					width: 36px;
+				}
+	.b-contacts-right{
+		width: 50%;
+		float: right;
+	}
+		.b-contacts-desc{
+			margin-top: -38px;
+			width: 500px;
+			padding: 42px;
+			box-shadow: 3px 5px 20px 5px rgba(230,230,230,0.50);
+			border-radius: 3px;
+			overflow: hidden;
+			border: 1px solid #E6E6E6;
+			font-size: 18px;
+			line-height: 26px;
+		}
 
 /*=======ui-slider=======*/
 
