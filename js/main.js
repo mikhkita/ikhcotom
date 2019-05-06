@@ -77,12 +77,37 @@ $(document).ready(function(){
         focusOnSelect: true
     });
 
+    $('.b-product-photo-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(".b-product-main-color a.show").removeClass("show");
+        $(".b-product-main-color").removeClass("show");
+    });
+
     if($(".colors-select").length){
         $(".colors-select").chosen({
             width: "193px",
             disable_search_threshold: 10000
         });
+        $('.colors-select').on('change', function(){
+            var id = Number($(this).find(":selected").attr("data-color-id"));
+            $(".texture-list img.active").removeClass("active");
+            $(".texture-list img[data-color-id='"+id+"']").addClass("active");
+            if(id > 10 && !$(".texture-list").hasClass("open")){
+                $(".more-colors").click();
+            }
+        });
     }
+
+    $(".texture-list img").click(function(){
+        var id = Number($(this).attr("data-color-id"));
+        $(".texture-list img.active").removeClass("active");
+        $(this).addClass("active");
+        $(".colors-select option[data-color-id='"+id+"']").prop('selected', true);
+        $('.colors-select').change().trigger('chosen:updated');
+
+        $(".b-product-main-color a.show").removeClass("show");
+        $(".b-product-main-color").addClass("show");
+        $(".b-product-main-color a[data-color-id='"+id+"']").addClass("show");
+    });
 
     function preloadImages()
     {
@@ -106,7 +131,7 @@ $(document).ready(function(){
     });
 
     $(".show-more").click(function() {
-        var $block = $(this).parents(".b-filter-toggle").find(".b-filter-checkbox-list");
+        var $block = $(this).parents(".b-filter-toggle").find(".b-filter-more");
         if($block.hasClass("open")){
             $block.removeClass("open");
             $(this).text("смотреть больше");
@@ -181,8 +206,8 @@ $(document).ready(function(){
     if( typeof autosize == "function" )
         autosize(document.querySelectorAll('textarea'));
 
-    $(".all-specifications").click(function() {
-        $(".tab-spec").click();
+    $(".go-tab").click(function() {
+        $($(this).attr("data-tab")).click();
         $("body, html").animate({scrollTop : $(".b-detail-tabs").offset().top-20}, 300);
         return false;
     });
