@@ -115,6 +115,13 @@
 .icon-update:before {
   content: "\e90c";
 }
+.icon-fav-heart:before {
+  content: "\e915";
+}
+.icon-catalogue:before {
+  content: "\e916";
+  color: #77be32;
+}
 /*.icon-minus:before {
   content: "\e90d";
 }*/
