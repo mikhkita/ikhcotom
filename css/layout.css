@@ -163,8 +163,8 @@ a, a:after{
 }
 a:hover,
 a:hover:after{
-	color: #5F9828; 
-	border-color: #5F9828;
+	color: #77BE32; 
+	border-color: #77BE32;
 }
 label.error{
 	display: none !important;
@@ -225,7 +225,7 @@ h2.b-title{
 		border-bottom: 1px solid #564531;
 	}
 	.b-text a:hover{
-		border-bottom: 1px solid #5F9828;
+		border-bottom: 1px solid #77BE32;
 	}
 
 .b-content-inner{
@@ -281,7 +281,7 @@ h2.b-title{
 	.b-search{
 		border: 1px solid rgba(86,69,49,0.50);
 		border-radius: 30px;
-		padding-top: 9px;
+		padding-top: 12px;
 		padding-bottom: 15px;
 		padding-left: 24px;
 		width: 363px;
@@ -301,7 +301,7 @@ h2.b-title{
 			top: calc(50% - 8px);
 		}
 			.b-search:hover, .b-search:hover:after{
-				color: #5F9828;
+				color: #77BE32;
 			}
 	.b-header-catalogue{
 		position: relative;
@@ -380,7 +380,7 @@ h2.b-title{
 			z-index: 10;
 		}
 	.b-main-menu{
-		background-color: #5F9828;
+		background-color: #77BE32;
 	}
 		.b-menu-items{
 			display: inline-block;
@@ -521,6 +521,7 @@ h2.b-title{
 			text-align: center;
 			padding: 10px;
 			position: relative;
+			padding-bottom: 13px;
 		}	
 			.b-card-top{
 				display: inline-block;
@@ -614,12 +615,13 @@ h2.b-title{
 				margin-bottom: 46px;
 			}
 				.b-item-name{
-					font-family: DINPro;
+					font-family: DINPro-Regular;
 					font-size: 18px;
 					color: #3E3224;
 					letter-spacing: 0;
-				    margin-top: 12px;
-				    z-index: 30;
+					margin-top: 12px;
+					z-index: 30;
+					line-height: 22px;
 				}
 				.b-price{
 					/* margin-top: 16px; */
@@ -649,7 +651,10 @@ h2.b-title{
 			transition: border-color 150ms ease-in-out;
 		}
 			.b-stock .b-btn{
-				padding: 14px 38px;
+				padding-left: 38px;
+				padding-right: 38px;
+				padding-top: 12px;
+				padding-bottom: 15px;
 			}
 			.b-btn:hover{
 				border-color: #77BE32;
