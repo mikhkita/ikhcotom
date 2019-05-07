@@ -2292,7 +2292,7 @@ h2.b-title{
 		}
 			.b-contacts-list li{
 				position: relative;
-				padding-left: 46px;
+				padding-left: 50px;
 				margin-bottom: 24px;
 				font-size: 18px;
 				line-height: 22px;
@@ -2310,22 +2310,38 @@ h2.b-title{
 					width: 24px;
 				}
 				.b-contacts-list li.contacts-phone > img{
-					top: 11px;
+					top: 10px;
 					width: 36px;
 				}
+					.b-contacts-list li.contacts-phone .telephone{
+						display: inline-block;
+						position: relative;
+					}
 					.b-contacts-list li.contacts-phone .telephone img{
-						margin-left: 16px;
+						position: absolute;
+					    top: 1px;
+					    right: -34px;
 					}
 					.b-contacts-list li.contacts-phone .telephone-1{
 						margin-bottom: 6px;
 					}
+				.b-contacts-list li.contacts-email{
+					padding-left: 54px;
+				}
+				.b-contacts-list li.contacts-email,
+				.b-contacts-list li.contacts-vk{
+					margin-bottom: 30px;
+				}
 				.b-contacts-list li.contacts-email > img{
+					top: -6px;
 					width: 36px;
 				}
 				.b-contacts-list li.contacts-vk > img{
+					top: 2px;
 					width: 36px;
 				}
 				.b-contacts-list li.contacts-insta > img{
+					top: -5px;
 					width: 36px;
 				}
 	.b-contacts-right{
