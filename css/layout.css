@@ -120,7 +120,6 @@
 }
 .icon-catalogue:before {
   content: "\e916";
-  color: #77be32;
 }
 /*.icon-minus:before {
   content: "\e90d";
@@ -295,7 +294,7 @@ h2.b-title{
 		display: inline-block;
 		position: relative;
 		vertical-align: middle;
-		margin-left: -3px;
+		margin-left: 15px;
 		margin-top: 10px;
 		max-height: 49px;
 		font-size: 16px;
@@ -313,38 +312,41 @@ h2.b-title{
 			display: inline-block;
 			position: absolute;
 			right: 24px;
-			top: calc(50% - 8px);
+			top: calc(50% - 7px);
+			font-size: 19px;
 		}
 			.b-header input[type=search]:hover, .b-search-icon:hover:after{
 				color: #77BE32;
 			}
 	.b-header-catalogue{
 		position: relative;
+		right: -13px;
 		font-family: DINPro-Medium;
 		font-size: 24px;
-		margin-left: 44px;
+		margin-left: 30px;
 		margin-top: 10px;
+		color: #564531;
+		-webkit-transition: color 150ms ease-in-out;
+		-moz-transition: color 150ms ease-in-out;
+		-o-transition: color 150ms ease-in-out;
+		transition: color 150ms ease-in-out;
 	}
 		.b-header-catalogue:before{
-			content: " ";
-			width: 30px;
-			height: 21px;
+			content: "\e916";
+			font-family: icomoon;
+			/* width: 30px; */
+			/* height: 21px; */
+			font-size: 21px;
 			position: absolute;
 			left: -47px;
 			top: 8px;
-			background-image: url("../i/header-catalogue-black.svg");
-			-webkit-transition: background-image 150ms ease-in-out;
-			-moz-transition: background-image 150ms ease-in-out;
-			-o-transition: background-image 150ms ease-in-out;
-			transition: background-image 150ms ease-in-out;
 		}
-			.b-header-catalogue:hover:before{
-			content: " ";
-			background-image: url("../i/header-catalogue-green.svg");
-		}
+			.b-header-catalogue:hover{
+				color: #77BE32;
+			}
 	.b-control{
 		position: relative;
-		/* right: 3px; */
+		right: 3px;
 		/* top: calc(50% - 14px); */
 		display: inline-block;
 		vertical-align: middle;
@@ -569,6 +571,9 @@ h2.b-title{
 				z-index: 10;
 				cursor: pointer;
 			}
+			.b-item-card:hover .b-card-fav{
+				color: #828282;
+			}
 			.b-item-card:hover .b-card-top-hover,
 			.b-item-card:hover .b-card-top-dark{
 				opacity: 1;
@@ -609,8 +614,23 @@ h2.b-title{
 				.b-card-fav{
 					position: absolute;
 					top: 0px;
+					padding-top: 10px;
 					right: 0px;
+					font-family: icomoon;
+					display: inline-block;
+					color: transparent;
+					width: 36px;
+					height: 36px;
+					z-index: 100;
+					background-color: rgba(255, 255, 255, 0.7);
+
 				}
+					.b-card-fav:hover{
+						color: #FFF !important;
+					}
+					.b-card-fav.active{
+						color: #CA6460 !important;
+					}
 				.b-in-stock{
 					padding: 7px 21px;
 					position: absolute;
