@@ -851,6 +851,13 @@ h2.b-title{
 			color: rgba(86, 69, 49, 1);
 			border-bottom: 1px solid rgba(86, 69, 49, 1);
 		}
+	.filter-list{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 .b-im-watch{
 	text-align: center;
 }
@@ -910,7 +917,9 @@ h2.b-title{
 				color: rgba(86,69,49,0.50);
 				letter-spacing: 0;
 				line-height: 26px;
+				position:  relative;
 				text-decoration: underline;
+				top: 5px;
 			}
 				.b-main-article:hover a{
 					text-decoration: none;

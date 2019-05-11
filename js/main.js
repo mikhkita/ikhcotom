@@ -104,7 +104,7 @@ $(document).ready(function(){
 
     $(".b-show-more").click(function(){
         $(this).addClass("hidden");
-        $(this).prev().addClass("visible");
+        $(this).prev(2).addClass("visible");
     });
 
     $(".b-item-card").height($(".b-item-cards").outerHeight());
