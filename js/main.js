@@ -77,6 +77,30 @@ $(document).ready(function(){
         focusOnSelect: true
     });
 
+    $('.b-item-cards').slick({
+        dots: false,
+        arrows: true,
+        prevArrow: '<div class="icon-arrow-left" style="cursor: pointer; position: absolute; top: calc(50% - 23px); font-size: 40px; left: -42px;"></div>',
+        nextArrow: '<div class="icon-arrow-right" style="cursor: pointer; position: absolute; top: calc(50% - 23px); font-size: 40px; right: -38px;"></div>',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: false
+    });
+     $('.b-im-block').slick({
+        dots: false,
+        arrows: true,
+        prevArrow: '<div class="icon-arrow-left" style="cursor: pointer; position: absolute; top: calc(50% - 34px); font-size: 70px; right: calc(100% - 150px); z-index: 100";></div>',
+        nextArrow: '<div class="icon-arrow-right" style="cursor: pointer; position: absolute; top: calc(50% - 34px); font-size: 70px; right: calc(0% + 150px);"></div>',
+        infinite: true,
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        autoplay: false,
+        focusOnSelect: true,
+        variableWidth: true
+    });
+    $(".b-item-card").height($(".b-item-cards").outerHeight());
+
     $('.b-product-photo-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         $(".b-product-main-color a.show").removeClass("show");
         $(".b-product-main-color").removeClass("show");
@@ -112,16 +136,6 @@ $(document).ready(function(){
         $('.colors-select').change().trigger('chosen:updated');
         showPhotoColor(id);
     });
-
-    function preloadImages()
-    {
-      for(var i = 0; i<arguments.length; i++)
-        $("<img />").attr("src", arguments[i]);
-    }
-
-    preloadImages  ("i/header-catalogue-green.svg",
-                    
-                   );
 
     $(".more-colors").click(function() {
         if($(".texture-list").hasClass("open")){

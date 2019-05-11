@@ -531,7 +531,20 @@ h2.b-title{
 		flex-wrap: wrap;
 		display: flex;
 		margin-bottom: 50px;
+		align-items: stretch;
 	}
+		.icon-arrow-right:hover,
+		.icon-arrow-left:hover{
+			color: #77BE32;
+		}
+		.b-im-watch .icon-arrow-right,
+		.b-im-watch .icon-arrow-left{
+			color: #FFF;
+		}
+		.b-im-watch .icon-arrow-right:hover,
+		.b-im-watch .icon-arrow-left:hover{
+			color: #77BE32;
+		}
 		.b-item-card{
 			display: inline-block;
 			width: calc(100% / 4);
@@ -539,6 +552,7 @@ h2.b-title{
 			padding: 10px;
 			position: relative;
 			padding-bottom: 13px;
+			min-height: 100%;
 		}	
 			.b-card-top{
 				display: inline-block;
@@ -755,6 +769,70 @@ h2.b-title{
 			.b-tab-wool.active{
 				color:#77BE32;
 			}
+.b-im-watch{
+	text-align: center;
+}
+	.b-im-block{
+		margin-bottom: 50px;
+	}
+.b-main-articles-block{
+	text-align: center;
+	margin-bottom: 56px;
+}
+	.b-main-articles{
+		margin-bottom: 50px;
+
+	}
+		.b-main-article{
+			text-align: left;
+			width: calc(50% - 25px);
+			float: left;
+		}
+		.b-main-article:nth-child(2n){
+			float: right;
+		}
+			.b-main-article img{
+				width: calc(50% - 12px);
+				margin-right: 24px;	
+				display: inline-block;
+				float: left;
+			}
+			.b-main-article-text{
+				display: inline-block;
+				float: right;
+				width: calc(50% - 12px);
+				height: 100%;
+			}
+				.b-main-article-header{
+					font-family: DINPro-Medium;
+					font-size: 18px;
+					color: #564531;
+					letter-spacing: 0;
+					line-height: 22px;
+					margin-bottom: 6px;
+				}
+				.b-main-article-description{
+					font-family: DINPro-Regular;
+					font-size: 16px;
+					color: #564531;
+					letter-spacing: 0;
+					line-height: 22px;
+				}
+			.b-main-article a{
+				display: inline-block;
+				vertical-align: bottom;
+				float: right;
+				font-family: DINPro-Light;
+				font-size: 16px;
+				color: rgba(86,69,49,0.50);
+				letter-spacing: 0;
+				line-height: 26px;
+				text-decoration: underline;
+			}
+				.b-main-article:hover a{
+					text-decoration: none;
+				}
+
 
 .b-footer{
 	background-color: #F3F3F3;
