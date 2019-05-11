@@ -104,6 +104,15 @@ $(document).ready(function(){
 
     $(".b-item-card").height($(".b-item-cards").outerHeight());
 
+    $(".b-item-card .b-card-fav").click(function(e){
+    e.preventDefault();
+        if ($(this).hasClass("active")){
+           $(this).removeClass("active"); 
+        }else{
+            $(this).addClass("active"); 
+        }
+    });
+
     $(".b-main-article").click(function(){
         window.location = $(this).find(".article-link").attr("href");
     });
