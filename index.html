@@ -204,7 +204,7 @@
 					<div class="b-discount-price"></div>
 				</a>
 			</div>
-			<div class="b-btn">Смотреть все</div>
+			<a class="b-btn">Смотреть все</a>
 		</div>
 	</div>
 	<div class="b b-stock">
@@ -301,51 +301,94 @@
 					<div class="b-discount-price"></div>
 				</a>
 			</div>
-			<div class="b-btn">Смотреть все</div>
+			<a class="b-btn">Смотреть все</a>
 		</div>
 	</div>
 	<div class="b b-choose-type">
 		<div class="b-block">
-			<h2 class="b-title">Подберите пряжу по параметрам</h2>
-			<h3>По цвету</h3>
-			<div class="b-product-texture">
-				<div class="texture-list">
-					<img src="i/color-1.jpg">
-					<img src="i/color-2.jpg">
-					<img src="i/color-3.jpg">
-					<img src="i/color-4.jpg">
-					<img src="i/color-5.jpg">
-					<img src="i/color-6.jpg">
-					<img src="i/color-7.jpg">
-					<img src="i/color-8.jpg" class="active">
-					<img src="i/color-9.jpg">
-					<img src="i/color-10.jpg">
-					<img src="i/color-1.jpg">
-					<img src="i/color-2.jpg">
+			<form class="b-main-filter">
+				<h2 class="b-title">Подберите пряжу по параметрам</h2>
+				<h3>По цвету</h3>
+				<div class="b-product-texture">
+					<div class="main-texture-list">
+						<input name="texture" type="radio" class="main-texture" id="texture-1" value="1">
+						<label for="texture-1"><img src="i/color-1.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-2" value="2">
+						<label for="texture-2"><img src="i/color-2.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-3" value="3">
+						<label for="texture-3"><img src="i/color-3.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-4" value="4">
+						<label for="texture-4"><img src="i/color-4.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-5" value="5" checked>
+						<label for="texture-5"><img src="i/color-5.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-6" value="6">
+						<label for="texture-6"><img src="i/color-6.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-7" value="7">
+						<label for="texture-7"><img src="i/color-7.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-8" value="8">
+						<label for="texture-8"><img src="i/color-8.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-9" value="9">
+						<label for="texture-9"><img src="i/color-9.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-10" value="10">
+						<label for="texture-10"><img src="i/color-10.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-11" value="11">
+						<label for="texture-11"><img src="i/color-1.jpg"></label>
+						<input name="texture" type="radio" class="main-texture" id="texture-12" value="12">
+						<label for="texture-12"><img src="i/color-1.jpg"></label>
+					</div>
 				</div>
-			</div>
-			<div class="b-main-tabs">
-				<div class="b-wool-tabs">
-				<h3>По составу</h3>
-					<div class="b-btn b-btn-tab b-tab-wool">Альпака</div>
-					<div class="b-btn b-btn-tab b-tab-wool active">Ангора</div>
-					<div class="b-btn b-btn-tab b-tab-wool">Меринос</div>
-					<div class="b-btn b-btn-tab b-tab-wool">Кашемир</div>
-					<div class="b-btn b-btn-tab b-tab-wool">Хлопок</div>
-					<div class="b-btn b-btn-tab b-tab-wool">Вискоза</div>
+				<div class="b-main-tabs">
+					<div class="b-wool-tabs">
+					<h3>По составу</h3>
+						<input class="wool-input" name="wool-type" type="radio" id="wool-1" value="1">
+						<label class="b-btn b-tab-wool" for="wool-1">Альпака</label>
+						<input class="wool-input" name="wool-type" type="radio" id="wool-2" value="2" checked>
+						<label class="b-btn b-tab-wool" for="wool-2">Ангора</label>
+						<input class="wool-input" name="wool-type" type="radio" id="wool-3" value="3">
+						<label class="b-btn b-tab-wool" for="wool-3">Меринос</label>
+						<input class="wool-input" name="wool-type" type="radio" id="wool-4" value="4">
+						<label class="b-btn b-tab-wool" for="wool-4">Кашемир</label>
+						<input class="wool-input" name="wool-type" type="radio" id="wool-5" value="5">
+						<label class="b-btn b-tab-wool" for="wool-5">Хлопок</label>
+						<input class="wool-input" name="wool-type" type="radio" id="wool-6" value="6">
+						<label class="b-btn b-tab-wool" for="wool-6">Вискоза</label>
+						<div class="b-more-tabs">
+							<input class="wool-input" name="wool-type" type="radio" id="wool-7" value="7">
+							<label class="b-btn b-tab-wool" for="wool-7">Кашемир</label>
+							<input class="wool-input" name="wool-type" type="radio" id="wool-8" value="8">
+							<label class="b-btn b-tab-wool" for="wool-8">Хлопок</label>
+							<input class="wool-input" name="wool-type" type="radio" id="wool-9" value="9">
+							<label class="b-btn b-tab-wool" for="wool-9">Вискоза</label>
+						</div>
+						<div class="b-show-more">смотреть больше</div>
+					</div>				
+					<div class="b-lenght-tabs">
+					<h3>По метражу</h3>
+						<input class="lenght-input" name="lenght" type="radio" id="lenght-1" value="1">
+						<label class="b-btn b-tab-wool" for="lenght-1">0-100</label>
+						<input class="lenght-input" name="lenght" type="radio" id="lenght-2" value="2">
+						<label class="b-btn b-tab-wool" for="lenght-2">100-180</label>
+						<input class="lenght-input" name="lenght" type="radio" id="lenght-3" value="3">
+						<label class="b-btn b-tab-wool" for="lenght-3">180-250</label>
+						<input class="lenght-input" name="lenght" type="radio" id="lenght-4" value="4" checked>
+						<label class="b-btn b-tab-wool" for="lenght-4">250-500</label>
+						<input class="lenght-input" name="lenght" type="radio" id="lenght-5" value="5">
+						<label class="b-btn b-tab-wool" for="lenght-5">500-800</label>
+						<input class="lenght-input" name="lenght" type="radio" id="lenght-6" value="6">
+						<label class="b-btn b-tab-wool" for="lenght-6">800-1200</label>
+						<div class="b-more-tabs">
+							<input class="lenght-input" name="lenght" type="radio" id="lenght-7" value="7">
+							<label class="b-btn b-tab-wool" for="lenght-7">250-500</label>
+							<input class="lenght-input" name="lenght" type="radio" id="lenght-8" value="8">
+							<label class="b-btn b-tab-wool" for="lenght-8">500-800</label>
+							<input class="lenght-input" name="lenght" type="radio" id="lenght-9" value="9">
+							<label class="b-btn b-tab-wool" for="lenght-9">800-1200</label>
+						</div>
+						<div class="b-show-more">смотреть больше</div>
+					</div>
 				</div>
-				
-				<div class="b-lenght-tabs">
-				<h3>По метражу</h3>
-					<div class="b-btn b-btn-tab b-tab-wool active">0-100</div>
-					<div class="b-btn b-btn-tab b-tab-wool">100-180</div>
-					<div class="b-btn b-btn-tab b-tab-wool">180-250</div>
-					<div class="b-btn b-btn-tab b-tab-wool">250-500</div>
-					<div class="b-btn b-btn-tab b-tab-wool">500-800</div>
-					<div class="b-btn b-btn-tab b-tab-wool">800-1200</div>
-				</div>
-			</div>
-		<div class="b-btn">Подписаться</div>
+				<a href="#" class="b-btn b-filter-submit" ajax>Подобрать</a>
+			</form>
 		</div>
 	</div>
 	<div class="b b-im-watch">

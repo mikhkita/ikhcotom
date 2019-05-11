@@ -102,6 +102,11 @@ $(document).ready(function(){
         variableWidth: true
     });
 
+    $(".b-show-more").click(function(){
+        $(this).addClass("hidden");
+        $(this).prev().addClass("visible");
+    });
+
     $(".b-item-card").height($(".b-item-cards").outerHeight());
 
     $(".b-item-card .b-card-fav").click(function(e){
