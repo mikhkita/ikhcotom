@@ -787,6 +787,7 @@ h2.b-title{
 			text-align: left;
 			width: calc(50% - 25px);
 			float: left;
+			cursor: pointer;
 		}
 		.b-main-article:nth-child(2n){
 			float: right;

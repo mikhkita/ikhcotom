@@ -63,6 +63,7 @@ $(document).ready(function(){
         asNavFor: '.b-product-photo-slider',
         swipe: false
     });
+
     $('.b-product-photo-slider').slick({
         dots: false,
         arrows: true,
@@ -87,6 +88,7 @@ $(document).ready(function(){
         slidesToScroll: 1,
         autoplay: false
     });
+
      $('.b-im-block').slick({
         dots: false,
         arrows: true,
@@ -99,7 +101,12 @@ $(document).ready(function(){
         focusOnSelect: true,
         variableWidth: true
     });
+
     $(".b-item-card").height($(".b-item-cards").outerHeight());
+
+    $(".b-main-article").click(function(){
+        window.location = $(this).find(".article-link").attr("href");
+    });
 
     $('.b-product-photo-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         $(".b-product-main-color a.show").removeClass("show");
