@@ -1432,6 +1432,7 @@ h2.b-title{
 							margin-right: 20px;
 						}
 						.b-order-item-name{
+							max-width: 560px;
 							display: inline-block;
 							vertical-align: top;
 							padding-top: 12px;
@@ -1490,8 +1491,10 @@ h2.b-title{
 		}
 		.price-total .icon-ruble:before,
 		.total .icon-ruble:before{
-			font-size: 18px;
-			margin-left: 6px;
+			font-size: 17px;
+    		margin-left: 6px;
+    		position: relative;
+    		top: -1px;
 		}
 		.b-cabinet-orders .icon-update:before{
 		    font-size: 16px;
@@ -1880,6 +1883,7 @@ h2.b-title{
 						.product-quantity{
 							position: relative;
 							display: inline-block;
+							vertical-align: top;
 							width: 124px;
 							padding: 0 32px;
 							margin-left: 22px;
@@ -2568,6 +2572,95 @@ h2.b-title{
 			border: 1px solid #E6E6E6;
 			font-size: 18px;
 			line-height: 26px;
+		}
+
+/*=====Оформление заказа=====*/
+
+.b-order .b-order-list{
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 368px);
+}
+	.b-order .b-order-item-name{
+		max-width: 269px;
+	}
+.b-order-totals{
+	display: inline-block;
+	vertical-align: top;
+	overflow-y: hidden;
+	width: 364px;
+	padding: 28px 32px 42px 32px;
+	border: 1px solid #E6E6E6;
+	border-radius: 3px;
+	box-shadow: 3px 5px 20px 5px rgba(230,230,230,0.50);
+}
+	.b-price-string{
+		margin-bottom: 16px;
+	}
+		.b-price-string .explanation{
+			float: left;
+			font-family: 'DINPro-Medium';
+			font-size: 18px;
+			line-height: 30px;
+		}
+
+		.b-price-string .price-total{
+			padding-top: 0;
+			float: right;
+			font-family: 'DINPro-Medium';
+    		font-size: 24px;
+    		line-height: 30px;
+		}
+
+	.b-price-raw{
+		position: relative;
+	}
+		.b-price-raw .price-total{
+			padding-top: 20px;
+		}
+
+	.price-final{
+		color: #CB6163;
+	}
+		.price-final .explanation{
+			font-size: 24px;
+			line-height: 40px;
+		}
+		.price-final .price-total{
+			font-family: DINPro-Medium;
+			font-size: 32px;
+			line-height: 40px;
+		}
+		.price-final .price-total .icon-ruble:before{
+		    font-size: 22px;
+		    margin-left: 9px;
+		    position: relative;
+		    top: -2px;
+		}
+	
+	.b-order-coupon .b-input{
+		display: inline-block;
+		vertical-align: middle;
+		float: none;
+		width: 147px;
+		margin-right: 12px;
+	}
+		.b-order-coupon .b-input p{
+			font-family: 'DINPro-Regular';
+			font-size: 16px;
+			line-height: 20px;
+		}
+		.b-order-coupon .b-input input{
+			font-size: 14px;
+    		line-height: 18px;
+			padding: 11px 19px 12px 19px;
+		}
+		.b-order-coupon .b-btn{
+			padding: 10px 25px;
+			font-family: 'DINPro-Light';
+			font-size: 16px;
+			line-height: 20px;
+			color: rgb(86, 69, 49);
 		}
 
 /*=======ui-slider=======*/
