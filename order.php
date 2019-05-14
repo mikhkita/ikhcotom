@@ -84,7 +84,8 @@
 				<div id="app-order">
 
 
-					<v-order-list :orders='<?=$ordersJSON?>'></v-order-list>
+					<v-order-list :_orders='<?=$ordersJSON?>'></v-order-list>
+					<v-totals></v-totals>
 
 
 
@@ -110,10 +111,10 @@
 						<?endforeach;?>
 					</div> -->
 
-					<div class="b-order-totals">
-						<div class="b-price-string clearfix">
+					<!-- <div class="b-order-totals">
+						<div class="b-price-string b-price-raw clearfix">
 							<span class="explanation">Стоимость заказа:</span>
-							<div class="b-price-raw has-discount">
+							<div class="b-price-total has-discount">
 								<div class="price-base">22 300<span class="icon-ruble"></span></div>
 								<div class="price-total">20 590<span class="icon-ruble"></span></div>
 							</div>
@@ -137,7 +138,7 @@
 							<span class="explanation">Итого:</span>
 							<div class="price-total">20 940<span class="icon-ruble"></span></div>
 						</div>
-					</div>
+					</div> -->
 
 				</div>
 			</div>
