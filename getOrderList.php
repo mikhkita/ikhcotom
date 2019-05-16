@@ -1,5 +1,4 @@
 <?
-function getOrderList(){
 	$orders = array();
 	$orders[] = array(
 		"id" => 25523,
@@ -31,6 +30,6 @@ function getOrderList(){
 		"totalPrice" => 50,
 		"maxCount" => 400
 	);
-	return htmlspecialchars(json_encode($orders), ENT_QUOTES, 'UTF-8');
-}
+	echo json_encode($orders);
+
 ?>

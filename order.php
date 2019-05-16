@@ -77,68 +77,15 @@
 
 				<?
 				//перенести код в init.php в битре
-				require_once 'init.php';
-				$ordersJSON = getOrderList();
+				//require_once 'init.php';
+				//$ordersJSON = getOrderList();
 				?>
 
 				<div id="app-order">
 
+					<v-order></v-order>
 
-					<v-order-list :_orders='<?=$ordersJSON?>'></v-order-list>
-					<v-totals></v-totals>
-
-
-
-					<!-- <div class="b-order-list">
-						<?foreach ($orders as $order) :?>
-						<div class="b-order-item clearfix">
-							<img src="<?=$order['photo']?>">
-							<div class="b-order-item-name">
-								<a href="#"><?=$order['name']?></a>
-							</div>
-							<div class="product-quantity">
-								<a href="#" class="icon-minus quantity-reduce"></a>
-								<input type="text" name="count" class="quantity-input" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" value="<?=$order['q']?>">
-								<a href="#" class="icon-plus quantity-add"></a>
-							</div>
-							<div class="b-order-item-price has-discount">
-								<div class="price-base"><?=$order['basePrice']?><span class="icon-ruble"></span></div>
-								<div class="price-total"><?=$order['totalPrice']?><span class="icon-ruble"></span></div>
-							</div>
-							<a href="#" class="control-delete icon-star">11</a>
-							<a href="#" class="control-favorite icon-close">22</a>
-						</div>
-						<?endforeach;?>
-					</div> -->
-
-					<!-- <div class="b-order-totals">
-						<div class="b-price-string b-price-raw clearfix">
-							<span class="explanation">Стоимость заказа:</span>
-							<div class="b-price-total has-discount">
-								<div class="price-base">22 300<span class="icon-ruble"></span></div>
-								<div class="price-total">20 590<span class="icon-ruble"></span></div>
-							</div>
-						</div>
-						<div class="b-order-coupon">
-							<div class="b-input">
-								<p>Купон</p>
-								<input type="text" name="coupon" placeholder="HFJDY61HQ">
-							</div>
-							<a href="#" class="b-btn">Применить</a>
-						</div>
-						<div class="b-price-string clearfix">
-							<span class="explanation">Размер скидки:</span>
-							<div class="price-total">1 710<span class="icon-ruble"></span></div>
-						</div>
-						<div class="b-price-string clearfix">
-							<span class="explanation">Стоимость доставки:</span>
-							<div class="price-total">350<span class="icon-ruble"></span></div>
-						</div>
-						<div class="b-price-string price-final">
-							<span class="explanation">Итого:</span>
-							<div class="price-total">20 940<span class="icon-ruble"></span></div>
-						</div>
-					</div> -->
+					
 
 				</div>
 			</div>
@@ -271,6 +218,8 @@
 	<script type="text/javascript" src="js/autosize.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/vue.js"></script>
+	<!-- <script type="text/javascript" src="js/axios.min.js"></script> -->
+	<!-- <script type="text/javascript" src="js/vue-resource.min.js"></script> -->
 	<script type="text/javascript" src="js/app-order.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
