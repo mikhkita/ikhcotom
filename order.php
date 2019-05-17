@@ -73,7 +73,7 @@
 				</li>
 			</ul>
 			<h2 class="b-title">Оформление заказа</h2>
-			<div class="b-order clearfix">
+			<div class="b-order-parent clearfix">
 
 				<?
 				//перенести код в init.php в битре
@@ -82,11 +82,7 @@
 				?>
 
 				<div id="app-order">
-
 					<v-order></v-order>
-
-					
-
 				</div>
 			</div>
 		</div>

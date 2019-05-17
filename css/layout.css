@@ -2673,6 +2673,7 @@ h2.b-title{
 
 	.price-final{
 		color: #CB6163;
+		margin-bottom: 0;
 	}
 		.price-final .explanation{
 			font-size: 24px;
@@ -2690,34 +2691,56 @@ h2.b-title{
 		    top: -2px;
 		}
 	
-	.b-order-coupon .b-input{
-		display: inline-block;
-		vertical-align: middle;
-		float: none;
-		width: 147px;
-		margin-right: 12px;
+	.b-order-coupon{
 		margin-bottom: 16px;
 	}
-		.b-order-coupon .b-input p{
-			font-family: 'DINPro-Regular';
-			font-size: 16px;
-			line-height: 20px;
+		.b-order-coupon .b-input{
+			display: inline-block;
+			vertical-align: middle;
+			float: none;
+			width: 147px;
+			margin-right: 12px;
+			margin-bottom: 0;
 		}
-		.b-order-coupon .b-input input{
-			font-size: 14px;
-    		line-height: 18px;
-			padding: 11px 19px 12px 19px;
+			.b-order-coupon .b-input p{
+				font-family: 'DINPro-Regular';
+				font-size: 16px;
+				line-height: 20px;
+			}
+			.b-order-coupon .b-input input{
+				font-size: 14px;
+	    		line-height: 18px;
+				padding: 11px 19px 12px 19px;
+			}
+			.b-order-coupon .b-btn{
+				vertical-align: top;
+			    border-radius: 5px;
+			    margin-top: 28px;
+			    padding: 9px 25px 10px 25px;
+			    font-family: 'DINPro-Light';
+			    font-size: 16px;
+			    line-height: 20px;
+			    color: rgb(86, 69, 49);
+			}
+		.coupon-info{
+			margin-top: 8px;
 		}
-		.b-order-coupon .b-btn{
-			vertical-align: top;
-		    border-radius: 5px;
-		    margin-top: 28px;
-		    padding: 9px 25px 10px 25px;
-		    font-family: 'DINPro-Light';
-		    font-size: 16px;
-		    line-height: 20px;
-		    color: rgb(86, 69, 49);
-		}
+			.coupon-info p{
+				display: inline-block;
+			}
+				.coupon-info p b{
+					font-family: 'DINPro-Medium';
+					color: #77BE32; 
+				}
+			.coupon-info a{
+				color: #9E9891;
+				border-bottom: 1px dashed #9E9891;
+				margin-left: 10px;
+			}
+			.coupon-info a:hover{
+				color: #77BE32;
+				border-bottom: 1px dashed #77BE32;
+			}
 
 /*=======ui-slider=======*/
 
