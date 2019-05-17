@@ -1115,7 +1115,7 @@ h2.b-title{
 				.b-footer-bottom-right  input[type=text], 
 				.b-footer-bottom-right input[type=phone]{
 					font-size: 16px;
-					padding: 7px 17px;
+					padding: 6px 17px 8px 17px;
 				}
 				.b-footer-bottom-right .b-btn{
 					font-size: 18px;
@@ -2940,7 +2940,7 @@ input[type=text], input[type=tel], input[type=submit], input[type=number], input
 }
 input[type=text], input[type=number], input[type=phone], input[type=search]{
 	font-family: DINPro-Light;
-	padding: 12px 24px;
+	padding: 11px 24px 13px 24px;
 	font-size: 18px;
 	color: #454545;
 	line-height: 24px;
