@@ -183,7 +183,7 @@ $(document).ready(function(){
 
     var maxBasketCount = 999;
     //увеличить количество
-    $('.quantity-add').on('click', function(){
+    $('.b-product-quantity .quantity-add').on('click', function(){
         var $input = $('.quantity-input');
         var count = parseInt($input.val()) + 1;
         count = (count > maxBasketCount || isNaN(count) === true) ? maxBasketCount : count;
@@ -191,7 +191,7 @@ $(document).ready(function(){
         return false;
     });
     //уменьшить количество
-    $('.quantity-reduce').on('click', function(){
+    $('.b-product-quantity .quantity-reduce').on('click', function(){
         var $input = $('.quantity-input');
         var count = parseInt($input.val()) - 1; 
         count = (count < 1 || isNaN(count) === true) ? 1 : count;
@@ -199,7 +199,7 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.quantity-input').on('change', function(){
+    $('.b-product-quantity .quantity-input').on('change', function(){
         var count = $(this).val()*1;
         count = (count < 1)? 1 : count;
         count = (count > maxBasketCount) ? maxBasketCount : count;

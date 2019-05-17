@@ -147,6 +147,9 @@
 .icon-checked:before {
   content: "\e913";
 }
+.icon-close:before {
+  content: "\e917";
+}
 
 html,
 body {
@@ -1432,6 +1435,7 @@ h2.b-title{
 							margin-right: 20px;
 						}
 						.b-order-item-name{
+							max-width: 560px;
 							display: inline-block;
 							vertical-align: top;
 							padding-top: 12px;
@@ -1490,8 +1494,10 @@ h2.b-title{
 		}
 		.price-total .icon-ruble:before,
 		.total .icon-ruble:before{
-			font-size: 18px;
-			margin-left: 6px;
+			font-size: 17px;
+    		margin-left: 6px;
+    		position: relative;
+    		top: -1px;
 		}
 		.b-cabinet-orders .icon-update:before{
 		    font-size: 16px;
@@ -1880,6 +1886,7 @@ h2.b-title{
 						.product-quantity{
 							position: relative;
 							display: inline-block;
+							vertical-align: top;
 							width: 124px;
 							padding: 0 32px;
 							margin-left: 22px;
@@ -1923,7 +1930,8 @@ h2.b-title{
 								-o-transition: color 150ms ease-in-out;
 								transition: color 150ms ease-in-out;
 							}
-							.product-quantity input[type=text]{
+							.product-quantity input[type=text],
+							.product-quantity input[type=number]{
 								padding: 5px 0 6px 0;
 								width: 60px;
 								text-align: center;
@@ -2570,6 +2578,147 @@ h2.b-title{
 			line-height: 26px;
 		}
 
+/*=====Оформление заказа=====*/
+
+.b-order .b-order-list{
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 368px);
+}
+	.b-order .b-order-item-name{
+		max-width: 269px;
+	}
+.b-order-totals{
+	display: inline-block;
+	vertical-align: top;
+	overflow-y: hidden;
+	width: 364px;
+	padding: 28px 32px 42px 32px;
+	border: 1px solid #E6E6E6;
+	border-radius: 3px;
+	box-shadow: 3px 5px 20px 5px rgba(230,230,230,0.50);
+}
+	.b-price-string{
+		margin-bottom: 16px;
+	}
+		.b-price-string .explanation{
+			float: left;
+			font-family: 'DINPro-Medium';
+			font-size: 18px;
+			line-height: 30px;
+		}
+
+		.b-price-string .price-total{
+			padding-top: 0;
+			float: right;
+			font-family: 'DINPro-Medium';
+    		font-size: 24px;
+    		line-height: 30px;
+		}
+
+	.b-price-raw{
+		width: 100%;
+		display: table;
+		position: relative;
+	}
+		.b-price-raw .b-price-total{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: right;
+			float: none;
+		}
+		.b-price-raw .explanation{
+			display: table-cell;
+			vertical-align: middle;
+			float: none;
+			padding-bottom: 2px;
+		}
+			.b-price-raw .price-base{
+				display: inline-block;
+				position: relative;
+			}
+
+			.b-price-raw .price-total{
+				float: none;
+			}
+
+	.b-order-item .icon-close{
+		
+	}
+		.b-order-item .icon-close:before{
+			font-size: 17px;
+		}
+	.control-favorite{
+		display: inline-block;
+		position: relative;
+	    cursor: pointer;
+	    width: 18px;
+	    height: 18px;
+	    box-sizing: content-box;
+	}
+		.control-favorite .icon-star-order{
+			width: 18px;
+		    height: 18px;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    background-image: url(../i/icon-star-order.svg);
+		    background-repeat: no-repeat;
+		    background-position: 50% 50%;
+		    background-size: 18px;
+		}
+		.control-favorite.active .icon-star-order{
+		    background-image: url(../i/icon-star-order-fill.svg);
+		}
+
+	.price-final{
+		color: #CB6163;
+	}
+		.price-final .explanation{
+			font-size: 24px;
+			line-height: 40px;
+		}
+		.price-final .price-total{
+			font-family: DINPro-Medium;
+			font-size: 32px;
+			line-height: 40px;
+		}
+		.price-final .price-total .icon-ruble:before{
+		    font-size: 22px;
+		    margin-left: 9px;
+		    position: relative;
+		    top: -2px;
+		}
+	
+	.b-order-coupon .b-input{
+		display: inline-block;
+		vertical-align: middle;
+		float: none;
+		width: 147px;
+		margin-right: 12px;
+		margin-bottom: 16px;
+	}
+		.b-order-coupon .b-input p{
+			font-family: 'DINPro-Regular';
+			font-size: 16px;
+			line-height: 20px;
+		}
+		.b-order-coupon .b-input input{
+			font-size: 14px;
+    		line-height: 18px;
+			padding: 11px 19px 12px 19px;
+		}
+		.b-order-coupon .b-btn{
+			vertical-align: top;
+		    border-radius: 5px;
+		    margin-top: 28px;
+		    padding: 9px 25px 10px 25px;
+		    font-family: 'DINPro-Light';
+		    font-size: 16px;
+		    line-height: 20px;
+		    color: rgb(86, 69, 49);
+		}
+
 /*=======ui-slider=======*/
 
 .ui-slider .ui-slider-handle {
@@ -2761,12 +2910,12 @@ input::-webkit-input-placeholder {
 input:-moz-placeholder {
 	color: #777;
 }
-input[type=text], input[type=tel], input[type=submit], input[type=search], textarea{
+input[type=text], input[type=tel], input[type=submit], input[type=number], input[type=search], textarea{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
-input[type=text], input[type=phone], input[type=search]{
+input[type=text], input[type=number], input[type=phone], input[type=search]{
 	font-family: DINPro-Light;
 	padding: 11px 24px 13px 24px;
 	font-size: 18px;
