@@ -22,7 +22,7 @@ Vue.component('v-order',{
             couponFields: {
                 coupon: "",
                 successCoupon: "",
-                hasCoupon: false,
+                errorCoupon: "",
             },
         }
     },
@@ -42,7 +42,6 @@ Vue.component('v-order',{
                 }
                 if(data.coupon){
                     self.couponFields.successCoupon = data.coupon.name;
-                    self.couponFields.hasCoupon = data.coupon.success;
                 }
               }
             },
@@ -55,12 +54,13 @@ Vue.component('v-order',{
       <div>\
         <div v-if="show" class="b-order">\
           <v-order-list \
-            @onChangeQuantity="changeCoupon"\
+            @onChangeQuantity="changeQuantity"\
             @onRemoveItem="removeItem"\
             :orders="orders"\
           ></v-order-list>\
           <v-totals\
             @onChangeCoupon="changeCoupon"\
+            @onUpdateOrder="updateOrder"\
             :_rawBase="rawBase"\
             :_rawTotal="rawTotal"\
             :_discount="discount"\
@@ -71,11 +71,11 @@ Vue.component('v-order',{
         </div>\
         \
         <div v-if="showCatalogRef">\
-          <span>Ваша корзина пуста. </span><a href="catalog.html">Перейти в каталог</a>\
+          <span>Ваша корзина пуста. </span><a class="dashed" href="catalog.html">Перейти в каталог</a>\
         </div>\
         \
         <div v-if="showPreloader" class="b-order-preloader">\
-          <h2>Прелоадер</h2>\
+          <img src="../i/preloader.svg">\
         </div>\
       </div>\
     ',
@@ -100,19 +100,22 @@ Vue.component('v-order',{
                       }
                   }else{
                       self.orders[index].visible = true;//вернуть элемент
-                      alert("Не удалось удалить товар из козрины");
+                      alert("Не удалось удалить товар из корзины");
                   }
                 },
                 error: function(){
                     self.orders[index].visible = true;
-                    alert("Не удалось удалить товар из козрины");
+                    alert("Не удалось удалить товар из корзины");
                 }
             });
         },
         changeCoupon: function (coupon) {
             this.couponFields.coupon = coupon.coupon;
             this.couponFields.successCoupon = coupon.successCoupon;
-            this.couponFields.hasCoupon = coupon.hasCoupon;
+            this.couponFields.errorCoupon = coupon.errorCoupon;
+        },
+        updateOrder: function (orders) {
+            this.orders = orders;
         },
     },
     computed: {
@@ -132,7 +135,7 @@ Vue.component('v-order',{
         },
         discount: function () {
             var res = this.rawBase - this.rawTotal;
-            return (res >= 0) ? res : 0;
+            return (res > 0) ? res : 0;
         },
         delivery: function () {
             return 350;
@@ -163,7 +166,6 @@ Vue.component('v-order',{
                     :_basePriceForOne="order.basePriceForOne"\
                     :_totalPriceForOne="order.totalPriceForOne"\
                     :_maxCount="order.maxCount"\
-                    :_visible="order.visible"\
                     :key="order.id" v-for="order in orders">\
                 </v-order-item>\
             </div>',
@@ -187,80 +189,89 @@ Vue.component('v-order',{
                         _basePriceForOne: Number,
                         _totalPriceForOne: Number,
                         _maxCount: Number,
-                        _visible: Boolean
                     },
                     data: function () {
                         return {
-                            id: this._id,
-                            image: this._image,
-                            name: this._name,
-                            url: this._url,
-                            quantity: this._quantity,
-                            basePriceForOne: this._basePriceForOne,
-                            totalPriceForOne: this._totalPriceForOne,
-                            maxCount: this._maxCount,
-                            visible: this._visible,
+                            visible: true,
                             favorite: false
                         }
                     },
                     computed: {
-                        quantityValidate: {
+                        id: function () {
+                           return this._id;
+                        },
+                        image: function () {
+                           return  this._image;
+                        },
+                        name: function () {
+                           return  this._name;
+                        },
+                        url: function () {
+                           return  this._url;
+                        },
+                        quantity: {
                             get: function () {
-                                return this.quantity;
+                                return this._quantity;
                             },
                             set: function (value) {
                                 if(isNumeric(value)){
                                     value = (value < 1) ? 1 : value;
                                     value = (value > this.maxCount) ? this.maxCount : value;
-                                    this.quantity = value;
-                                    this.onChangeQuantity(this.id, this.quantity);
+                                    this.onChangeQuantity(this.id, value);
                                 }
                                 //value = value.replace(/\D+/g,"");
                             }
                         },
                         basePrice: function () {
-                           return this.basePriceForOne * this.quantity;
+                           return this._basePriceForOne * this.quantity;
                         },
                         totalPrice: function () {
-                           return this.totalPriceForOne * this.quantity;
+                           return this._totalPriceForOne * this.quantity;
+                        },
+                        maxCount: function () {
+                           return  this._maxCount;
                         },
                     },
                     template: '\
                     <div class="b-order-item" v-show="visible">\
-                        <a :href="url">\
+                        <a :href="url" class="item-field b-order-item-img">\
                             <img :src="image">\
                         </a>\
-                        <a :href="url">\
-                            <p class="b-order-item-name">{{ name }}</p>\
+                        <a :href="url" class="item-field b-order-item-name">\
+                            <p>{{ name }}</p>\
                         </a>\
-                        <div class="product-quantity">\
-                            <a href="#" @click.prevent="quantityReduce" class="icon-minus quantity-reduce"></a>\
-                            <input v-model.number="quantityValidate" type="text" name="quantity" class="quantity-input" maxlength="3">\
-                            <a href="#" @click.prevent="quantityAdd" class="icon-plus quantity-add"></a>\
+                        <div class="item-field b-order-item-quantity">\
+                            <div class="product-quantity">\
+                                <a href="#" @click.prevent="quantityReduce" class="icon-minus quantity-reduce"></a>\
+                                <input v-model.number="quantity" type="text" name="quantity" class="quantity-input" maxlength="3">\
+                                <a href="#" @click.prevent="quantityAdd" class="icon-plus quantity-add"></a>\
+                            </div>\
                         </div>\
-                        <div class="b-order-item-price has-discount">\
+                        <div class="item-field b-order-item-price has-discount">\
                             <div v-show="basePrice != totalPrice" class="price-base">{{ basePrice }}<span class="icon-ruble"></span></div>\
                             <div class="price-total">{{ totalPrice }}<span class="icon-ruble"></span></div>\
                         </div>\
-                        <div \
-                            @click.prevent="favoriteToggle" \
-                            :class="{active: favorite}" \
-                            class="control-favorite"\
-                        >\
-                            <div class="icon-star-order"></div>\
-                            <div class="icon-star-order-fill"></div>\
+                        <div class="item-field b-order-item-controls">\
+                            <div \
+                                @click.prevent="favoriteToggle" \
+                                :class="{active: favorite}" \
+                                class="control-favorite"\
+                            >\
+                                <div class="icon-star-order"></div>\
+                                <div class="icon-star-order-fill"></div>\
+                            </div>\
+                            <a href="#" \
+                                @click.prevent="onRemoveItem" \
+                                class="control-delete icon-close"\
+                            ></a>\
                         </div>\
-                        <a href="#" \
-                            @click.prevent="onRemoveItem" \
-                            class="control-delete icon-close"\
-                        ></a>\
                     </div>',
                     methods: {
                         quantityReduce: function () {
-                            this.quantityValidate--;
+                            this.quantity--;
                         },
                         quantityAdd: function () {
-                            this.quantityValidate++;
+                            this.quantity++;
                         },
                         favoriteToggle: function () {
                             this.favorite = !this.favorite;
@@ -268,8 +279,8 @@ Vue.component('v-order',{
                         onRemoveItem: function () {
                             this.$emit('onRemoveItem', this.id);
                         },
-                        onChangeQuantity: function () {
-                            this.$emit('onChangeQuantity', this.id, this.quantity);
+                        onChangeQuantity: function (id, value) {
+                            this.$emit('onChangeQuantity', id, value);
                         } 
                     }
                 }
@@ -287,9 +298,11 @@ Vue.component('v-order',{
             },
             data: function () {
                 return {
+                    validInput: true,
+                    ajaxCoupon: false,
                     coupon: this._couponFields.coupon,
                     successCoupon: this._couponFields.successCoupon,
-                    hasCoupon: this._couponFields.hasCoupon,
+                    errorCoupon: this._couponFields.errorCoupon,
                 }
             },
             template: '\
@@ -304,12 +317,26 @@ Vue.component('v-order',{
                 <div class="b-order-coupon">\
                   <div class="b-input">\
                     <p>Купон</p>\
-                    <input @keyup.enter="sendCoupon" v-model="coupon" type="text" name="coupon" placeholder="HFJDY61HQ">\
+                    <input\
+                        @keyup.enter="sendCoupon"\
+                        @input="validInput = true"\
+                        v-model="coupon"\
+                        :class="{error: !validInput}"\
+                        type="text"\
+                        name="coupon"\
+                        placeholder="HFJDY61HQ"\
+                    >\
                   </div>\
                   <a href="#" class="b-btn" @click.prevent="sendCoupon">Применить</a>\
-                  <div class="coupon-info" v-if="hasCoupon">\
-                    <p><b>{{successCoupon}}</b> - купон применён</p>\
-                    <a href="#" class="dashed" @click.prevent="removeCoupon">Удалить</a>\
+                  <div class="coupon-info">\
+                    <div v-if="successCoupon" class="coupon-success">\
+                        <p><b>{{successCoupon}}</b> - купон применён</p>\
+                        <a href="#" class="dashed" @click.prevent="removeSuccessCoupon">Удалить</a>\
+                    </div>\
+                    <div v-if="errorCoupon" class="coupon-error">\
+                        <p><b>{{errorCoupon}}</b> - купон не найден</p>\
+                        <a href="#" class="dashed" @click.prevent="removeErrorCoupon">Удалить</a>\
+                    </div>\
                   </div>\
                 </div>\
                 <div v-show="_discount > 0" class="b-price-string clearfix">\
@@ -327,53 +354,102 @@ Vue.component('v-order',{
               </div>\
             ',
             methods: {
+                updateOrder: function (orders) {
+                    this.$emit('onUpdateOrder', orders);
+                },
+                changeCoupon: function (coupon) {
+                    this.coupon = coupon.coupon;
+                    this.successCoupon = coupon.successCoupon;
+                    this.errorCoupon = coupon.errorCoupon;
+                    this.$emit('onChangeCoupon', coupon);
+                },
                 sendCoupon: function () {
                     var self = this;
-                    if(self.coupon){
+                    if(self.coupon && !self.ajaxCoupon){
+                        self.ajaxCoupon = true;
                         $.ajax({
                             type: "post",
                             url: "../send/addCoupon.php",
                             data: {coupon: self.coupon},
                             success: function(response){
                                 if(response){
+                                    var data = JSON.parse(response);
                                     self.changeCoupon({
                                         coupon: "",
                                         successCoupon: self.coupon,
-                                        hasCoupon: true
+                                        errorCoupon: ""
                                     });
+                                    if(data.items){
+                                        self.updateOrder(data.items);
+                                    }
                                 }else{
-
+                                    self.changeCoupon({
+                                        coupon: "",
+                                        successCoupon: self.successCoupon,
+                                        errorCoupon: self.coupon
+                                    });
                                 }
                             },
-                            error: function(){}
+                            error: function(){},
+                            complete: function(){
+                                self.ajaxCoupon = false;
+                            },
                         });
+                    }else{
+                        self.validInput = false;
                     }
                 },
-                removeCoupon: function () {
-                    var self = this;
-                    $.ajax({
-                        type: "post",
-                        url: "../send/removeCoupon.php",
-                        data: {coupon: self.successCoupon},
-                        success: function(response){
-                            if(response){
-                                self.changeCoupon({
-                                    coupon: "",
-                                    successCoupon: "",
-                                    hasCoupon: false
-                                });
-                            }else{
+                removeSuccessCoupon: function () {
+                    // var self = this;
+                    // $.ajax({
+                    //     type: "post",
+                    //     url: "../send/removeCoupon.php",
+                    //     data: {coupon: self.successCoupon},
+                    //     success: function(response){
+                    //         if(response){
+                    //             var data = JSON.parse(response);
+                    //             //активировать купон
+                    //             self.changeCoupon({
+                    //                 coupon: "",
+                    //                 successCoupon: "",
+                    //                 errorCoupon: self.errorCoupon,
+                    //             });
+                    //             //обновить позиции
+                    //             if(data.items){
+                    //                 self.updateOrder(data.items);
+                    //             }
+                    //         }else{
 
-                            }
-                        },
-                        error: function(){}
-                    });
+                    //         }
+                    //     },
+                    //     error: function(){}
+                    // });
                 },
-                changeCoupon: function (coupon) {
-                    this.coupon = coupon.coupon;
-                    this.successCoupon = coupon.successCoupon;
-                    this.hasCoupon = coupon.hasCoupon;
-                    this.$emit('onChangeCoupon', coupon);
+                removeErrorCoupon: function () {
+                    // var self = this;
+                    // $.ajax({
+                    //     type: "post",
+                    //     url: "../send/removeCoupon.php",
+                    //     data: {coupon: self.errorCoupon},
+                    //     success: function(response){
+                    //         if(response){
+                    //             var data = JSON.parse(response);
+                    //             //активировать купон
+                    //             self.changeCoupon({
+                    //                 coupon: "",
+                    //                 successCoupon: self.successCoupon,
+                    //                 errorCoupon: "",
+                    //             });
+                    //             //обновить позиции
+                    //             if(data.items){
+                    //                 self.updateOrder(data.items);
+                    //             }
+                    //         }else{
+
+                    //         }
+                    //     },
+                    //     error: function(){}
+                    // });
                 },
             }
         }

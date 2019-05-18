@@ -2580,167 +2580,225 @@ h2.b-title{
 
 /*=====Оформление заказа=====*/
 
+.b-order-parent{
+	min-height: 200px;
+}
+
 .b-order .b-order-list{
 	display: inline-block;
 	vertical-align: top;
 	width: calc(100% - 368px);
+	padding-right: 16px;
 }
-	.b-order .b-order-item-name{
-		max-width: 269px;
-	}
-.b-order-totals{
-	display: inline-block;
-	vertical-align: top;
-	overflow-y: hidden;
-	width: 364px;
-	padding: 28px 32px 42px 32px;
-	border: 1px solid #E6E6E6;
-	border-radius: 3px;
-	box-shadow: 3px 5px 20px 5px rgba(230,230,230,0.50);
-}
-	.b-price-string{
-		margin-bottom: 16px;
-	}
-		.b-price-string .explanation{
-			float: left;
-			font-family: 'DINPro-Medium';
-			font-size: 18px;
-			line-height: 30px;
-		}
-
-		.b-price-string .price-total{
-			padding-top: 0;
-			float: right;
-			font-family: 'DINPro-Medium';
-    		font-size: 24px;
-    		line-height: 30px;
-		}
-
-	.b-price-raw{
-		width: 100%;
+	.b-order-list .b-order-item{
 		display: table;
-		position: relative;
+		width: 100%;
 	}
-		.b-price-raw .b-price-total{
+		.b-order .b-order-item .item-field{
 			display: table-cell;
 			vertical-align: middle;
-			text-align: right;
-			float: none;
 		}
-		.b-price-raw .explanation{
-			display: table-cell;
-			vertical-align: middle;
-			float: none;
-			padding-bottom: 2px;
+
+	.b-order-item-img{
+		width: 93px;
+	}
+	.b-order-item-name{
+		padding-top: 0;
+		padding-bottom: 5px;
+		width: 269px;
+	}
+	.b-order-item-quantity{
+		width: 124px;
+	}
+	.b-order-item-price{
+		text-align: right;
+		width: 120px;
+		padding-bottom: 4px;
+	}
+		.b-order-item-price .price-base{
+			display: inline-block;
+			position: relative;
 		}
-			.b-price-raw .price-base{
-				display: inline-block;
-				position: relative;
-			}
-
-			.b-price-raw .price-total{
-				float: none;
-			}
-
-	.b-order-item .icon-close{
-		
+		.b-order-item-price .price-total{
+			padding-top: 0;
+		}
+	.b-order-item-controls{
+		text-align: right;
 	}
 		.b-order-item .icon-close:before{
 			font-size: 17px;
 		}
-	.control-favorite{
-		display: inline-block;
-		position: relative;
-	    cursor: pointer;
-	    width: 18px;
-	    height: 18px;
-	    box-sizing: content-box;
-	}
-		.control-favorite .icon-star-order{
-			width: 18px;
-		    height: 18px;
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    background-image: url(../i/icon-star-order.svg);
-		    background-repeat: no-repeat;
-		    background-position: 50% 50%;
-		    background-size: 18px;
-		}
-		.control-favorite.active .icon-star-order{
-		    background-image: url(../i/icon-star-order-fill.svg);
-		}
-
-	.price-final{
-		color: #CB6163;
-		margin-bottom: 0;
-	}
-		.price-final .explanation{
-			font-size: 24px;
-			line-height: 40px;
-		}
-		.price-final .price-total{
-			font-family: DINPro-Medium;
-			font-size: 32px;
-			line-height: 40px;
-		}
-		.price-final .price-total .icon-ruble:before{
-		    font-size: 22px;
-		    margin-left: 9px;
-		    position: relative;
-		    top: -2px;
-		}
-	
-	.b-order-coupon{
-		margin-bottom: 16px;
-	}
-		.b-order-coupon .b-input{
+		.control-favorite{
 			display: inline-block;
-			vertical-align: middle;
-			float: none;
-			width: 147px;
-			margin-right: 12px;
+			position: relative;
+		    cursor: pointer;
+		    width: 20px;
+		    height: 20px;
+		    box-sizing: content-box;
+		    margin-right: 5px;
+		}
+			.control-favorite .icon-star-order{
+				width: 20px;
+			    height: 20px;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    background-image: url(../i/icon-star-order.svg);
+			    background-repeat: no-repeat;
+			    background-position: 50% 50%;
+			    background-size: 20px;
+			}
+			.control-favorite.active .icon-star-order{
+			    background-image: url(../i/icon-star-order-fill.svg);
+			}
+
+	.b-order-totals{
+		display: inline-block;
+		vertical-align: top;
+		overflow-y: hidden;
+		width: 364px;
+		padding: 28px 32px 42px 32px;
+		border: 1px solid #E6E6E6;
+		border-radius: 3px;
+		box-shadow: 3px 5px 20px 5px rgba(230,230,230,0.50);
+	}
+		.b-price-string{
+			margin-bottom: 16px;
+		}
+			.b-price-string .explanation{
+				float: left;
+				font-family: 'DINPro-Medium';
+				font-size: 18px;
+				line-height: 30px;
+			}
+
+			.b-price-string .price-total{
+				padding-top: 0;
+				float: right;
+				font-family: 'DINPro-Medium';
+	    		font-size: 24px;
+	    		line-height: 30px;
+			}
+
+		.b-price-raw{
+			width: 100%;
+			display: table;
+			position: relative;
+		}
+			.b-price-raw .b-price-total{
+				display: table-cell;
+				vertical-align: middle;
+				text-align: right;
+				float: none;
+			}
+			.b-price-raw .explanation{
+				display: table-cell;
+				vertical-align: middle;
+				float: none;
+				padding-bottom: 2px;
+			}
+				.b-price-raw .price-base{
+					display: inline-block;
+					position: relative;
+				}
+
+				.b-price-raw .price-total{
+					float: none;
+				}
+		.price-final{
+			color: #CB6163;
 			margin-bottom: 0;
 		}
-			.b-order-coupon .b-input p{
-				font-family: 'DINPro-Regular';
-				font-size: 16px;
-				line-height: 20px;
+			.price-final .explanation{
+				font-size: 24px;
+				line-height: 40px;
 			}
-			.b-order-coupon .b-input input{
-				font-size: 14px;
-	    		line-height: 18px;
-				padding: 11px 19px 12px 19px;
+			.price-final .price-total{
+				font-family: DINPro-Medium;
+				font-size: 32px;
+				line-height: 40px;
 			}
-			.b-order-coupon .b-btn{
-				vertical-align: top;
-			    border-radius: 5px;
-			    margin-top: 28px;
-			    padding: 9px 25px 10px 25px;
-			    font-family: 'DINPro-Light';
-			    font-size: 16px;
-			    line-height: 20px;
-			    color: rgb(86, 69, 49);
+			.price-final .price-total .icon-ruble:before{
+			    font-size: 22px;
+			    margin-left: 9px;
+			    position: relative;
+			    top: -2px;
 			}
-		.coupon-info{
-			margin-top: 8px;
+		
+		.b-order-coupon{
+			margin-bottom: 16px;
 		}
-			.coupon-info p{
+			.b-order-coupon .b-input{
 				display: inline-block;
+				vertical-align: middle;
+				float: none;
+				width: 147px;
+				margin-right: 12px;
+				margin-bottom: 0;
 			}
-				.coupon-info p b{
-					font-family: 'DINPro-Medium';
+				.b-order-coupon .b-input p{
+					font-family: 'DINPro-Regular';
+					font-size: 16px;
+					line-height: 20px;
+				}
+				.b-order-coupon .b-input input{
+					font-size: 14px;
+		    		line-height: 18px;
+					padding: 11px 19px 12px 19px;
+				}
+				.b-order-coupon .b-btn{
+					vertical-align: top;
+				    border-radius: 5px;
+				    margin-top: 28px;
+				    padding: 9px 25px 10px 25px;
+				    font-family: 'DINPro-Light';
+				    font-size: 16px;
+				    line-height: 20px;
+				    color: rgb(86, 69, 49);
+				}
+			.coupon-info{
+				margin-top: 8px;
+			}
+				.coupon-info .coupon-success p{
 					color: #77BE32; 
 				}
-			.coupon-info a{
-				color: #9E9891;
-				border-bottom: 1px dashed #9E9891;
-				margin-left: 10px;
-			}
-			.coupon-info a:hover{
-				color: #77BE32;
-				border-bottom: 1px dashed #77BE32;
-			}
+				.coupon-info .coupon-error p{
+					color: #CB6163; 
+				}
+				.coupon-info p{
+					display: inline-block;
+				}
+					.coupon-info p b{
+						font-family: 'DINPro-Medium';
+					}
+				.coupon-info a{
+					color: #9E9891;
+					border-bottom: 1px dashed #9E9891;
+					margin-left: 10px;
+				}
+				.coupon-info a:hover{
+					color: #77BE32;
+					border-bottom: 1px dashed #77BE32;
+				}
+
+	.b-order-preloader{
+		position: relative;
+		width: 100%;
+		height: 200px;
+	}
+		.b-order-preloader img{
+			display: inline-block;
+			width: 64px;
+			height: 64px;
+			position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        -webkit-transform: translate(-50%,-50%);
+			-moz-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+		}
 
 /*=======ui-slider=======*/
 
