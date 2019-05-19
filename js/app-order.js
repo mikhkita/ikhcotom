@@ -85,7 +85,7 @@ Vue.component('v-order',{
         },
         removeItem: function (id) {
             var self = this,
-                index = self.orders.findIndex(function(v) {return v.id === id});
+                index = self.orders.map(function(v) {return v.id}).indexOf(id);
             self.orders[index].visible = false;//скрыть элемент
             $.ajax({
                 type: "post",
@@ -201,13 +201,13 @@ Vue.component('v-order',{
                            return this._id;
                         },
                         image: function () {
-                           return  this._image;
+                           return this._image;
                         },
                         name: function () {
-                           return  this._name;
+                           return this._name;
                         },
                         url: function () {
-                           return  this._url;
+                           return this._url;
                         },
                         quantity: {
                             get: function () {
@@ -229,7 +229,7 @@ Vue.component('v-order',{
                            return this._totalPriceForOne * this.quantity;
                         },
                         maxCount: function () {
-                           return  this._maxCount;
+                           return this._maxCount;
                         },
                     },
                     template: '\

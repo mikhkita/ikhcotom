@@ -1346,7 +1346,7 @@ h2.b-title{
 	.b-cabinet-content{
 		display: inline-block;
 		vertical-align: top;
-		width: calc(100% - 295px);
+		width: calc(100% - 296px);
 	}
 		.b-cabinet-tabs{
 			margin-bottom: 27px;
@@ -1664,7 +1664,7 @@ h2.b-title{
 				margin-bottom: 20px;
 			}
 			.b-product-actions-wrap{
-				padding-right: 54px;
+				padding-right: 50px;
 				padding-bottom: 14px;
 				border-bottom: 1px solid #D8D8D8;
 			}
@@ -2418,16 +2418,18 @@ h2.b-title{
 						    top: 0;
 						    left: 0;
 						}
-					.filter-toggle.open .icon-minus{
-						display: block;
-					}
-					.filter-toggle.open .icon-plus{
-						display: none;
-					}
+			.b-filter-tab.open .icon-minus{
+				display: block;
+			}
+			.b-filter-tab.open .icon-plus{
+				display: none;
+			}
+
 			.b-filter-checkbox-list{
-				max-height: 155px;
+				max-height: 156px;
     			overflow: hidden;
     			margin-bottom: 12px;
+    			padding-top: 3px;
 			}
 			.b-filter-checkbox-list.open{
 				max-height: 1000px;
@@ -2602,7 +2604,7 @@ h2.b-title{
 	.b-order-item-img{
 		width: 93px;
 	}
-	.b-order-item-name{
+	.b-order .b-order-item-name{
 		padding-top: 0;
 		padding-bottom: 5px;
 		width: 269px;
