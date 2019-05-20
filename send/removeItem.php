@@ -1,5 +1,5 @@
 <?
-	if(isset($_POST["id"])){
+	if(isset($_REQUEST["id"])){
 		echo true;
 	}
 ?>

@@ -1458,6 +1458,10 @@ h2.b-title{
 							position: relative;
 							margin-right: 60px
 						}
+						.b-order-item-right .b-order-item-price{
+							padding-top: 6px;
+							padding-bottom: 0;
+						}
 							.has-discount .price-total{
 								color: #CB6163;
 							}
@@ -2594,18 +2598,25 @@ h2.b-title{
 .b-order-parent{
 	min-height: 200px;
 }
+	.b-order-left{
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100% - 368px);
+		padding-right: 22px;
+	}
 
 .b-order .b-order-list{
-	display: inline-block;
-	vertical-align: top;
-	width: calc(100% - 368px);
-	padding-right: 16px;
+	margin-bottom: 28px;
 }
-	.b-order-list .b-order-item{
+	.b-order .b-order-list .b-order-item{
 		display: table;
 		width: 100%;
+		margin-bottom: 14px;
 	}
-		.b-order .b-order-item .item-field{
+	.b-order .b-order-list .b-order-item:last-child{
+		margin-bottom: 0;
+	}
+		.b-order .b-order-list .b-order-item .item-field{
 			display: table-cell;
 			vertical-align: middle;
 		}
@@ -2623,7 +2634,7 @@ h2.b-title{
 	}
 	.b-order-item-price{
 		text-align: right;
-		width: 120px;
+		width: 130px;
 		padding-bottom: 4px;
 	}
 		.b-order-item-price .price-base{
@@ -2641,12 +2652,13 @@ h2.b-title{
 		}
 		.control-favorite{
 			display: inline-block;
+			vertical-align: top;
 			position: relative;
 		    cursor: pointer;
 		    width: 20px;
 		    height: 20px;
 		    box-sizing: content-box;
-		    margin-right: 5px;
+		    margin-right: 12px;
 		}
 			.control-favorite .icon-star-order{
 				width: 20px;
@@ -2662,6 +2674,11 @@ h2.b-title{
 			.control-favorite.active .icon-star-order{
 			    background-image: url(../i/icon-star-order-fill.svg);
 			}
+		.contlol-delete{
+			margin-top: 2px;
+		    display: inline-block;
+		    vertical-align: top;
+		}
 
 	.b-order-totals{
 		display: inline-block;
@@ -2767,30 +2784,88 @@ h2.b-title{
 				    line-height: 20px;
 				    color: rgb(86, 69, 49);
 				}
-			.coupon-info{
+			.coupon-list{
 				margin-top: 8px;
 			}
-				.coupon-info .coupon-success p{
+				.coupon-item{
+					margin-bottom: 4px;
+				}
+				.coupon-item.coupon-success p{
 					color: #77BE32; 
 				}
-				.coupon-info .coupon-error p{
+				.coupon-item.coupon-error p{
 					color: #CB6163; 
 				}
-				.coupon-info p{
+				.coupon-item p{
 					display: inline-block;
 				}
-					.coupon-info p b{
+					.coupon-item p b{
 						font-family: 'DINPro-Medium';
 					}
-				.coupon-info a{
+				.coupon-item a{
 					color: #9E9891;
 					border-bottom: 1px dashed #9E9891;
 					margin-left: 10px;
 				}
-				.coupon-info a:hover{
+				.coupon-item a:hover{
 					color: #77BE32;
 					border-bottom: 1px dashed #77BE32;
 				}
+	.b-order-form{
+
+	}
+		.b-order-form h3{
+			font-family: 'DINPro-Medium';
+			font-size: 24px;
+			line-height: 30px;
+			margin-bottom: 24px;
+		}
+			.b-choice{
+				margin-bottom: 24px;
+			}
+				.b-choice h4{
+					font-family: 'DINPro-Medium';
+					font-size: 18px;
+					line-height: 22px;
+					margin-bottom: 16px;
+				}
+				.b-choice .b-radio li{
+					margin-bottom: 8px;
+				}
+
+				.b-delivery{
+					float: left;
+					width: calc(100%/3*2 - 8px);
+				}
+					.b-delivery .b-radio{
+						float: left;
+						width: calc(50% - 12px);
+					}
+					.b-delivery-tabs{
+						float: right;
+						width: calc(50% - 12px);
+					}
+						.b-delivery-tabs li{
+
+						}
+				.b-pay{
+					float: right;
+					width: calc(100%/3 - 16px);
+				}
+
+	.b-order-form-bottom{
+		margin-bottom: 40px;
+	}
+		.b-order-form-bottom .b-input{
+			width: 100%;
+			margin-bottom: 24px;
+		}
+			.b-order-form input[type="text"]{
+				font-size: 16px;
+			}
+		.b-order-form-bottom .b-textarea textarea{
+			padding: 14px 18px 16px 18px;
+		}
 
 	.b-order-preloader{
 		position: relative;
@@ -3049,6 +3124,8 @@ textarea:-moz-placeholder {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/*=====inputs=====*/
+
 .b-input{
 	float: left;
 	margin-right: 24px;
@@ -3064,7 +3141,7 @@ textarea:-moz-placeholder {
 	.b-input input{
 		width: 100%;
 		border-radius: 5px;
-		padding: 14px 18px 15px 18px;
+		padding: 13px 18px 15px 18px;
 	}
 
 .b-textarea{
@@ -3080,7 +3157,7 @@ textarea:-moz-placeholder {
 		resize: none;
 	}
 
-/*=========checkbox==========*/
+/*=====checkbox=====*/
 
 .icon-checked{
 	font-size: 18px;
@@ -3140,6 +3217,65 @@ textarea:-moz-placeholder {
 		line-height: 16px;
 	}
 
+/*=====radio=====*/
+
+.b-radio input[type="radio"]{
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	margin-bottom: 0;
+}
+
+.b-radio input[type="radio"] + span + label,
+.b-radio input[type="radio"] + label {
+    position: relative;
+    padding-left: 36px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.b-radio input[type="radio"] + span + label:before,
+.b-radio input[type="radio"] + label:before {
+    top: 5px;
+    left: 0;
+    width: 20px;
+	height: 20px;
+	border-radius: 13px;
+	border: 1px solid rgba(86,69,49,0.50);
+	background-color: #FFF;
+}
+
+.b-radio input[type="radio"]:checked + span + label:after,
+.b-radio input[type="radio"]:checked + label:after {
+   background-color: #77BE32 !important;
+}
+
+.b-radio input[type="radio"]:checked + span + label,
+.b-radio input[type="radio"]:checked + label{
+
+}
+
+.b-radio input[type="radio"] + span + label:after,
+.b-radio input[type="radio"] + label:after  {
+    top: 9px;
+    left: 4px;
+    height: 12px;
+    width: 12px;
+    border-radius: 10px;
+}
+
+.b-radio input[type="radio"] + label:before,
+.b-radio input[type="radio"] + label:after,
+.b-radio input[type="radio"] + span + label:before,
+.b-radio input[type="radio"] + span + label:after {
+    content: ' ';
+    border-radius: 50%;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 /*===2 инпута в строке===*/
 .b-inputs-2 .b-input{
 	width: calc(50% - 12px);
@@ -3165,10 +3301,18 @@ textarea:-moz-placeholder {
 
 @media (-webkit-min-device-pixel-ratio: 1.5) {
 	
-}	
-@media screen and (max-width: 1250px){
-	
 }
-@media screen and (max-width: 1020px){
+
+@media screen and (min-width: 768px){
+
+	.b-radio input[type="radio"] + span + label:hover:after,
+	.b-radio input[type="radio"] + label:hover:after{
+	    top: 9px;
+	    left: 4px;
+	    height: 12px;
+	    width: 12px;
+	    border-radius: 10px;
+	    background-color: #e4e4e4;
+	}
 
 }

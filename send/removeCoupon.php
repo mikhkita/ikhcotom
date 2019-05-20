@@ -1,5 +1,5 @@
 <?
-	if(isset($_POST["coupon"])){
+	if(isset($_REQUEST["coupon"])){
 		
 		$orders["coupon"] = array();
 

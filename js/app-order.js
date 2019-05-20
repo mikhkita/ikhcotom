@@ -19,18 +19,30 @@ Vue.component('v-order',{
             show: false,
             showCatalogRef: false,
             showPreloader: true,
-            couponFields: {
-                coupon: "",
-                successCoupon: "",
-                errorCoupon: "",
+            couponList: [],
+            form: {
+                name: "",
+                phone: "",
+                email: "",
+                delivery: [
+                    // {
+                    //     name: "Почта России",
+                    //     cost: 350
+                    // }
+                ],
+                pay: [],
+                address: "",
+                comment: "",
             },
+            delayAjax: 200,
+            countQueue: 0
         }
     },
     mounted: function () {
       var self = this;
       //setTimeout(function() { 
         $.ajax({
-            type: "post",
+            type: "get",
             url: "../send/getOrderList.php",
             success: function(response){
               if(response){
@@ -40,8 +52,10 @@ Vue.component('v-order',{
                     self.show = true;
                     self.showPreloader = false;
                 }
-                if(data.coupon){
-                    self.couponFields.successCoupon = data.coupon.name;
+                if(data.coupons){
+                    data.coupons.forEach(function(item, i, arr) {
+                        self.couponList.push({value: item.name, success: item.success});
+                    });
                 }
               }
             },
@@ -51,23 +65,102 @@ Vue.component('v-order',{
         
     },
     template: '\
-      <div>\
+    <div>\
         <div v-if="show" class="b-order">\
-          <v-order-list \
-            @onChangeQuantity="changeQuantity"\
-            @onRemoveItem="removeItem"\
-            :orders="orders"\
-          ></v-order-list>\
-          <v-totals\
-            @onChangeCoupon="changeCoupon"\
-            @onUpdateOrder="updateOrder"\
-            :_rawBase="rawBase"\
-            :_rawTotal="rawTotal"\
-            :_discount="discount"\
-            :_delivery="delivery"\
-            :_total="total"\
-            :_couponFields="couponFields"\
-          ></v-totals>\
+            <div class="b-order-left">\
+                <v-order-list \
+                    @onChangeQuantity="changeQuantity"\
+                    @onRemoveItem="removeItem"\
+                    :orders="orders"\
+                ></v-order-list>\
+                <form class="b-order-form" method="post" action="">\
+                    <h3>Данные к заказу</h3>\
+                    <div class="b-inputs-3 clearfix">\
+                        <div class="b-input">\
+                            <p>Ф.И.О.</p>\
+                            <input type="text" name="name" placeholder="Как вас зовут?">\
+                        </div>\
+                        <div class="b-input">\
+                            <p>Номер телефона</p>\
+                            <input type="text" name="phone" placeholder="+7 (999) 999 0000">\
+                        </div>\
+                        <div class="b-input">\
+                            <p>Электронная почта</p>\
+                            <input type="text" name="email" placeholder="example@yandex.ru">\
+                        </div>\
+                    </div>\
+                    <div class="b-choice clearfix">\
+                      <div class="b-delivery">\
+                        <h4>Способ доставки</h4>\
+                        <ul class="b-radio">\
+                            <li>\
+                                <input id="label-post" type="radio" name="delivery" value="post">\
+                                <label for="label-post">Почта России</label>\
+                            </li>\
+                            <li>\
+                                <input id="label-SDEC" type="radio" name="delivery" value="SDEC">\
+                                <label for="label-SDEC">СДЭК</label>\
+                            </li>\
+                            <li>\
+                                <input id="label-courier" type="radio" name="delivery" value="courier">\
+                                <label for="label-courier">Курьер по Томску</label>\
+                            </li>\
+                            <li>\
+                                <input id="label-pickup" type="radio" name="delivery" value="pickup">\
+                                <label for="label-pickup">Самовывоз из офиса</label>\
+                            </li>\
+                        </ul>\
+                        <ul class="b-delivery-tabs">\
+                            <li>\
+                                1. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
+                            </li>\
+                            <li>\
+                                2. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
+                            </li>\
+                            <li>\
+                                3. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
+                            </li>\
+                            <li>\
+                                4. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
+                            </li>\
+                        </ul>\
+                      </div>\
+                      <div class="b-pay">\
+                        <h4>Способ оплаты</h4>\
+                        <ul class="b-radio">\
+                            <li>\
+                                <input id="label-online" type="radio" name="pay" value="online">\
+                                <label for="label-online">Онлайн-оплата картой</label>\
+                            </li>\
+                            <li>\
+                                <input id="label-sber" type="radio" name="pay" value="sber">\
+                                <label for="label-sber">Сбербанк.Онлайн</label>\
+                            </li>\
+                        </ul>\
+                      </div>\
+                    </div>\
+                    <div class="b-order-form-bottom">\
+                        <div class="b-input">\
+                            <p>Адрес доставки</p>\
+                            <input type="text" name="address" placeholder="Введите адрес">\
+                        </div>\
+                        <div class="b-textarea">\
+                            <p>Комментарий к заказу</p>\
+                            <textarea rows="1" name="comment" placeholder="Введите комментарий"></textarea>\
+                        </div>\
+                    </div>\
+                    <a href="#" class="b-btn">Оформить заказ</a>\
+                </form>\
+            </div>\
+            <v-totals\
+                @onUpdateOrder="updateOrder"\
+                :_rawBase="rawBase"\
+                :_rawTotal="rawTotal"\
+                :_discount="discount"\
+                :_delivery="delivery"\
+                :_total="total"\
+                :_couponList="couponList"\
+            ></v-totals>\
         </div>\
         \
         <div v-if="showCatalogRef">\
@@ -77,18 +170,41 @@ Vue.component('v-order',{
         <div v-if="showPreloader" class="b-order-preloader">\
           <img src="../i/preloader.svg">\
         </div>\
-      </div>\
+    </div>\
     ',
     methods: {
         changeQuantity: function (id, quantity) {
-            this.orders.filter(function(v) {return v.id === id})[0].quantity = quantity;
+            var self = this;
+            self.orders.filter(function(v) {return v.id === id})[0].quantity = quantity;
+            //setTimeout(function () {
+                self.countQueue++;
+                $.ajax({
+                    type: "get",
+                    url: "../send/changeQuantity.php",
+                    data: {"id": id, "quantity": quantity},
+                    success: function(response){
+                      if(response){
+                        var data = JSON.parse(response);
+                        self.countQueue--;
+                        if(self.countQueue == 0){
+                            self.orders.filter(function(v) {return v.id === data.id})[0].quantity = data.quantity;
+                        }
+                      }else{
+                        alert("Ошибка изменения количеста, пожалуйста, обновите страницу");
+                      }
+                    },
+                    error: function(){
+                        self.countQueue--;
+                    }
+                });
+            //}, self.delayAjax);
         },
         removeItem: function (id) {
             var self = this,
                 index = self.orders.map(function(v) {return v.id}).indexOf(id);
             self.orders[index].visible = false;//скрыть элемент
             $.ajax({
-                type: "post",
+                type: "get",
                 url: "../send/removeItem.php",
                 data: {"id": id},
                 success: function(response){
@@ -109,11 +225,12 @@ Vue.component('v-order',{
                 }
             });
         },
-        changeCoupon: function (coupon) {
-            this.couponFields.coupon = coupon.coupon;
-            this.couponFields.successCoupon = coupon.successCoupon;
-            this.couponFields.errorCoupon = coupon.errorCoupon;
-        },
+        // addCoupon: function (coupon) {
+        //     this.couponList.push(coupon);
+        // },
+        // removeCoupon: function (index) {
+        //     this.couponList.splice(index, 1);
+        // },
         updateOrder: function (orders) {
             this.orders = orders;
         },
@@ -215,9 +332,11 @@ Vue.component('v-order',{
                             },
                             set: function (value) {
                                 if(isNumeric(value)){
+                                    if(value > 0 && value <= this.maxCount){
+                                       this.onChangeQuantity(this.id, value); 
+                                    }
                                     value = (value < 1) ? 1 : value;
                                     value = (value > this.maxCount) ? this.maxCount : value;
-                                    this.onChangeQuantity(this.id, value);
                                 }
                                 //value = value.replace(/\D+/g,"");
                             }
@@ -294,15 +413,14 @@ Vue.component('v-order',{
                 _discount: Number,
                 _delivery: Number,
                 _total: Number,
-                _couponFields: Object,
+                _couponList: Array,
             },
             data: function () {
                 return {
+                    coupon: "",
                     validInput: true,
                     ajaxCoupon: false,
-                    coupon: this._couponFields.coupon,
-                    successCoupon: this._couponFields.successCoupon,
-                    errorCoupon: this._couponFields.errorCoupon,
+                    couponList: this._couponList,
                 }
             },
             template: '\
@@ -328,14 +446,13 @@ Vue.component('v-order',{
                     >\
                   </div>\
                   <a href="#" class="b-btn" @click.prevent="sendCoupon">Применить</a>\
-                  <div class="coupon-info">\
-                    <div v-if="successCoupon" class="coupon-success">\
-                        <p><b>{{successCoupon}}</b> - купон применён</p>\
-                        <a href="#" class="dashed" @click.prevent="removeSuccessCoupon">Удалить</a>\
-                    </div>\
-                    <div v-if="errorCoupon" class="coupon-error">\
-                        <p><b>{{errorCoupon}}</b> - купон не найден</p>\
-                        <a href="#" class="dashed" @click.prevent="removeErrorCoupon">Удалить</a>\
+                  <div class="coupon-list">\
+                    <div class="coupon-item"\
+                        v-for="coupon in couponList"\
+                        :class="{\'coupon-success\': coupon.success, \'coupon-error\': !coupon.success}"\
+                    >\
+                        <p><b>{{ coupon.value }}</b> - {{ (coupon.success) ? "купон применён" : "купон не найден" }}</p>\
+                        <a href="#" class="dashed" @click.prevent="removeCoupon(coupon.value)">Удалить</a>\
                     </div>\
                   </div>\
                 </div>\
@@ -357,41 +474,32 @@ Vue.component('v-order',{
                 updateOrder: function (orders) {
                     this.$emit('onUpdateOrder', orders);
                 },
-                changeCoupon: function (coupon) {
-                    this.coupon = coupon.coupon;
-                    this.successCoupon = coupon.successCoupon;
-                    this.errorCoupon = coupon.errorCoupon;
-                    this.$emit('onChangeCoupon', coupon);
-                },
                 sendCoupon: function () {
                     var self = this;
                     if(self.coupon && !self.ajaxCoupon){
                         self.ajaxCoupon = true;
                         $.ajax({
-                            type: "post",
+                            type: "get",
                             url: "../send/addCoupon.php",
                             data: {coupon: self.coupon},
                             success: function(response){
+                                var newCoupon;
                                 if(response){
                                     var data = JSON.parse(response);
-                                    self.changeCoupon({
-                                        coupon: "",
-                                        successCoupon: self.coupon,
-                                        errorCoupon: ""
-                                    });
+                                    newCoupon = {value: self.coupon, success: true};
+                                    self.couponList.push(newCoupon);
                                     if(data.items){
                                         self.updateOrder(data.items);
                                     }
                                 }else{
-                                    self.changeCoupon({
-                                        coupon: "",
-                                        successCoupon: self.successCoupon,
-                                        errorCoupon: self.coupon
-                                    });
+                                    newCoupon = {value: self.coupon, success: false};
+                                    self.couponList.push(newCoupon);
                                 }
+                                //self.$emit('onAddCoupon', newCoupon);
                             },
                             error: function(){},
                             complete: function(){
+                                self.coupon = "";
                                 self.ajaxCoupon = false;
                             },
                         });
@@ -399,57 +507,27 @@ Vue.component('v-order',{
                         self.validInput = false;
                     }
                 },
-                removeSuccessCoupon: function () {
-                    // var self = this;
-                    // $.ajax({
-                    //     type: "post",
-                    //     url: "../send/removeCoupon.php",
-                    //     data: {coupon: self.successCoupon},
-                    //     success: function(response){
-                    //         if(response){
-                    //             var data = JSON.parse(response);
-                    //             //активировать купон
-                    //             self.changeCoupon({
-                    //                 coupon: "",
-                    //                 successCoupon: "",
-                    //                 errorCoupon: self.errorCoupon,
-                    //             });
-                    //             //обновить позиции
-                    //             if(data.items){
-                    //                 self.updateOrder(data.items);
-                    //             }
-                    //         }else{
-
-                    //         }
-                    //     },
-                    //     error: function(){}
-                    // });
-                },
-                removeErrorCoupon: function () {
-                    // var self = this;
-                    // $.ajax({
-                    //     type: "post",
-                    //     url: "../send/removeCoupon.php",
-                    //     data: {coupon: self.errorCoupon},
-                    //     success: function(response){
-                    //         if(response){
-                    //             var data = JSON.parse(response);
-                    //             //активировать купон
-                    //             self.changeCoupon({
-                    //                 coupon: "",
-                    //                 successCoupon: self.successCoupon,
-                    //                 errorCoupon: "",
-                    //             });
-                    //             //обновить позиции
-                    //             if(data.items){
-                    //                 self.updateOrder(data.items);
-                    //             }
-                    //         }else{
-
-                    //         }
-                    //     },
-                    //     error: function(){}
-                    // });
+                removeCoupon: function (value) {
+                    var self = this;
+                    $.ajax({
+                        type: "get",
+                        url: "../send/removeCoupon.php",
+                        data: {coupon: value},
+                        success: function(response){
+                            if(response){
+                                var data = JSON.parse(response),
+                                    index = self.couponList.map(function(v) {return v.value}).indexOf(value);
+                                self.couponList.splice(index, 1);
+                                if(data.items){
+                                    self.updateOrder(data.items);
+                                }
+                                //self.$emit('onRemoveCoupon', index);
+                            }else{
+                                alert("Произошла ошибка при удалении купона.\nПожалуйста, обновите страницу");
+                            }
+                        },
+                        error: function(){}
+                    });
                 },
             }
         }

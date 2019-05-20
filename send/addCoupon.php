@@ -1,13 +1,13 @@
 <?
 	$coupons = array("zima10", "leto10");
-	if(isset($_POST["coupon"])){
-		if(in_array($_POST["coupon"], $coupons)){
+	if(isset($_REQUEST["coupon"])){
+		if(in_array($_REQUEST["coupon"], $coupons)){
 			
 			$orders = array();
 
 			$orders["coupon"] = array(
 				"id" => 234,
-				"name" => $_POST["coupon"],
+				"name" => $_REQUEST["coupon"],
 				"success" => true,
 				"discount" => 5.5, //скидка в процентах
 			);
