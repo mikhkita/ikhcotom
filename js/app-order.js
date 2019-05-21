@@ -53,17 +53,13 @@ Vue.component('v-order',{
                     self.couponList = data.coupons;
                 }
                 if(data.delivery){
-                    self.form.deliveryActive = data.delivery.active;
-                    self.form.deliveryList = data.delivery.items;
-                    self.form.deliveryList.forEach(function(item, i, arr) {
-                        item.label = "label-delivery-"+item.value;
-                    });
+                    self.form.deliveryList = data.delivery;
+                    self.form.deliveryActive = self.form.deliveryList[0].value;
                 }
                 if(data.payments){
                     self.form.paymentList = data.payments;
+                    self.form.paymentActive = self.form.paymentList[0].value;
                 }
-                console.log(self.form.deliveryList);
-                console.log(self.form.deliveryActive);
               }
             },
             error: function(){}
@@ -102,14 +98,14 @@ Vue.component('v-order',{
                         <ul class="b-radio">\
                             <li v-for="delivery in form.deliveryList" :key="delivery.id">\
                                 <input\
-                                    :id="delivery.label"\
+                                    :id="getLabel(\'delivery\', delivery.id)"\
                                     type="radio"\
                                     name="delivery"\
                                     :checked="form.deliveryActive == delivery.value"\
                                     v-model="form.deliveryActive"\
                                     :value="delivery.value"\
                                 >\
-                                <label :for="delivery.label">{{ delivery.name }}</label>\
+                                <label :for="getLabel(\'delivery\', delivery.id)">{{ delivery.name }}</label>\
                             </li>\
                         </ul>\
                         <ul class="b-delivery-tabs">\
@@ -121,13 +117,16 @@ Vue.component('v-order',{
                       <div class="b-pay">\
                         <h4>Способ оплаты</h4>\
                         <ul class="b-radio">\
-                            <li>\
-                                <input id="label-online" type="radio" name="pay" value="online">\
-                                <label for="label-online">Онлайн-оплата картой</label>\
-                            </li>\
-                            <li>\
-                                <input id="label-sber" type="radio" name="pay" value="sber">\
-                                <label for="label-sber">Сбербанк.Онлайн</label>\
+                            <li v-for="payment in form.paymentList" :key="payment.id">\
+                                <input\
+                                    :id="getLabel(\'payment\', payment.id)"\
+                                    type="radio"\
+                                    name="payment"\
+                                    :checked="form.paymentActive == payment.value"\
+                                    v-model="form.paymentActive"\
+                                    :value="payment.value"\
+                                >\
+                                <label :for="getLabel(\'payment\', payment.id)">{{ payment.name }}</label>\
                             </li>\
                         </ul>\
                       </div>\
@@ -166,6 +165,9 @@ Vue.component('v-order',{
     </div>\
     ',
     methods: {
+        getLabel: function (block, value) {
+            return "label-"+block+"-"+value;
+        },
         changeQuantity: function (id, quantity) {
             var self = this;
             self.orders.filter(function(v) {return v.id === id})[0].quantity = quantity;
@@ -481,13 +483,13 @@ Vue.component('v-order',{
                                 var newCoupon;
                                 if(response){
                                     var data = JSON.parse(response);
-                                    newCoupon = {value: self.coupon, success: true};
+                                    newCoupon = {name: self.coupon, success: true};
                                     self.couponList.push(newCoupon);
                                     if(data.items){
                                         self.updateOrder(data.items);
                                     }
                                 }else{
-                                    newCoupon = {value: self.coupon, success: false};
+                                    newCoupon = {name: self.coupon, success: false};
                                     self.couponList.push(newCoupon);
                                 }
                                 //self.$emit('onAddCoupon', newCoupon);
@@ -502,16 +504,16 @@ Vue.component('v-order',{
                         self.validInput = false;
                     }
                 },
-                removeCoupon: function (value) {
+                removeCoupon: function (name) {
                     var self = this;
                     $.ajax({
                         type: "get",
                         url: "../send/removeCoupon.php",
-                        data: {coupon: value},
+                        data: {coupon: name},
                         success: function(response){
                             if(response){
                                 var data = JSON.parse(response),
-                                    index = self.couponList.map(function(v) {return v.value}).indexOf(value);
+                                    index = self.couponList.map(function(v) {return v.name}).indexOf(name);
                                 self.couponList.splice(index, 1);
                                 if(data.items){
                                     self.updateOrder(data.items);

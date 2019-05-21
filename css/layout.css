@@ -2422,11 +2422,17 @@ h2.b-title{
 						    top: 0;
 						    left: 0;
 						}
-			.b-filter-tab.open .icon-minus{
+			.b-filter-item.open .filter-toggle .icon-minus{
 				display: block;
 			}
-			.b-filter-tab.open .icon-plus{
+			.b-filter-item.open .filter-toggle .icon-plus{
 				display: none;
+			}
+			.b-filter-more{
+				margin-bottom: 12px;
+			}
+			.b-filter-item.open .b-filter-more.open{
+				margin-bottom: 0;
 			}
 
 			.b-filter-checkbox-list{
@@ -2441,15 +2447,15 @@ h2.b-title{
 				.b-filter-checkbox-list li{
 					margin-bottom: 10px;
 				}
-				.b-filter-checkbox-list li:last-child{
+				/*.b-filter-checkbox-list li:last-child{
 					margin-bottom: 0;
-				}
+				}*/
 			.b-filter-item-range{
 				padding-bottom: 16px;
 			}
-				.slider-range{
-					/*margin: 0 8px;*/
-				}
+				/*.slider-range{
+					margin: 0 8px;
+				}*/
 				.range-inputs{
 					margin-bottom: 14px;
 				}
@@ -2512,7 +2518,6 @@ h2.b-title{
 
 			.b-filter-toggle .show-more{
 				display: inline-block;
-				margin-top: 10px;
     			margin-bottom: 14px;
 			}
 

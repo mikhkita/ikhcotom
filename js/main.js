@@ -251,22 +251,22 @@ $(document).ready(function(){
         return false;
     });
 
-    $(".b-filter-tab").each(function() {
+    $(".b-filter-item").each(function() {
         if(!$(this).hasClass("open")){
-            $(this).siblings(".b-filter-toggle").slideUp(0);
+            $(this).children(".b-filter-toggle").slideUp(0);
         }
     });
     $(".b-filter-tab").click(function() {
         if(!$(this).hasClass("sliding")){
             var $this = $(this);
             $this.addClass("sliding");
-            if($this.hasClass("open")){
-                $this.removeClass("open");
+            if($this.parent().hasClass("open")){
+                $this.parent().removeClass("open");
                 $this.parents(".b-filter-item").find(".b-filter-toggle").slideUp(300, function(){
                     $this.removeClass("sliding");
                 });
             }else{
-                $this.addClass("open");
+                $this.parent().addClass("open");
                 $this.parents(".b-filter-item").find(".b-filter-toggle").slideDown(300, function(){
                     $this.removeClass("sliding");
                 });
