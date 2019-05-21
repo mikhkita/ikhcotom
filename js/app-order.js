@@ -24,13 +24,10 @@ Vue.component('v-order',{
                 name: "",
                 phone: "",
                 email: "",
-                delivery: [
-                    // {
-                    //     name: "Почта России",
-                    //     cost: 350
-                    // }
-                ],
-                pay: [],
+                deliveryActive: "",
+                deliveryList: [],
+                paymentActive: "",
+                paymentList: [],
                 address: "",
                 comment: "",
             },
@@ -53,10 +50,20 @@ Vue.component('v-order',{
                     self.showPreloader = false;
                 }
                 if(data.coupons){
-                    data.coupons.forEach(function(item, i, arr) {
-                        self.couponList.push({value: item.name, success: item.success});
+                    self.couponList = data.coupons;
+                }
+                if(data.delivery){
+                    self.form.deliveryActive = data.delivery.active;
+                    self.form.deliveryList = data.delivery.items;
+                    self.form.deliveryList.forEach(function(item, i, arr) {
+                        item.label = "label-delivery-"+item.value;
                     });
                 }
+                if(data.payments){
+                    self.form.paymentList = data.payments;
+                }
+                console.log(self.form.deliveryList);
+                console.log(self.form.deliveryActive);
               }
             },
             error: function(){}
@@ -93,35 +100,21 @@ Vue.component('v-order',{
                       <div class="b-delivery">\
                         <h4>Способ доставки</h4>\
                         <ul class="b-radio">\
-                            <li>\
-                                <input id="label-post" type="radio" name="delivery" value="post">\
-                                <label for="label-post">Почта России</label>\
-                            </li>\
-                            <li>\
-                                <input id="label-SDEC" type="radio" name="delivery" value="SDEC">\
-                                <label for="label-SDEC">СДЭК</label>\
-                            </li>\
-                            <li>\
-                                <input id="label-courier" type="radio" name="delivery" value="courier">\
-                                <label for="label-courier">Курьер по Томску</label>\
-                            </li>\
-                            <li>\
-                                <input id="label-pickup" type="radio" name="delivery" value="pickup">\
-                                <label for="label-pickup">Самовывоз из офиса</label>\
+                            <li v-for="delivery in form.deliveryList" :key="delivery.id">\
+                                <input\
+                                    :id="delivery.label"\
+                                    type="radio"\
+                                    name="delivery"\
+                                    :checked="form.deliveryActive == delivery.value"\
+                                    v-model="form.deliveryActive"\
+                                    :value="delivery.value"\
+                                >\
+                                <label :for="delivery.label">{{ delivery.name }}</label>\
                             </li>\
                         </ul>\
                         <ul class="b-delivery-tabs">\
-                            <li>\
-                                1. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
-                            </li>\
-                            <li>\
-                                2. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
-                            </li>\
-                            <li>\
-                                3. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
-                            </li>\
-                            <li>\
-                                4. Без объявленной ценности. Если хотите ценную посылку, пишите в примечании к заказу, какую ценность указать, и мы пересчитаем доставку.\
+                            <li v-for="delivery in form.deliveryList" :key="delivery.id" v-show="form.deliveryActive == delivery.value">\
+                                {{delivery.text}}\
                             </li>\
                         </ul>\
                       </div>\
@@ -255,7 +248,8 @@ Vue.component('v-order',{
             return (res > 0) ? res : 0;
         },
         delivery: function () {
-            return 350;
+            var active = this.form.deliveryActive;
+            return this.form.deliveryList.filter(function(v) {return v.value === active})[0].cost;
         },
         total: function () {
             return this.rawTotal + this.delivery;
@@ -449,10 +443,11 @@ Vue.component('v-order',{
                   <div class="coupon-list">\
                     <div class="coupon-item"\
                         v-for="coupon in couponList"\
+                        :key="coupon.id"\
                         :class="{\'coupon-success\': coupon.success, \'coupon-error\': !coupon.success}"\
                     >\
-                        <p><b>{{ coupon.value }}</b> - {{ (coupon.success) ? "купон применён" : "купон не найден" }}</p>\
-                        <a href="#" class="dashed" @click.prevent="removeCoupon(coupon.value)">Удалить</a>\
+                        <p><b>{{ coupon.name }}</b> - {{ (coupon.success) ? "купон применён" : "купон не найден" }}</p>\
+                        <a href="#" class="dashed" @click.prevent="removeCoupon(coupon.name)">Удалить</a>\
                     </div>\
                   </div>\
                 </div>\
