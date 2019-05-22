@@ -62,7 +62,7 @@
 		</div>
 	</div>
 
-	<div class="b-content-inner">
+	<div class="b-content-inner no-margin">
 		<div class="b-block">
 			<ul class="b-breadcrumbs clearfix">
 				<li>
@@ -82,18 +82,21 @@
 						</li>
 						<li class="contacts-phone">
 							<img src="i/call-icon.svg">
-							<div class="telephone telephone-1"><a href="#">+7 (913) 820 0534</a><img src="i/contacts-call-1.svg"></div><br>
-							<div class="telephone telephone-2"><a href="#">+7 (903) 953 8088</a><img src="i/contacts-call-2.svg"></div>
+							<div class="telephone telephone-1"><a href="tel:+79138200534">+7 (913) 820 0534</a><img src="i/contacts-call-1.svg"></div><br>
+							<div class="telephone telephone-2"><a href="tel:+79039538088">+7 (903) 953 8088</a><img src="i/contacts-call-2.svg"></div>
 						</li>
 						<li class="contacts-email">
 							<img src="i/email-icon.svg">
-							<a href="mailto:mkv70@yandex.ru">mkv70@yandex.ru</a></li>
+							<a href="mailto:mkv70@yandex.ru">mkv70@yandex.ru</a>
+						</li>
 						<li class="contacts-vk">
 							<img src="i/icon-vk.svg">
-							/mkv70</li>
+							<a href="https://www.vk.com/mkv70" target="_blank">/mkv70</a>
+						</li>
 						<li class="contacts-insta">
 							<img src="i/icon-insta.svg">
-							/motochkiklubochki</li>
+							<a href="https://www.instagram.com/motochkiklubochki" target="_blank">/motochkiklubochki</a>
+						</li>
 					</ul>
 				</div>
 				<div class="b-contacts-right">
@@ -106,6 +109,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="map_canvas"></div>
 	</div>
 	
 	<div class="b-footer">
@@ -222,7 +226,7 @@
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
-	<!-- <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script> -->
+	<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script>
 	<script type="text/javascript" src="js/jquery.touch.min.js"></script>
 	<script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>

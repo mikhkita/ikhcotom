@@ -351,21 +351,21 @@ $(document).ready(function(){
 
 
     
-	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
- //    var myOptions = {
- //        zoom: 16,
- //        center: myPlace,
- //        mapTypeId: google.maps.MapTypeId.ROADMAP,
- //        disableDefaultUI: true,
- //        scrollwheel: false,
- //        zoomControl: true
- //    }
- //    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
+	var myPlace = new google.maps.LatLng(56.504379, 84.945910);
+    var myOptions = {
+        zoom: 16,
+        center: myPlace,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
+        scrollwheel: false,
+        zoomControl: true
+    }
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
 
- //    var marker = new google.maps.Marker({
-	//     position: myPlace,
-	//     map: map,
-	//     title: "Ярмарка вакансий и стажировок"
-	// });
+    var marker = new google.maps.Marker({
+	    position: myPlace,
+	    map: map,
+	    title: "Моточки-клубочки"
+	});
 
 });
