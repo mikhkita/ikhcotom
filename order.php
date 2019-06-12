@@ -216,6 +216,7 @@
 	<script type="text/javascript" src="js/vue.js"></script>
 	<!-- <script type="text/javascript" src="js/axios.min.js"></script> -->
 	<!-- <script type="text/javascript" src="js/vue-resource.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.sticky-kit.min.js"></script>
 	<script type="text/javascript" src="js/app-order.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>

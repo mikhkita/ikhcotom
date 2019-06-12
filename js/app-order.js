@@ -526,6 +526,9 @@ Vue.component('v-order',{
                         error: function(){}
                     });
                 },
+            },
+            mounted: function () {
+                $(".b-order-totals").stick_in_parent({offset_top: 24});
             }
         }
     }
