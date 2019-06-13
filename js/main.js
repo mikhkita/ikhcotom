@@ -318,6 +318,25 @@ $(document).ready(function(){
         }
     });
 
+    $('.b-btn-address').on('click', function(){
+        if($('.js-order-adress-map-input').val()){
+            var room = "";
+            if($('.number-room-input').val()){
+                room = ", кв. ";
+            }
+            var resString = $('.js-order-adress-map-input').val() + room + $('.number-room-input').val();
+            $("#app-order input[name='address']").val(resString).change();
+            $.fancybox.close(); 
+        }else{
+            $('.js-order-adress-map-input').addClass("error");
+        }
+        return false;
+    });
+
+    $('.js-order-adress-map-input').on('focus', function(){
+        $('.js-order-adress-map-input').removeClass("error");
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 
