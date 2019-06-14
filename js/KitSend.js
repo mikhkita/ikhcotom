@@ -98,6 +98,7 @@ $(document).ready(function(){
 		$this.fancybox({
 			padding : 0,
 			content : $popup,
+			touch: false,
 			helpers: {
 	         	overlay: {
 	            	locked: true 

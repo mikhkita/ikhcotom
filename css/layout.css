@@ -2838,6 +2838,9 @@ h2.b-title{
 			line-height: 30px;
 			margin-bottom: 24px;
 		}
+		.b-order-form .b-textarea{
+			margin-bottom: 24px;
+		}
 			.b-choice{
 				margin-bottom: 24px;
 			}
@@ -2907,7 +2910,7 @@ h2.b-title{
 /*======Попапы=======*/
 
 .b-popup{
-	
+	padding: 40px 44px 40px 44px;
 }
 	.b-popup h3{
 		font-family: 'DINPro-Medium';
@@ -2920,8 +2923,8 @@ h2.b-title{
 
 .fancybox-close-small {
     position: absolute;
-    right: 17px;
-    top: 14px;
+    right: 22px;
+    top: 19px;
 }
 .fancybox-close-small:after {
     content: "\e917";
@@ -2949,6 +2952,7 @@ h2.b-title{
 #b-popup-map{
 	width: 100%;
 	max-width: 1152px;
+	padding: 40px 0 0 0;
 }
 
 	#b-popup-map h3{
@@ -2966,20 +2970,33 @@ h2.b-title{
 		color: #564531;
 		font-family: 'DINPro-Regular';
 	}
-		#b-popup-map .b-inputs{
-			padding-top: 0;
+		.b-map-padding{
+			padding: 0 32px;
 		}
-			.b-inputs .b-input.ui-widget{
-				width: calc(50% - 12px);
+			#b-popup-map .b-inputs{
+				padding-top: 0;
 			}
-			.b-inputs .b-input.number-room{
-				width: calc(25% - 12px);
-			}
-			.b-inputs .b-btn-address{
-				width: calc(25% - 25px);
-				margin-top: 30px;
-				padding: 9px 40px 12px 40px;
-			}
+				.b-inputs-left{
+					float: left;
+					width: calc(50% - 8px);
+					margin-right: 16px;
+				}
+					.b-inputs-left .b-input{
+						width: 100%;
+					}
+				.b-inputs-right{
+					float: left;
+					width: calc(50% - 8px);
+				}
+					.b-inputs-right .b-input{
+						width: calc(30% - 12px);
+						margin-right: 16px;
+					}
+					.b-inputs-right .b-btn-address{
+						margin-top: 30px;
+						width: calc(40% - 12px);
+						padding: 9px 40px 12px 40px;
+					}
 	
 
 #map-address{
@@ -2996,6 +3013,7 @@ h2.b-title{
 	border: 0;
 }
 .b-popup ul.ui-menu.ui-widget-content{
+	position: absolute;
 	border-radius: 3px;
 	border: 1px solid rgba(86, 69, 49, 0.5);
 }

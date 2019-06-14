@@ -154,13 +154,13 @@ Vue.component('v-order',{
                       </div>\
                     </div>\
                     <div class="b-order-form-bottom">\
-                        <div class="b-input">\
+                        <div class="b-textarea" v-if="form.deliveryActive != \'pickup\'">\
                             <p>Адрес доставки</p>\
-                            <input type="text" name="address" placeholder="Введите адрес" v-model="form.address"\
+                            <textarea rows="1" name="address" placeholder="Введите адрес" v-model="form.address"\
                                 v-validate="\'required\'"\
                                 :class="{ error: errors.first(\'address\')}"\
                                 @click="openMap"\
-                            >\
+                            ></textarea>\
                         </div>\
                         <div class="b-textarea">\
                             <p>Комментарий к заказу</p>\
@@ -262,6 +262,7 @@ Vue.component('v-order',{
         },
         openMap: function (event) {
             $(".b-popup-map-link").click();
+            console.log(this.form.address);
             // console.log(event.target);
             // event.target.blur();
         }
@@ -386,6 +387,7 @@ Vue.component('v-order',{
                                     }
                                     value = (value < 1) ? 1 : value;
                                     value = (value > this.maxCount) ? this.maxCount : value;
+                                    console.log(value);
                                 }
                                 //value = value.replace(/\D+/g,"");
                             }
@@ -443,6 +445,18 @@ Vue.component('v-order',{
                         },
                         favoriteToggle: function () {
                             this.favorite = !this.favorite;
+                            var self = this;
+                            $.ajax({
+                                type: "get",
+                                url: "../send/changeFavorite.php",
+                                data: {"id": this.id, "state": this.favorite},
+                                success: function(response){
+                                    if(!response){
+                                        self.favorite = !self.favorite;
+                                    }
+                                },
+                                error: function(){}
+                            });
                         },
                         onRemoveItem: function () {
                             this.$emit('onRemoveItem', this.id);
