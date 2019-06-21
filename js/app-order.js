@@ -32,7 +32,8 @@ Vue.component('v-order',{
                 address: "",
                 comment: "",
             },
-            delayAjax: 200,
+            delayQuantity: 1000,
+            timeoutQuantity: null,
             countQueue: 0
         }
     },
@@ -197,7 +198,10 @@ Vue.component('v-order',{
         changeQuantity: function (id, quantity) {
             var self = this;
             self.orders.filter(function(v) {return v.id === id})[0].quantity = quantity;
-            //setTimeout(function () {
+            if(self.timeoutQuantity){
+                clearTimeout(self.timeoutQuantity);
+            }
+            self.timeoutQuantity = setTimeout(function () {
                 self.countQueue++;
                 $.ajax({
                     type: "get",
@@ -218,7 +222,7 @@ Vue.component('v-order',{
                         self.countQueue--;
                     }
                 });
-            //}, self.delayAjax);
+            }, self.delayQuantity);
         },
         removeItem: function (id) {
             var self = this,
