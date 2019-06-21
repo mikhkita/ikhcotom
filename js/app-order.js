@@ -42,7 +42,7 @@ Vue.component('v-order',{
       //setTimeout(function() { 
         $.ajax({
             type: "get",
-            url: "../send/getOrderList.php",
+            url: "send/getOrderList.php",
             success: function(response){
               if(response){
                 var data = JSON.parse(response);
@@ -187,7 +187,7 @@ Vue.component('v-order',{
         </div>\
         \
         <div v-if="showPreloader" class="b-order-preloader">\
-          <img src="../i/preloader.svg">\
+          <img src="i/preloader.svg">\
         </div>\
     </div>\
     ',
@@ -205,7 +205,7 @@ Vue.component('v-order',{
                 self.countQueue++;
                 $.ajax({
                     type: "get",
-                    url: "../send/changeQuantity.php",
+                    url: "send/changeQuantity.php",
                     data: {"id": id, "quantity": quantity},
                     success: function(response){
                       if(response){
@@ -230,7 +230,7 @@ Vue.component('v-order',{
             self.orders[index].visible = false;//скрыть элемент
             $.ajax({
                 type: "get",
-                url: "../send/removeItem.php",
+                url: "send/removeItem.php",
                 data: {"id": id},
                 success: function(response){
                   if(response){
@@ -452,7 +452,7 @@ Vue.component('v-order',{
                             var self = this;
                             $.ajax({
                                 type: "get",
-                                url: "../send/changeFavorite.php",
+                                url: "send/changeFavorite.php",
                                 data: {"id": this.id, "state": this.favorite},
                                 success: function(response){
                                     if(!response){
@@ -548,7 +548,7 @@ Vue.component('v-order',{
                         self.ajaxCoupon = true;
                         $.ajax({
                             type: "get",
-                            url: "../send/addCoupon.php",
+                            url: "send/addCoupon.php",
                             data: {coupon: self.coupon},
                             success: function(response){
                                 var newCoupon;
@@ -579,7 +579,7 @@ Vue.component('v-order',{
                     var self = this;
                     $.ajax({
                         type: "get",
-                        url: "../send/removeCoupon.php",
+                        url: "send/removeCoupon.php",
                         data: {coupon: name},
                         success: function(response){
                             if(response){
