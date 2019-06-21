@@ -351,6 +351,32 @@ $(document).ready(function(){
         }
     });
 
+    $('.b-btn-address').on('click', function(){
+        if($('.js-order-adress-map-input').val()){
+            var room = "",
+                postalCode = "";
+            if($('#number-room-input').val()){
+                room = ", кв. "+$('#number-room-input').val();
+            }
+            if($('#postal-code').val()){
+                postalCode = $('#postal-code').val() + ", ";
+            }
+            var resString = postalCode + $('.js-order-adress-map-input').val() + room;
+            var $address = $("#app-order textarea[name='address']").val(resString);
+            var e = document.createEvent('HTMLEvents');
+            e.initEvent('textarea', true, true);
+            $address[0].dispatchEvent(e);
+            $.fancybox.close(); 
+        }else{
+            $('.js-order-adress-map-input').addClass("error");
+        }
+        return false;
+    });
+
+    $('.js-order-adress-map-input').on('focus', function(){
+        $('.js-order-adress-map-input').removeClass("error");
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 

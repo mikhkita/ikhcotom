@@ -109,6 +109,40 @@
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
+
+		<a href="#b-popup-map" class="b-popup-map-link fancy" style="display:none;"></a>
+		<div class="b-popup b-popup-map" id="b-popup-map">
+			<h3>Выбор адреса доставки</h3>
+			<div class="js-popup-map-address">
+				<div class="b-map-padding">
+				    <form class="order-adress-map-form clearfix" style="position: relative">
+				        <div class="order-adress-map-form-content">
+				            <div class="b-inputs form-item __adress b-ui-autocomplete clearfix">
+								<div class="b-inputs-left">
+					            	<div class="b-input ui-menu ui-widget ui-widget-content ui-autocomplete ui-front">
+					            		<p>Адрес, дом</p>
+					            		<input type="text" id="js-order-adress-map-input" class="js-order-adress-map-input" autocomplete="off">
+					                </div>
+								</div>
+								<div class="b-inputs-right">
+					                <div class="b-input number-room">
+							        	<p>Квартира/офис</p>
+										<input type="text" id="number-room-input" autocomplete="off" class="number-room-input" maxlength="5">
+							        </div>
+							        <div class="b-input">
+							        	<p>Индекс</p>
+							        	<input type="text" id="postal-code" class="postal-code">
+							        </div>
+							        <a href="#" class="b-btn b-btn-buy b-btn-address">Принять</a>
+								</div>
+				            </div>
+				        </div>
+				        <input type="submit" class="b-popup-map-submit" style="display:none;">
+				    </form>
+			    </div>
+			    <div id="map-address"></div>
+			</div>
+		</div>
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
@@ -123,6 +157,19 @@
 	<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
 	<script type="text/javascript" src="js/autosize.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!-- Плагины для страницы оформления заказа -->
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/vee-validate.min.js"></script>
+	<script type="text/javascript" src="js/jquery.sticky-kit.min.js"></script>
+	<!-- <script type="text/javascript" src="js/cleave.min.js"></script> -->
+	<!-- <script type="text/javascript" src="js/axios.min.js"></script> -->
+	<!-- <script type="text/javascript" src="js/vue-resource.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1.41/?load=package.full&amp;lang=ru-RU"></script>
+	<script type="text/javascript" src="js/address.js"></script>
+	<script type="text/javascript" src="js/AddressDeliveryClass.js"></script>
+	<script type="text/javascript" src="js/app-order.js"></script>
+	<!-- \\\\\\\\ -->
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

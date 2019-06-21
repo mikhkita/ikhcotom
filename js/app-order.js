@@ -12,6 +12,7 @@ function isNumeric(n) {
 
 // ==============================
 
+Vue.use(VeeValidate);
 Vue.component('v-order',{
     data: function () {
         return {
@@ -40,7 +41,7 @@ Vue.component('v-order',{
       //setTimeout(function() { 
         $.ajax({
             type: "get",
-            url: "../send/getOrderList.php",
+            url: "send/getOrderList.php",
             success: function(response){
               if(response){
                 var data = JSON.parse(response);
@@ -64,8 +65,6 @@ Vue.component('v-order',{
             },
             error: function(){}
         });
-      //}, 1000);
-        
     },
     template: '\
     <div>\
@@ -76,20 +75,43 @@ Vue.component('v-order',{
                     @onRemoveItem="removeItem"\
                     :orders="orders"\
                 ></v-order-list>\
-                <form class="b-order-form" method="post" action="">\
+                <form id="b-order-form" class="b-order-form" method="post" action="">\
                     <h3>Данные к заказу</h3>\
                     <div class="b-inputs-3 clearfix">\
                         <div class="b-input">\
                             <p>Ф.И.О.</p>\
-                            <input type="text" name="name" placeholder="Как вас зовут?">\
+                            <input \
+                                type="text" \
+                                name="name" \
+                                placeholder="Как вас зовут?"\
+                                v-model="form.name"\
+                                v-validate="\'required\'"\
+                                :class="{ error: errors.first(\'name\')}"\
+                            >\
                         </div>\
                         <div class="b-input">\
                             <p>Номер телефона</p>\
-                            <input type="text" name="phone" placeholder="+7 (999) 999 0000">\
+                            <input \
+                                type="text" \
+                                name="phone" \
+                                placeholder="+7 (999) 999 0000"\
+                                v-model="form.phone"\
+                                v-validate="{ required: true, regex: /^\\+\\d \\(\\d{3}\\) \\d{3} \\d{4}$/ }"\
+                                :class="{ error: errors.first(\'phone\')}"\
+                            >\
+                            \
                         </div>\
                         <div class="b-input">\
                             <p>Электронная почта</p>\
-                            <input type="text" name="email" placeholder="example@yandex.ru">\
+                            <input \
+                                type="text" \
+                                name="email" \
+                                placeholder="example@yandex.ru"\
+                                v-model="form.email"\
+                                v-validate="\'required|email\'"\
+                                :class="{ error: errors.first(\'email\')}"\
+                            >\
+                            \
                         </div>\
                     </div>\
                     <div class="b-choice clearfix">\
@@ -132,16 +154,20 @@ Vue.component('v-order',{
                       </div>\
                     </div>\
                     <div class="b-order-form-bottom">\
-                        <div class="b-input">\
+                        <div class="b-textarea" v-if="form.deliveryActive != \'pickup\'">\
                             <p>Адрес доставки</p>\
-                            <input type="text" name="address" placeholder="Введите адрес">\
+                            <textarea rows="1" name="address" placeholder="Введите адрес" v-model="form.address"\
+                                v-validate="\'required\'"\
+                                :class="{ error: errors.first(\'address\')}"\
+                                @click="openMap"\
+                            ></textarea>\
                         </div>\
                         <div class="b-textarea">\
                             <p>Комментарий к заказу</p>\
-                            <textarea rows="1" name="comment" placeholder="Введите комментарий"></textarea>\
+                            <textarea rows="1" name="comment" placeholder="Введите комментарий" v-model="form.comment"></textarea>\
                         </div>\
                     </div>\
-                    <a href="#" class="b-btn">Оформить заказ</a>\
+                    <a href="#" class="b-btn" @click.prevent="validationForm">Оформить заказ</a>\
                 </form>\
             </div>\
             <v-totals\
@@ -160,7 +186,7 @@ Vue.component('v-order',{
         </div>\
         \
         <div v-if="showPreloader" class="b-order-preloader">\
-          <img src="../i/preloader.svg">\
+          <img src="i/preloader.svg">\
         </div>\
     </div>\
     ',
@@ -175,7 +201,7 @@ Vue.component('v-order',{
                 self.countQueue++;
                 $.ajax({
                     type: "get",
-                    url: "../send/changeQuantity.php",
+                    url: "send/changeQuantity.php",
                     data: {"id": id, "quantity": quantity},
                     success: function(response){
                       if(response){
@@ -200,7 +226,7 @@ Vue.component('v-order',{
             self.orders[index].visible = false;//скрыть элемент
             $.ajax({
                 type: "get",
-                url: "../send/removeItem.php",
+                url: "send/removeItem.php",
                 data: {"id": id},
                 success: function(response){
                   if(response){
@@ -229,6 +255,17 @@ Vue.component('v-order',{
         updateOrder: function (orders) {
             this.orders = orders;
         },
+        validationForm: function () {
+            if(this.formValid){
+                document.getElementById('b-order-form').submit();
+            }
+        },
+        openMap: function (event) {
+            $(".b-popup-map-link").click();
+            console.log(this.form.address);
+            // console.log(event.target);
+            // event.target.blur();
+        }
     },
     computed: {
         rawBase: function () {
@@ -255,6 +292,23 @@ Vue.component('v-order',{
         },
         total: function () {
             return this.rawTotal + this.delivery;
+        },
+        formValid: function() {
+            this.$validator.validate();
+            return Object.keys(this.fields).every(field => {
+                return this.fields[field] && this.fields[field].valid;
+            });
+            // var self = this,
+            //     valid = true;
+            // for (var field in this.fields){
+            //     if(self.fields[field] && self.fields[field].valid){
+            //         $("#app-order input[name='"+field+"']").removeClass("error");
+            //     }else{
+            //         $("#app-order input[name='"+field+"']").addClass("error");
+            //         valid = false;
+            //     }
+            // }
+            // return valid;
         },
     },
     components: {
@@ -333,6 +387,7 @@ Vue.component('v-order',{
                                     }
                                     value = (value < 1) ? 1 : value;
                                     value = (value > this.maxCount) ? this.maxCount : value;
+                                    console.log(value);
                                 }
                                 //value = value.replace(/\D+/g,"");
                             }
@@ -390,6 +445,18 @@ Vue.component('v-order',{
                         },
                         favoriteToggle: function () {
                             this.favorite = !this.favorite;
+                            var self = this;
+                            $.ajax({
+                                type: "get",
+                                url: "send/changeFavorite.php",
+                                data: {"id": this.id, "state": this.favorite},
+                                success: function(response){
+                                    if(!response){
+                                        self.favorite = !self.favorite;
+                                    }
+                                },
+                                error: function(){}
+                            });
                         },
                         onRemoveItem: function () {
                             this.$emit('onRemoveItem', this.id);
@@ -477,7 +544,7 @@ Vue.component('v-order',{
                         self.ajaxCoupon = true;
                         $.ajax({
                             type: "get",
-                            url: "../send/addCoupon.php",
+                            url: "send/addCoupon.php",
                             data: {coupon: self.coupon},
                             success: function(response){
                                 var newCoupon;
@@ -508,7 +575,7 @@ Vue.component('v-order',{
                     var self = this;
                     $.ajax({
                         type: "get",
-                        url: "../send/removeCoupon.php",
+                        url: "send/removeCoupon.php",
                         data: {coupon: name},
                         success: function(response){
                             if(response){
@@ -526,6 +593,9 @@ Vue.component('v-order',{
                         error: function(){}
                     });
                 },
+            },
+            mounted: function () {
+                $(".b-order-totals").stick_in_parent({offset_top: 24});
             }
         }
     }
@@ -540,3 +610,8 @@ var app = new Vue({
 
     }
 });
+
+$(document).ready(function(){
+    $('#app-order input[name="phone"]').mask('+7 (000) 000 0000');
+});
+
