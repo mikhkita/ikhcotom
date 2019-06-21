@@ -86,7 +86,7 @@ $(document).ready(function(){
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: false
+        autoplay: false,
     });
 
      $('.b-im-block').slick({
@@ -107,7 +107,40 @@ $(document).ready(function(){
         $(this).prev(2).addClass("visible");
     });
 
-    $(".b-item-card").height($(".b-item-cards").outerHeight());
+    $(".b-item-cards.slick-slider").find(".b-item-card").each(function(){
+        var $height = $(this).parents(".slick-track").innerHeight();
+        $(this).innerHeight($height);
+    })
+    $('.b-catalog-list').find(".b-item-card").each(function(){
+        var $index = $(this).index() + 1,
+            $height = $(this).height(),
+            $count = $(this).parents('.b-catalog-list').find('.b-item-card').length;
+
+        if ($index == 1) {
+            $maxHeight = 0;
+        }
+
+        if ($height > $maxHeight) {
+            $maxHeight = $height;
+        }
+
+        if ($index % 3 == 0) {
+            $('.b-catalog-list .b-item-card:nth-child('+$index+')').height($maxHeight);
+            $('.b-catalog-list .b-item-card:nth-child('+($index - 1)+')').height($maxHeight);
+            $('.b-catalog-list .b-item-card:nth-child('+($index - 2)+')').height($maxHeight);
+            $maxHeight = 0;
+        } else {
+            if (($count - $index) == 0) {
+                while($index % 3 != 0){
+                    $('.b-catalog-list .b-item-card:nth-child('+$index+')').height($maxHeight);
+                    $index = $index - 1;
+                }
+            }
+        }
+
+        // console.log($('.b-catalog-list .b-item-card').length);
+
+    })
 
     $(".b-item-card .b-card-fav").click(function(e){
     e.preventDefault();
@@ -351,21 +384,21 @@ $(document).ready(function(){
 
 
     
-	var myPlace = new google.maps.LatLng(56.504379, 84.945910);
-    var myOptions = {
-        zoom: 16,
-        center: myPlace,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        disableDefaultUI: true,
-        scrollwheel: false,
-        zoomControl: true
-    }
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
+	// var myPlace = new google.maps.LatLng(56.504379, 84.945910);
+ //    var myOptions = {
+ //        zoom: 16,
+ //        center: myPlace,
+ //        mapTypeId: google.maps.MapTypeId.ROADMAP,
+ //        disableDefaultUI: true,
+ //        scrollwheel: false,
+ //        zoomControl: true
+ //    }
+ //    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
 
-    var marker = new google.maps.Marker({
-	    position: myPlace,
-	    map: map,
-	    title: "Моточки-клубочки"
-	});
+ //    var marker = new google.maps.Marker({
+	//     position: myPlace,
+	//     map: map,
+	//     title: "Моточки-клубочки"
+	// });
 
 });
