@@ -377,6 +377,24 @@ $(document).ready(function(){
         $('.js-order-adress-map-input').removeClass("error");
     });
 
+    $('.fancybox-a').fancybox({'loop': true});
+    $('.review-more-a').on('click',function(){
+        var el = $(this).attr('href');
+        var popup = $(el).attr('href');
+        var src = $(this).parents('li').find('.review-img').attr('src');
+        var name = $(this).parents('li').find('.review-name').text();
+        var text = $(this).parents('li').find('.review-text').text();
+        $(popup).find('.popup-review-img').attr('src',src);
+        $(popup).find('.popup-review-name').text(name);
+        $(popup).find('.popup-review-text').text(text);
+        $(el).click();
+        return false;
+    });
+    $('.popup-review-btn').on('click',function(){
+        $.fancybox.close();
+        return false;
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 
