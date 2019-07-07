@@ -224,6 +224,114 @@ body {
 	top: calc(50% - 14px) !important;
 }
 
+.b-cabinet{
+
+}
+	.b-cabinet-profile{
+		display: block;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+	.b-cabinet-content{
+		display: block;
+		width: 100%;
+	}
+
+	.b-profile-photo {
+	    display: inline-block;
+	    vertical-align: top;
+	}
+	.b-profile-info{
+	    display: inline-block;
+	    vertical-align: top;
+	    width: calc(100% - 272px);
+	    padding-left: 24px;
+	}
+	.b-profile-name{
+		margin-top: 0;
+	}
+	.b-profile-phone,
+	.b-profile-email{
+	    margin-top: 16px;
+	}
+	.b-cabinet-profile .b-btn{
+		margin-top: 22px;
+	}
+	.b-btn-edit{
+		padding: 14px 0px 17px 0px;
+	}
+	.b-btn-logout{
+		padding: 14px 70px 17px 70px;
+	}
+	.b-cabinet-profile .b-btn {
+	    margin-top: 21px;
+	}
+
+	.b-order-item-price {
+	    margin-right: 24px;
+	}
+	.b-order-item-name {
+	    width: calc(100% - 100px);
+	    padding-top: 0px;
+	}
+
+	.b-order-item-left {
+	    width: calc(100% - 180px);
+	}
+	.order-header-right{
+		padding-right: 0;
+	}
+	.order-header-right p{
+		display: inline-block;
+		font-family: 'DINPro-Light';
+		font-size: 24px;
+		line-height: 30px;
+	}
+	.order-status{
+		position: static;
+		padding-left: 10px;
+		display: inline-block;
+	}
+	.b-order-item-update,
+	.b-order-item-buy {
+	    padding-top: 15px;
+	}
+
+	.order-header-left{
+		float: none;
+		display: block;
+		margin-bottom: 6px;
+	}
+	.order-header-right{
+		float: none;
+		display: block;
+	}
+	.b-order-item-price {
+	    margin-right: 16px;
+	}
+	.b-order-item img{
+		margin-right: 12px;
+	}
+	.b-order-item-left {
+	    width: calc(100% - 152px);
+	}
+	.b-order-item-price {
+	    width: 110px;
+	}
+	.b-order-total-inner {
+	    margin-top: 16px;
+	}
+	.b-cabinet-order {
+	    margin-bottom: 40px;
+	}
+	.b-order-total-inner .total {
+	    right: 38px;
+	}
+	.b-order-total {
+	    width: 232px;
+	}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -402,6 +510,25 @@ body {
 	.b-main-article a {
 		float: none;
 	}
+	.b-profile-photo {
+	    width: 200px;
+	    height: 200px;
+	}
+	.empty-photo-icon {
+	    top: 56px;
+	    left: 57px;
+	}
+	.b-profile-info {
+	    width: calc(100% - 205px);
+	    padding-left: 12px;
+	}
+	.b-btn-edit{
+		padding: 10px 0px 13px 0px;
+	}
+	.b-btn-logout{
+		padding: 10px 70px 13px 70px;
+	}
+
 }
 
 @media screen and (max-width: 500px){

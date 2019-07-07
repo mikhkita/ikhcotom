@@ -20,11 +20,13 @@
 							<img src="i/cabinet-photo.jpg">
 						</div> -->
 					</div>
-					<div class="b-profile-name">Яковлева Марина Иванова</div>
-					<div class="b-profile-phone"><span class="b-profile-phone-icon"></span>+7 (999) 999 0000</div>
-					<div class="b-profile-email"><span class="b-profile-phone-email"></span>example@yandex.ru</div>
-					<div><a href="edit.html" class="b-btn b-btn-edit">Редактировать профиль</a></div>
-					<div><a href="#" class="b-btn b-btn-logout">Выйти</a></div>
+					<div class="b-profile-info">
+						<div class="b-profile-name">Яковлева Марина Иванова</div>
+						<div class="b-profile-phone"><span class="b-profile-phone-icon"></span>+7 (999) 999 0000</div>
+						<div class="b-profile-email"><span class="b-profile-phone-email"></span>example@yandex.ru</div>
+						<div><a href="edit.html" class="b-btn b-btn-edit">Редактировать профиль</a></div>
+						<div><a href="#" class="b-btn b-btn-logout">Выйти</a></div>
+					</div>
 				</div>
 				<div class="b-cabinet-content">
 					<div class="b-cabinet-tabs">

@@ -64,6 +64,36 @@ body {
 	right: auto !important;
 }
 
+.b-order-item-price {
+    margin-right: 24px;
+}
+.b-order-item-name {
+    width: calc(100% - 100px);
+    padding-top: 0px;
+}
+
+.b-order-item-left {
+    width: calc(100% - 180px);
+}
+.order-header-right{
+	padding-right: 0;
+}
+.order-header-right p{
+	display: inline-block;
+	font-family: 'DINPro-Light';
+	font-size: 24px;
+	line-height: 30px;
+}
+.order-status{
+	position: static;
+	padding-left: 10px;
+	display: inline-block;
+}
+.b-order-item-update,
+.b-order-item-buy {
+    padding-top: 15px;
+}
+
 @media screen and (max-width: 1024px){
 
 	/*.b-profile {
@@ -144,6 +174,40 @@ body {
 	.b-im-block .slick-slide img {
 		max-width: 100%;
 		margin: 0 auto;
+	}
+
+	.order-header-left{
+		float: none;
+		display: block;
+		margin-bottom: 6px;
+	}
+	.order-header-right{
+		float: none;
+		display: block;
+	}
+	.b-order-item-price {
+	    margin-right: 16px;
+	}
+	.b-order-item img{
+		margin-right: 12px;
+	}
+	.b-order-item-left {
+	    width: calc(100% - 152px);
+	}
+	.b-order-item-price {
+	    width: 110px;
+	}
+	.b-order-total-inner {
+	    margin-top: 16px;
+	}
+	.b-cabinet-order {
+	    margin-bottom: 40px;
+	}
+	.b-order-total-inner .total {
+	    right: 38px;
+	}
+	.b-order-total {
+	    width: 232px;
 	}
 }
 
