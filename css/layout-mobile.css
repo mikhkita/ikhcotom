@@ -147,6 +147,7 @@ body {
 	    margin-bottom: 8px;
 	}
 	.b-product-actions li:last-child {
+		display: none;
 	    margin-bottom: 0;
 	}
 
@@ -174,11 +175,16 @@ body {
 	.b-product-texture {
 	    margin-bottom: 0;
 	}
+	.b-product-name {
+	    font-size: 20px;
+	    line-height: 28px;
+	    margin-bottom: 20px;
+	}
 }
 
 @media screen and (max-width: 450px){
 
-	.b-detail-review-text {
+	/*.b-detail-review-text {
 	    padding-bottom: 24px;
 	    border-bottom: 1px solid #EEE;
 	}
@@ -197,5 +203,37 @@ body {
 	}
 	.b-detail-review-text .rating-cont span{
 		margin-bottom: 0;
+	}*/
+	
+}
+
+@media screen and (max-width: 374px){
+	.b-product-actions li a {
+	    font-size: 16px;
+	    line-height: 20px;
+	}
+	.b-product-actions li {
+	    padding-left: 28px;
+	}
+	.b-product-actions li .icon{
+		top: 1px;
+		width: 20px;
+		height: 22px;
+	}
+	.b-product-actions li .icon-star:before{
+		font-size: 20px;
+	}
+	.b-product-actions li .icon-star-green,
+	.b-product-actions li .icon-share,
+	.b-product-actions li .icon-share-green{
+		background-size: 20px;
+	}
+	.b-detail-tabs .tabs .tab {
+	    width: calc(50% - 4px);
+	    margin-right: 8px;
+	    margin-bottom: 8px;
+	}
+	.b-detail-tabs .tabs .tab span{
+		font-size: 16px;
 	}
 }
