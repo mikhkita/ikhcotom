@@ -1,4 +1,10 @@
-$(document).ready(function(){	
+$(document).ready(function(){
+
+    var isDesktop = false,
+        isTablet = false,
+        isMobile = false,
+        isMobileSmall = false;
+
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
             myWidth = window.innerWidth;
@@ -10,6 +16,30 @@ $(document).ready(function(){
         } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
             myWidth = document.body.clientWidth;
             myHeight = document.body.clientHeight;
+        }
+
+        isDesktop = isTablet = isMobile = isMobileSmall = false;
+        if( myWidth > 1188 ){
+            isDesktop = true;
+        }else if( myWidth > 767 ){
+            isTablet = true;
+        }else{
+            isMobile = true;
+            if(myWidth < 664){
+                isMobileSmall = true;
+            }
+        }
+
+        if(isMobile){
+            if($(".b-product-content .b-product-name").length){
+                $(".b-product").prepend($(".b-product-actions-wrap"));
+                $(".b-product").prepend($(".b-product-name"));
+            }
+        }else{
+            if(!$(".b-product-content .b-product-name").length){
+                $(".b-product-content").prepend($(".b-product-actions-wrap"));
+                $(".b-product-content").prepend($(".b-product-name"));
+            }
         }
     }
     $(window).resize(resize);
@@ -91,6 +121,12 @@ $(document).ready(function(){
             },
             {
               breakpoint: 665,
+              settings: {
+                slidesToShow: 4
+              }
+            },
+            {
+              breakpoint: 374,
               settings: {
                 slidesToShow: 3
               }
@@ -441,12 +477,24 @@ $(document).ready(function(){
     });
 
     $('.fancybox-a').fancybox({'loop': true});
-    $('.review-more-a').on('click',function(){
+    $('.b-reviews-list .review-more-a').on('click',function(){
         var el = $(this).attr('href');
         var popup = $(el).attr('href');
         var src = $(this).parents('li').find('.review-img').attr('src');
         var name = $(this).parents('li').find('.review-name').text();
         var text = $(this).parents('li').find('.review-text').text();
+        $(popup).find('.popup-review-img').attr('src',src);
+        $(popup).find('.popup-review-name').text(name);
+        $(popup).find('.popup-review-text').text(text);
+        $(el).click();
+        return false;
+    });
+    $('.b-detail-review .review-more-a').on('click',function(){
+        var el = $(this).attr('href');
+        var popup = $(el).attr('href');
+        var src = $(this).parents('.b-detail-review').find('.b-detail-review-header img').attr('src');
+        var name = $(this).parents('.b-detail-review').find('.b-detail-review-name h3').text();
+        var text = $(this).parents('.b-detail-review').find('.b-detail-review-text').text();
         $(popup).find('.popup-review-img').attr('src',src);
         $(popup).find('.popup-review-name').text(name);
         $(popup).find('.popup-review-text').text(text);

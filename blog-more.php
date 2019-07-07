@@ -102,6 +102,7 @@
 									</div>
 								</div>
 							</div>
+							<a href="#popup-review-a" class="review-more-a">Читать отзыв полностью</a>
 						</div>
 					</div>
 					<div class="b-detail-review">
@@ -131,6 +132,7 @@
 									</div>
 								</div>
 							</div>
+							<a href="#popup-review-a" class="review-more-a">Читать отзыв полностью</a>
 						</div>
 					</div>
 				</div>
@@ -140,8 +142,9 @@
 						<div class="b-textarea">
 							<textarea rows="2" name="feedback" required placeholder="Отзывы могут оставлять только зарегистрированные пользователи"></textarea>
 						</div>
-						<a href="#" class="b-detail-register">Зарегистрироваться</a>
+						<a href="#" class="b-detail-register desktop">Зарегистрироваться</a>
 						<a href="#" class="b-btn">Оставить отзыв</a>
+						<a href="#" class="b-detail-register mobile">Зарегистрироваться</a>
 					</form>
 				</div>
 			</div>
