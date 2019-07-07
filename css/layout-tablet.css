@@ -78,6 +78,26 @@ body {
 	margin-right: 0;
 }
 
+.b-advantage-img-wrapper {
+	float: none;
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-bottom: 8px;
+}
+.b-advantage-img-wrapper img {
+	display: block;
+	max-width: 100%;
+	margin: 0 !important;
+}
+
+.b-choose-type .main-texture-list {
+	justify-content: flex-start;
+}
+.b-wool-tabs, .b-lenght-tabs {
+	width: calc(50% - 30px);
+}
+
 @media screen and (max-width: 1024px){
 
 	/*.b-profile {

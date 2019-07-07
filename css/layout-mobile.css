@@ -288,6 +288,45 @@ body {
 	line-height: 38px;
 }
 
+.b-main-advantages .b-block {
+	display: block;
+}
+.b-advantage-img-wrapper {
+	height: auto;
+}
+.b-advantage {
+	display: block;
+	width: 100%;
+	margin-bottom: 32px;
+}
+.b-advantage:last-child {
+	margin-bottom: 0;
+}
+
+.b-choose-type .main-texture-list {
+	justify-content: flex-start;
+}
+.b-main-tabs {
+	display: block;
+}
+.b-wool-tabs, .b-lenght-tabs {
+	display: block;
+	width: 100%;
+}
+.filter-list {
+	display: block;
+	text-align: left;
+	padding-bottom: 17px;
+	margin-bottom: 20px;
+}
+.b-more-tabs.visible {
+	display: inline-block;
+	width: auto;
+}
+.b-show-more {
+	bottom: 0;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
