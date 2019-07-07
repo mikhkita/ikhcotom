@@ -102,12 +102,14 @@
 		<div class="b-thanks b-popup" id="b-popup-success">
 			<h3>Спасибо!</h3>
 			<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
-			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
+			<!--<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">-->
+			<a href="#" class="b-btn popup-review-btn">Закрыть</a>
 		</div>
 		<div class="b-thanks b-popup" id="b-popup-error">
 			<h3>Ошибка отправки!</h3>
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
-			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
+			<!--<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">-->
+			<a href="#" class="b-btn popup-review-btn">Закрыть</a>
 		</div>
 
 		<a href="#b-popup-map" class="b-popup-map-link fancy" style="display:none;"></a>
@@ -141,6 +143,86 @@
 				    </form>
 			    </div>
 			    <div id="map-address"></div>
+			</div>
+		</div>
+
+		<!--Новые попапы моточки-->
+		<a href="#popup-review" class="fancybox-a" id="popup-review-a"></a>
+		<div class="b-popup popup-review" id="popup-review">
+			<div class="popup-review-head">
+				<img src="" alt="" class="popup-review-img">
+				<div class="popup-review-name"></div>
+			</div>
+			<div class="popup-review-text"></div>
+			<a href="#" class="b-btn popup-review-btn">Закрыть</a>
+		</div>
+
+		<div class="b-popup" id="popup-callback">
+			<img src="i/popup-logo.svg" alt="" class="popup-img">
+			<div class="popup-title"></div>
+			<form>
+				<div class="b-inputs-2 clearfix">
+					<div class="b-input">
+						<input type="text" name="name" placeholder="Ваше имя">
+					</div>
+					<div class="b-input">
+						<input type="text" name="phone" placeholder="Номер телефона">
+					</div>
+				</div>
+				<div class="b-textarea">
+					<textarea rows="3" name="comment" placeholder="Ваш вопрос"></textarea>
+				</div>
+				<div class="politics">Отправляя форму, я даю согласие на обработку моих персональных данных в соответствии с <a href="#" class="underlined">политикой конфиденциальности</a></div>
+				<a href="#" class="b-btn b-btn-callback ajax">Заказать звонок</a>
+			</form>
+		</div>
+
+		<div class="b-popup" id="popup-comment">
+			<img src="i/popup-logo.svg" alt="" class="popup-img">
+			<div class="popup-title"></div>
+			<form>
+				<div class="b-inputs-2 clearfix">
+					<div class="b-input">
+						<input type="text" name="name" placeholder="Ваше имя">
+					</div>
+					<div class="b-input">
+						<input type="text" name="phone" placeholder="Номер телефона">
+					</div>
+				</div>
+				<div class="b-textarea">
+					<textarea rows="3" name="comment" placeholder="Ваш отзыв"></textarea>
+				</div>
+				<div class="politics">Отправляя форму, я даю согласие на обработку моих персональных данных в соответствии с <a href="#" class="underlined">политикой конфиденциальности</a></div>
+				<a href="#" class="b-btn b-btn-callback ajax">Отправить отзыв</a>
+			</form>
+		</div>
+
+		<div class="b-popup popup-sign" id="popup-sign">
+			<img src="i/popup-logo.svg" alt="" class="popup-img">
+			<ul class="popup-sign-list">
+				<li><a href="#popup-form-sign-in" class="active">Войти</a></li>
+				<li><a href="#popup-form-sign-up">Регистрация</a></li>
+			</ul>
+			<div class="popup-sign-form active" id="popup-form-sign-in">
+				<form>
+					<input type="text" name="mail" placeholder="Электронная почта">
+					<input type="text" name="password" placeholder="Пароль">
+					<div class="clearfix">
+						<div class="popup-sign-checkbox left">
+							<input type="checkbox" id="remember" name="remember" checked>
+							<label for="remember"><b></b>Запомнить</label>
+						</div>
+						<a href="#" class="popup-sign-pass-a underline right">Забыли пароль?</a>
+					</div>
+					<a href="#" class="b-btn b-btn-sign-in ajax">Войти</a>
+				</form>
+			</div>
+			<div class="popup-sign-form" id="popup-form-sign-up">
+				<form>
+					<input type="text" name="mail" placeholder="Электронная почта">
+					<input type="text" name="password" placeholder="Пароль">
+					<a href="#" class="b-btn b-btn-sign-up ajax">Зарегистрироваться</a>
+				</form>
 			</div>
 		</div>
 	</div>

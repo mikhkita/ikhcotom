@@ -415,6 +415,25 @@ $(document).ready(function(){
         return false;
     });
 
+    $('.delivery-methods-list').slick({
+        infinite: true,
+        arrows: false,
+        slidesToShow: 4,
+        slidesToScroll: 1
+    });
+
+    $('.popup-sign-list li a').on('click',function(){
+        var el = $(this).attr('href');
+
+        if ( !$(this).hasClass('active') ){
+            $('.popup-sign-list li a').removeClass('active');
+            $(this).addClass('active');
+            $('.popup-sign-form').removeClass('active');
+            $(el).addClass('active');
+        }
+        return false;
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 
