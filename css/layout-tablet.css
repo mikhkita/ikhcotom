@@ -64,6 +64,20 @@ body {
 	right: auto !important;
 }
 
+.b-contacts-desc {
+	width: 100%;
+}
+
+.b-section-item {
+	width: calc(50% - 12px);
+}
+.b-section-item:nth-child(3n) {
+	margin-right: 24px;
+}
+.b-section-item:nth-child(2n) {
+	margin-right: 0;
+}
+
 @media screen and (max-width: 1024px){
 
 	/*.b-profile {
@@ -187,5 +201,9 @@ body {
 		width: 100%;
 		max-width: 500px;
 		margin: 0 auto;
+	}
+
+	.b-catalog-list .b-item-card {
+		width: 50%;
 	}
 }

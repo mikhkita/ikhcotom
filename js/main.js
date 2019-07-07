@@ -546,6 +546,17 @@ $(document).ready(function(){
         return false;
     });
 
+    $('.catalog-mobile-filter').on('click',function(){
+        if ( $(this).hasClass('active') ){
+            $(this).text('Фильтр');
+        } else {
+            $(this).text('Скрыть фильтр');
+        }
+        $(this).toggleClass('active');
+        $('.b-filter').toggleClass('active');
+        $('body').toggleClass('no-scroll');
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 

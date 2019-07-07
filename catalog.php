@@ -13,8 +13,7 @@
 				<h2 class="b-title">Каталог</h2>
 				<div class="b-section clearfix">
 					<a href="#" class="b-section-item">
-						<div class="b-section-item-img">
-							<img src="i/catalog-1.jpg">
+						<div class="b-section-item-img" style="background-image: url('i/catalog-1.jpg');">
 							<div class="lettering" style="clip-path: url(#path-lettering-1); width: 191px; height: 86px;"></div>
 							<svg width="191" height="86" viewBox="0 0 191 86" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<clipPath id="path-lettering-1">
@@ -26,8 +25,7 @@
 						</div>
 					</a>
 					<a href="#" class="b-section-item">
-						<div class="b-section-item-img">
-							<img src="i/catalog-2.jpg">
+						<div class="b-section-item-img" style="background-image: url('i/catalog-2.jpg');">
 							<div class="lettering" style="clip-path: url(#path-lettering-2); width: 243px; height: 68px;"></div>
 							<svg width="243" height="68" viewBox="0 0 243 68" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<clipPath id="path-lettering-2">
@@ -40,36 +38,28 @@
 						</div>
 					</a>
 					<a href="#" class="b-section-item">
-						<div class="b-section-item-img">
-							<img src="i/catalog-1.jpg">
-						</div>
+						<div class="b-section-item-img" style="background-image: url('i/catalog-1.jpg');"></div>
 						<div class="b-section-item-name">
 							<div class="b-section-gradient"></div>
 							<h2>Пряжа</h2>
 						</div>
 					</a>
 					<a href="#" class="b-section-item">
-						<div class="b-section-item-img">
-							<img src="i/catalog-2.jpg">
-						</div>
+						<div class="b-section-item-img" style="background-image: url('i/catalog-2.jpg');"></div>
 						<div class="b-section-item-name">
 							<div class="b-section-gradient"></div>
 							<h2>Инструменты</h2>
 						</div>
 					</a>
 					<a href="#" class="b-section-item">
-						<div class="b-section-item-img">
-							<img src="i/catalog-1.jpg">
-						</div>
+						<div class="b-section-item-img" style="background-image: url('i/catalog-1.jpg');"></div>
 						<div class="b-section-item-name">
 							<div class="b-section-gradient"></div>
 							<h2>Наборы для вязания</h2>
 						</div>
 					</a>
 					<a href="#" class="b-section-item">
-						<div class="b-section-item-img">
-							<img src="i/catalog-2.jpg">
-						</div>
+						<div class="b-section-item-img" style="background-image: url('i/catalog-2.jpg');"></div>
 						<div class="b-section-item-name">
 							<div class="b-section-gradient"></div>
 							<h2>Книги и журналы</h2>

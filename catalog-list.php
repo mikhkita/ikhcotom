@@ -13,6 +13,7 @@
 				</li>
 			</ul>
 			<h2 class="b-title">Пряжа</h2>
+			<div class="catalog-mobile-filter">Фильтр</div>
 			<div class="b-catalog clearfix">
 				<form class="b-filter" method="POST" action="">
 					<div class="b-filter-item open">
