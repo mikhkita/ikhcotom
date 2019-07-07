@@ -60,19 +60,7 @@
 				</ul>
 				<a href="#" class="b-nav-right icon-arrow-right"></a>
 			</div>
-			<a href="#" class="b-btn b-btn-review">Оставить отзыв</a>
-		</div>
-	</div>
-
-	<div style="display: none;">
-		<a href="#popup-review" class="fancybox-a" id="popup-review-a"></a>
-		<div class="popup popup-review" id="popup-review">
-			<div class="popup-review-head">
-				<img src="" alt="" class="popup-review-img">
-				<div class="popup-review-name"></div>
-			</div>
-			<div class="popup-review-text"></div>
-			<a href="#" class="b-btn popup-review-btn">Закрыть</a>
+			<a href="#popup-comment" class="b-btn b-btn-review fancy">Оставить отзыв</a>
 		</div>
 	</div>
 <?include "footer.php";?>
