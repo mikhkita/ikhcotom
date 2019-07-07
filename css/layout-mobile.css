@@ -10,6 +10,9 @@ body {
 	margin-bottom: 10px;
 }
 
+.b-breadcrumbs li {
+	margin-bottom: 8px;
+}
 .b-product-photo{
 	display: block;
 	width: 100%;
@@ -56,6 +59,156 @@ body {
 }
 .b-detail-tabs .tabs .tab:after {
     width: 16px;
+}
+
+.b-blog-filter {
+	margin-bottom: 15px;
+}
+.b-blog-filter li {
+	margin-bottom: 15px;
+}
+.b-blog-list-image {
+	display: block;
+	width: 100%;
+	margin: 0 auto 20px;
+}
+.b-blog-list-image img {
+	display: block;
+	margin: 0 auto;
+}
+.b-blog-list-text {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.blog-more-article .article-text img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto 24px;
+}
+
+.b-reviews-list li {
+	width: calc(50% - 12px);
+}
+.b-reviews-list li:nth-child(3n) {
+	margin-right: 20px;
+}
+.b-reviews-list li:nth-child(2n) {
+	margin-right: 0;
+}
+
+.payment-list {
+	display: block;
+	width: 100%;
+	margin: 31px auto 32px;
+}
+.payment-list li {
+	max-width: 200px;
+	margin-right: 26px;
+}
+.payment-info {
+	display: block;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.delivery-info-item {
+	display: block;
+	width: 100%;
+	margin: 0 auto 32px;
+	max-width: 500px;
+}
+.delivery-info-list li a {
+	padding: 0;
+	text-decoration: underline;
+}
+.delivery-info-list li a:hover {
+	text-decoration: none;
+}
+.delivery-info-list li a::after {
+	display: none;
+}
+.delivery-info-text {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	max-width: 500px;
+}
+
+.b-about-face {
+	padding: 29px 0;
+}
+.about-face-title {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+.about-face-img {
+	margin-bottom: 15px;
+}
+.about-face-subtitle {
+	font-size: 16px;
+}
+.about-info-text {
+	display: block;
+	width: 100%;
+	margin: 0 auto 32px;
+}
+.about-info-text p a {
+	display: inline;
+	padding: 0;
+	text-decoration: underline;
+}
+.about-info-text p a:hover {
+	text-decoration: none;
+}
+.about-info-text p a::after {
+	display: none;
+}
+.about-info-wrap {
+	display: block;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.about-qwestions-vk {
+	display: block;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto 32px;
+}
+.about-qwestions-form {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.b-main-article {
+	float: none;
+	width: 100%;
+	margin-bottom: 20px
+}
+.b-main-article:nth-child(2n){
+	float: none;
+}
+.b-main-article:last-child {
+	margin-bottom: 0;
+}
+
+.b-im-block .slick-slide img {
+	max-width: 100%;
+	margin: 0 auto;
+}
+.b-im-watch .icon-arrow-right {
+	right: 10px !important;
+	font-size: 30px !important;
+	top: calc(50% - 14px) !important;
+}
+.b-im-watch .icon-arrow-left {
+	left: 10px !important;
+	right: auto !important;
+	font-size: 30px !important;
+	top: calc(50% - 14px) !important;
 }
 
 @media screen and (max-width: 665px){
@@ -174,6 +327,33 @@ body {
 	.b-product-texture {
 	    margin-bottom: 0;
 	}
+
+	.b-main-article img {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		margin: 0 auto 20px;
+		float: none;
+	}
+	.b-main-article-text {
+		display: block;
+		width: 100%;
+		float: none;
+	}
+	.b-main-article a {
+		float: none;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.payment-list li {
+		display: block;
+		margin: 0 auto 26px;
+		max-width: 218px;
+	}
+	.payment-list li:last-child {
+		margin: 0 auto 26px;
+	}
 }
 
 @media screen and (max-width: 450px){
@@ -197,5 +377,18 @@ body {
 	}
 	.b-detail-review-text .rating-cont span{
 		margin-bottom: 0;
+	}
+
+	.b-reviews-list li {
+		display: block;
+		width: 100%;
+		margin: 0 auto 42px !important;
+	}
+
+	.delivery-info-item {
+		padding: 24px 22px 20px;
+	}
+	.payment-info, .about-info-wrap {
+		padding: 22px 22px 21px;
 	}
 }

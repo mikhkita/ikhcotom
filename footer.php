@@ -172,7 +172,7 @@
 				<div class="b-textarea">
 					<textarea rows="3" name="comment" placeholder="Ваш вопрос"></textarea>
 				</div>
-				<div class="politics">Отправляя форму, я даю согласие на обработку моих персональных данных в соответствии с <a href="#" class="underlined">политикой конфиденциальности</a></div>
+				<div class="politics">Отправляя форму, я даю согласие на обработку моих персональных данных в соответствии с <a href="#" class="underlined">политикой&nbsp;конфиденциальности</a></div>
 				<a href="#" class="b-btn b-btn-callback ajax">Заказать звонок</a>
 			</form>
 		</div>
@@ -192,7 +192,7 @@
 				<div class="b-textarea">
 					<textarea rows="3" name="comment" placeholder="Ваш отзыв"></textarea>
 				</div>
-				<div class="politics">Отправляя форму, я даю согласие на обработку моих персональных данных в соответствии с <a href="#" class="underlined">политикой конфиденциальности</a></div>
+				<div class="politics">Отправляя форму, я даю согласие на обработку моих персональных данных в соответствии с <a href="#" class="underlined">политикой&nbsp;конфиденциальности</a></div>
 				<a href="#" class="b-btn b-btn-callback ajax">Отправить отзыв</a>
 			</form>
 		</div>

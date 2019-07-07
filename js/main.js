@@ -107,6 +107,26 @@ $(document).ready(function(){
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
      $('.b-im-block').slick({
@@ -119,7 +139,30 @@ $(document).ready(function(){
         slidesToScroll: 1,
         autoplay: false,
         focusOnSelect: true,
-        variableWidth: true
+        variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    variableWidth: false,
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    variableWidth: false,
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                    variableWidth: false,
+                    slidesToShow: 2
+                }
+            }
+        ]
     });
 
     $(".b-show-more").click(function(){
@@ -419,7 +462,28 @@ $(document).ready(function(){
         infinite: true,
         arrows: false,
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     $('.popup-sign-list li a').on('click',function(){

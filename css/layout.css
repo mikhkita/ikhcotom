@@ -164,6 +164,7 @@ body {
 	font-size: 16px;
 	color: #564531;
 	text-align: left;
+	overflow-x: hidden;
 }
 a, a:after{
 	text-decoration: none;
@@ -3341,6 +3342,9 @@ h3.b-title{
 }
 .delivery-info-list li {
 	margin-bottom: 18px;
+}
+.delivery-info-list li:last-child {
+	margin-bottom: 0;
 }
 .delivery-info-list li a {
 	display: inline-block;
