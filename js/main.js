@@ -75,7 +75,27 @@ $(document).ready(function(){
         autoplay: false,
         variableWidth: true,
         asNavFor: '.b-product-main',
-        focusOnSelect: true
+        focusOnSelect: true,
+        responsive: [
+            {
+              breakpoint: 1188,
+              settings: {
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 5
+              }
+            },
+            {
+              breakpoint: 665,
+              settings: {
+                slidesToShow: 3
+              }
+            }
+        ]
     });
 
     $('.b-item-cards').slick({

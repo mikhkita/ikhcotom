@@ -239,10 +239,10 @@
 						</div>
 						<div class="tabs-content models-block clearfix hide">
 							<div class="models-item">
-								<div class="models-img">
+								<div class="models-img-cont">
 									<div class="icon-zoom"></div>
 									<a class="fancy-img" href="i/model-1.jpg">
-				                    	<img src="i/model-1.jpg">
+				                    	<div class="models-img" style="background-image: url(i/model-1.jpg)"></div>
 				                    </a>
 								</div>
 								<p><span>Цвет пряжи:</span> 02 Larch</p>
@@ -250,10 +250,10 @@
 								<p><span>Время вязания:</span> 6 часов</p>
 							</div>
 							<div class="models-item">
-								<div class="models-img">
+								<div class="models-img-cont">
 									<div class="icon-zoom"></div>
 									<a class="fancy-img" href="i/model-2.jpg">
-				                    	<img src="i/model-2.jpg">
+				                    	<div class="models-img" style="background-image: url(i/model-2.jpg)"></div>
 				                    </a>
 								</div>
 								<p><span>Цвет пряжи:</span> 02 Larch</p>
@@ -261,10 +261,10 @@
 								<p><span>Время вязания:</span> 6 часов</p>
 							</div>
 							<div class="models-item">
-								<div class="models-img">
+								<div class="models-img-cont">
 									<div class="icon-zoom"></div>
 									<a class="fancy-img" href="i/model-3.jpg">
-				                    	<img src="i/model-3.jpg">
+				                    	<div class="models-img" style="background-image: url(i/model-3.jpg)"></div>
 				                    </a>
 								</div>
 								<p><span>Цвет пряжи:</span> 02 Larch</p>
