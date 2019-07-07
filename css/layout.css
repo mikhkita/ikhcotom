@@ -2314,6 +2314,13 @@ h3.b-title{
 					    margin-left: 24px;
 					    font-family: DINPro-Light;
 					}
+					.b-detail-register.desktop{
+						display: inline-block;
+					}
+					.b-detail-register.mobile{
+						margin-top: 10px;
+						display: none;
+					}
 					.b-detail-feedback .b-detail-register:hover{
 					    border-bottom: 1px solid transparent;
 						text-decoration: none;
@@ -3269,7 +3276,7 @@ h3.b-title{
 	overflow: hidden;
 	margin-bottom: 8px;
 }
-.b-reviews-list .review-more-a {
+.review-more-a {
 	display: inline-block;
 	position: relative;
 	color: #979797;
@@ -3277,7 +3284,10 @@ h3.b-title{
 	font-family: 'DINPro-Regular';
 	padding-bottom: 2px;
 }
-.b-reviews-list .review-more-a::after {
+.review-more-a:hover{
+	color: #979797;
+}
+.review-more-a::after {
 	content: '';
 	display: block;
 	width: 100%;
@@ -3287,7 +3297,10 @@ h3.b-title{
 	bottom: 0;
 	background-color: #979797;
 }
-.b-reviews-list .review-more-a:hover:after {
+.review-more-a:hover:after {
+	display: none;
+}
+.b-detail-review .review-more-a{
 	display: none;
 }
 .b-btn-review {
