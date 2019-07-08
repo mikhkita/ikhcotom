@@ -489,6 +489,70 @@ body {
     margin-bottom: 30px;
 }
 
+.b-popup {
+	padding: 45px 20px;
+}
+.b-popup.popup-review {
+	padding: 48px 20px;
+}
+
+.b-top .b-block {
+	align-items: center;
+}
+.b-city {
+	max-width: calc(100% - 135px);
+}
+.b-footer .b-city {
+	max-width: none;
+}
+.b-top-menu, .b-header-catalogue, .b-menu-items {
+	display: none;
+}
+.b-search-form {
+	display: block;
+	max-width: none;
+	margin-top: 15px;
+	order: 1;
+}
+.b-profile {
+	margin-right: 15px;
+}
+.b-price-button {
+	vertical-align: middle;
+	top: 0;
+}
+.b-main-menu {
+	padding: 5px 0;
+}
+.mobile-btn {
+	display: inline-block;
+	margin-top: 8px;
+}
+.b-bottom {
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+.mobile-menu {
+	display: block;
+}
+
+.b-footer-top-text {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.b-footer-top-input {
+	display: block;
+	width: 100%;
+}
+.b-footer-bottom-left, .b-footer-bottom-middle {
+	width: calc(50% - 20px);
+}
+.b-footer-bottom-right {
+	width: 100%;
+	margin-top: 30px;
+}
+
 @media screen and (max-width: 665px){
 
 	h2.b-title {
@@ -813,6 +877,57 @@ body {
 	.payment-list li:last-child {
 		margin: 0 auto 26px;
 	}
+
+	.b-footer-bottom {
+		display: block;
+	}
+	.b-footer-bottom-left {
+		width: 100%;
+		text-align: center;
+	}
+	.b-footer-logo {
+		margin: 6px auto 0;
+	}
+	.b-footer-bottom-middle {
+		margin-top: 30px;
+		text-align: center;
+		width: 100%;
+	}
+	.b-footer-inputs {
+		display: block;
+		text-align: center;
+	}
+	.b-footer-inputs input {
+		width: 100%;
+	}
+	.b-footer-inputs .politics {
+		width: 100%;
+		padding: 0;
+		margin-top: 5px;
+		text-align: left;
+	}
+	.b-footer-bottom-right .politics {
+		margin-top: 5px;
+	}
+
+	.b-inputs-2 .b-input {
+		display: block;
+		width: 100%;
+		margin: 0 auto 24px;
+	}
+	.about-qwestions-form {
+		text-align: center;
+	}
+	.about-qwestions-form .b-btn {
+		width: auto;
+		margin-right: 0;
+	}
+	.about-qwestions-form .politics {
+		display: block;
+		width: 100%;
+		margin-top: 5px;
+		text-align: left;
+	}
 }
 
 @media screen and (max-width: 450px){
@@ -974,6 +1089,12 @@ body {
 	}
 	.b-order-coupon .b-input {
 	    width: calc(100% - 134px);
+	}
+
+	.b-logo {
+		width: 180px;
+		height: 59px;
+		background-size: contain;
 	}
 }
 
