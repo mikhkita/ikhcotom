@@ -131,7 +131,7 @@
 							        	<p>Квартира/офис</p>
 										<input type="text" id="number-room-input" autocomplete="off" class="number-room-input" maxlength="5">
 							        </div>
-							        <div class="b-input">
+							        <div class="b-input b-postal-code">
 							        	<p>Индекс</p>
 							        	<input type="text" id="postal-code" class="postal-code">
 							        </div>

@@ -3923,9 +3923,10 @@ h3.b-title{
 /*=======Карта========*/
 
 #b-popup-map{
-	width: 100%;
+	width: calc(100% - 48px);
 	max-width: 1152px;
 	padding: 40px 0 0 0;
+	text-align: left;
 }
 
 	#b-popup-map h3{
@@ -4348,6 +4349,7 @@ textarea:-moz-placeholder {
 .b-radio input[type="radio"] + span + label,
 .b-radio input[type="radio"] + label {
     position: relative;
+    display: block;
     padding-left: 36px;
     cursor: pointer;
     font-size: 18px;

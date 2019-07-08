@@ -126,6 +126,44 @@ body {
 .b-wool-tabs, .b-lenght-tabs {
 	width: calc(50% - 30px);
 }
+.b-detail-review-text p {
+    max-width: calc(100% - 75px);
+    padding-right: 50px;
+}
+.control-favorite {
+    margin-right: 6px;
+}
+.b-order-item-controls {
+    width: 90px;
+}
+.b-map-padding{
+
+}
+	#b-popup-map .b-inputs{
+
+	}
+		#b-popup-map .b-input.ui-widget{
+			margin-bottom: 16px;
+		}
+		.b-inputs-left{
+			float: none;
+			width: 100%;
+			margin-right: 0;
+		}
+			.b-inputs-left .b-input{
+				float: none;
+			}
+		.b-inputs-right{
+			float: none;
+			width: 100%;
+			margin-bottom: 24px;
+		}
+			.b-inputs-right .b-input {
+			    margin-bottom: 16px;
+			}
+			.b-inputs-right .b-btn-address{
+				width: calc(40% - 10px);
+			}
 
 @media screen and (max-width: 1024px){
 
@@ -242,6 +280,78 @@ body {
 	.b-order-total {
 	    width: 232px;
 	}
+
+	.b-input {
+	    margin-bottom: 24px;
+	}
+	.b-inputs-3 .b-input{
+		width: calc(100%/2 - 12px);
+	}
+	.b-inputs-3 .b-input:nth-child(3n){
+		margin-right: 24px;
+	}
+	.b-inputs-3 .b-input:nth-child(2n){
+		margin-right: 0;
+	}
+
+	.b-order-totals {
+	    width: 314px;
+	    padding: 12px 16px;
+	}
+	.b-order-coupon .b-btn {
+	    padding: 9px 16px 10px 16px;
+	}
+	.b-order-left {
+	    width: calc(100% - 320px);
+	    padding-right: 16px;
+	}
+	.b-delivery{
+		float: none;
+	    width: 100%;
+	    margin-bottom: 16px;
+	}
+	.b-pay{
+	    float: none;
+	    width: 100%;
+	}
+
+
+	.b-order .b-order-list .b-order-item .item-field {
+	    display: inline-block;
+	}
+	.b-order .b-order-list .b-order-item:last-child{
+		padding-bottom: 0;
+	    border-bottom: 0;
+	}
+	.b-order .b-order-list .b-order-item {
+	    margin-bottom: 14px;
+	    padding-bottom: 14px;
+	    border-bottom: 1px solid #d8d8d8;
+	}
+	.b-order .b-order-item-name {
+	    width: calc(100% - 100px);
+	}
+	.b-order .b-order-item-quantity {
+	    width: 140px;
+	}
+	.b-order .b-order-item-quantity .product-quantity{
+		margin-left: 0;
+	}
+	.b-order .b-order-item-price{
+		width: auto;
+	}
+	.b-order .b-order-item-price .price-base {
+	    display: inline-block;
+	    position: relative;
+	    margin-right: 4px;
+	}
+	.b-order .b-order-item-controls {
+	    padding-top: 2px;
+	    width: 50px;
+	}
+	.b-order .b-order-item-price .price-total {
+	    display: inline-block;
+	}
 }
 
 @media screen and (max-width: 920px){
@@ -265,10 +375,6 @@ body {
 	}
 	.spec-block-right {
 	    width: 245px;
-	}
-	.b-detail-review-text p {
-	    max-width: calc(100% - 75px);
-	    padding-right: 50px;
 	}
 	.models-img-cont {
 	    height: 250px;

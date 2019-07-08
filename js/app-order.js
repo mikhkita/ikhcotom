@@ -116,7 +116,7 @@ Vue.component('v-order',{
                         </div>\
                     </div>\
                     <div class="b-choice clearfix">\
-                      <div class="b-delivery">\
+                      <div class="b-delivery clearfix">\
                         <h4>Способ доставки</h4>\
                         <ul class="b-radio">\
                             <li v-for="delivery in form.deliveryList" :key="delivery.id">\
@@ -168,8 +168,8 @@ Vue.component('v-order',{
                             <textarea rows="1" name="comment" placeholder="Введите комментарий" v-model="form.comment"></textarea>\
                         </div>\
                     </div>\
-                    <a href="#" class="b-btn" @click.prevent="validationForm">Оформить заказ</a>\
                 </form>\
+                <a href="#" class="b-btn" @click.prevent="validationForm">Оформить заказ</a>\
             </div>\
             <v-totals\
                 @onUpdateOrder="updateOrder"\
