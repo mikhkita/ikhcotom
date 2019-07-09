@@ -556,6 +556,26 @@ $(document).ready(function(){
         $('body').toggleClass('no-scroll');
     });
 
+    $('.mobile-btn').on('click',function(){
+        $('.mobile-menu').addClass('active');
+        $('.mobile-menu-bg').addClass('active');
+        $('body').addClass('no-scroll');
+        return false;
+    });
+
+    $('.mobile-menu-close-btn').on('click',function(){
+        $('.mobile-menu').removeClass('active');
+        $('.mobile-menu-bg').removeClass('active');
+        $('body').removeClass('no-scroll');
+        return false;
+    });
+    $('.mobile-menu-bg').on('click',function(){
+        $('.mobile-menu').removeClass('active');
+        $('.mobile-menu-bg').removeClass('active');
+        $('body').removeClass('no-scroll');
+        return false;
+    });
+
     // $(".b-card-top").height($(".b-card-top").width());
 
 

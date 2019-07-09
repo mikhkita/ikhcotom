@@ -55,7 +55,17 @@
 			</div>
 		</div>
 		<div class="b-main-menu">
-			<div class="b-block">
+			<div class="b-block clearfix">
+				<div class="mobile-btn">
+					<div class="mobile-btn-burger">
+						<div class="mobile-btn-burger">
+							<div class="burger-el"></div>
+							<div class="burger-el"></div>
+							<div class="burger-el"></div>
+						</div>
+					</div>
+					<span>Меню</span>
+				</div>
 				<ul class="b-menu-items">
 					<ul class="b-menu-item"><a href="#">Пряжа</a></ul>
 					<ul class="b-menu-item"><a href="#">Инструменты</a></ul>
@@ -63,6 +73,25 @@
 					<ul class="b-menu-item"><a href="#">Акции и скидки</a></ul>
 				</ul>
 				<a href=# class="b-price-button">6 400 ₽<p class="b-cart-number">50</p></a>
+			</div>
+		</div>
+		<div class="mobile-menu-bg"></div>
+		<div class="mobile-menu">
+			<div class="mobile-menu-wrap">
+				<div class="mobile-menu-close-btn"></div>
+				<ul class="mobile-menu-catalog-list">
+					<li><a href="#">Ссылка</a></li>
+					<li><a href="#">Ссылка</a></li>
+					<li><a href="#">Ссылка</a></li>
+				</ul>
+				<ul class="mobile-menu-nav">
+					<li><a href="#">О нас</a></li>
+					<li><a href="#">Доставка и оплата</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Блог</a></li>
+					<li><a href="#">Отзывы</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
