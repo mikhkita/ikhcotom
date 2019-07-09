@@ -240,7 +240,7 @@
 	<script type="text/javascript" src="js/autosize.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<!-- Плагины для страницы оформления заказа -->
-	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
 	<script type="text/javascript" src="js/vee-validate.min.js"></script>
 	<script type="text/javascript" src="js/jquery.sticky-kit.min.js"></script>
 	<!-- <script type="text/javascript" src="js/cleave.min.js"></script> -->

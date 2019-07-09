@@ -13,7 +13,7 @@
 				</li>
 			</ul>
 			<h2 class="b-title">Редактирование профиля</h2>
-			<div class="b-cabinet">
+			<div class="b-cabinet b-cabinet-edit">
 				<div class="b-cabinet-profile">
 					<div class="b-profile-photo">
 						<div class="current-photo">

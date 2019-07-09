@@ -10,7 +10,7 @@
 				</li>
 			</ul>
 			<h2 class="b-title">Личный кабинет</h2>
-			<div class="b-cabinet">
+			<div class="b-cabinet b-cabinet-main">
 				<div class="b-cabinet-profile">
 					<div class="b-profile-photo">
 						<div class="empty-photo">

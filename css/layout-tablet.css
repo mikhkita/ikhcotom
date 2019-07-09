@@ -352,6 +352,9 @@ body {
 	.b-order .b-order-item-price .price-total {
 	    display: inline-block;
 	}
+	.b-product-advantages li:nth-child(2) img {
+	    top: 0;
+	}
 }
 
 @media screen and (max-width: 920px){

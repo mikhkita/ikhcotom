@@ -92,7 +92,7 @@ ymaps.ready(['AddressDelivery']).then(function init() {
 
         //если пользователь покинул input
         $('#js-order-adress-map-input').change(function(){
-            if(addressList[0].label){
+            if(addressList[0] && addressList[0].label){
                 ymaps.geocode(addressList[0].label, {
                     results: 1,
                 }).then(function (res) {

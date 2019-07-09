@@ -3,6 +3,26 @@ function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
+function windowResize (event) {
+    if( typeof( window.innerWidth ) == 'number' ) {
+        myWidth = window.innerWidth;
+        myHeight = window.innerHeight;
+    } else if( document.documentElement && ( document.documentElement.clientWidth || 
+    document.documentElement.clientHeight ) ) {
+        myWidth = document.documentElement.clientWidth;
+        myHeight = document.documentElement.clientHeight;
+    } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+        myWidth = document.body.clientWidth;
+        myHeight = document.body.clientHeight;
+    }
+
+    if(myWidth < 768){
+        $(".b-side-right").trigger("sticky_kit:detach");
+    }else{
+        $(".b-order-totals").stick_in_parent({offset_top: 24});
+    }
+};
+
 // ===== Дерево компонентов =====
 
 // v-order
@@ -32,7 +52,7 @@ Vue.component('v-order',{
                 address: "",
                 comment: "",
             },
-            delayQuantity: 1000,
+            delayQuantity: 300,
             timeoutQuantity: null,
             countQueue: 0
         }
@@ -299,8 +319,9 @@ Vue.component('v-order',{
         },
         formValid: function() {
             this.$validator.validate();
-            return Object.keys(this.fields).every(field => {
-                return this.fields[field] && this.fields[field].valid;
+            var self = this;
+            return Object.keys(this.fields).every( function(field) {
+                return self.fields[field] && self.fields[field].valid;
             });
             // var self = this,
             //     valid = true;
@@ -599,7 +620,7 @@ Vue.component('v-order',{
                 },
             },
             mounted: function () {
-                $(".b-order-totals").stick_in_parent({offset_top: 24});
+                
             }
         }
     }
@@ -611,11 +632,14 @@ var app = new Vue({
         
     },
     mounted: function () {
-
+        window.addEventListener('load', function() {
+            $('#app-order input[name="phone"]').mask('+7 (000) 000 0000');
+            if( typeof autosize == "function" ){
+                autosize(document.querySelectorAll('#app-order textarea[name="address"], #app-order textarea[name="comment"]'));
+            }
+            window.onresize = windowResize;
+            windowResize();
+        });
     }
-});
-
-$(document).ready(function(){
-    $('#app-order input[name="phone"]').mask('+7 (000) 000 0000');
 });
 
