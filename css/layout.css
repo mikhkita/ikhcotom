@@ -853,13 +853,10 @@ h3.b-title{
 				opacity: 0;
 			}
 			.b-more-tabs{
-				width: 100%;
-				display: none;
-				flex-wrap: wrap;
-				justify-content: space-between;
+				display: none !important;
 			}
 				.b-more-tabs.visible{
-					display: flex;
+					display: inline-block !important;
 				}
 
 .b-choose-type .b-block{
@@ -3505,6 +3502,13 @@ h3.b-title{
 	font-size: 32px;
 	color: #564531;
 	margin-bottom: 31px;
+}
+.delivery-methods-list .b-product-arrows.icon-arrow-left-bold ,.delivery-methods-list .b-product-arrows.icon-arrow-right-bold {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 .delivery-method {
 	margin-right: 24px;

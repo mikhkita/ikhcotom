@@ -177,6 +177,15 @@ body {
 	margin-top: 30px;
 }
 
+.about-qwestions-form .b-btn {
+	padding: 17px 32px 19px;
+	width: auto;
+}
+.about-qwestions-form .politics {
+	width: calc(100% - 300px);
+}
+
+
 @media screen and (max-width: 1024px){
 
 	/*.b-profile {
@@ -230,7 +239,7 @@ body {
 	    margin-bottom: 24px;
 	}
 
-	.delivery-info-item {
+	/*.delivery-info-item {
 		display: block;
 		width: 100%;
 		margin: 0 auto 32px;
@@ -241,7 +250,7 @@ body {
 		width: 100%;
 		margin: 0 auto;
 		max-width: 500px;
-	}
+	}*/
 
 	.b-main-article {
 		float: none;
@@ -381,6 +390,80 @@ body {
 		display: block;
 		width: 100%;
 	}
+
+	.b-top .b-block {
+		align-items: center;
+	}
+	.b-city {
+		max-width: calc(100% - 135px);
+	}
+	.b-footer .b-city {
+		max-width: none;
+	}
+	.b-top-menu, .b-header-catalogue, .b-menu-items {
+		display: none;
+	}
+	.b-search-form {
+		display: block;
+		max-width: none;
+		margin-top: 15px;
+		order: 1;
+	}
+	.b-profile {
+		margin-right: 15px;
+	}
+	.b-price-button {
+		vertical-align: middle;
+		top: 0;
+	}
+	.b-main-menu {
+		padding: 5px 0;
+	}
+	.mobile-btn {
+		display: inline-block;
+		margin-top: 8px;
+	}
+	.b-bottom {
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+	.mobile-menu {
+		display: block;
+	}
+
+	.catalog-mobile-filter {
+	display: block;
+}
+	.b-filter {
+		display: block;
+		width: 100%;
+		height: 100vh;
+		box-sizing: border-box;
+		overflow-y: auto;
+		overflow-x: hidden;
+		position: fixed;
+		top: 0;
+		left: -200%;
+		z-index: 1000;
+		padding: 40px 20px;
+		background-color: #ffffff;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-ms-transition: all 0.3s;
+		transition: all 0.3s;
+	}
+	.b-filter.active {
+		left: 0;
+	}
+	.b-catalog-list {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.delivery-methods-list {
+		padding: 0 40px;
+	}
 }
 
 @media screen and (max-width: 920px){
@@ -409,20 +492,23 @@ body {
 	    height: 250px;
 	}
 
+	.payment-title {
+		margin-bottom: 32px;
+	}
 	.payment-list {
+		width: calc(45% - 22px);
+		margin-right: 20px;
+	}
+	.payment-list li {
 		display: block;
 		width: 100%;
-		margin: 31px auto 32px;
+		margin: 0 auto 30px;
+	}
+	.payment-list li:last-child {
+		margin-right: auto;
 	}
 	.payment-info {
-		display: block;
-		width: 100%;
-		max-width: 500px;
-		margin: 0 auto;
-	}
-
-	.b-catalog-list .b-item-card {
-		width: 50%;
+		width: calc(55% - 22px);
 	}
 
 	.about-qwestions-vk {

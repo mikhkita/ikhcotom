@@ -341,13 +341,21 @@ body {
 	width: 100%;
 	margin: 0 auto 32px;
 }
+.b-contacts-list {
+	max-width: none;
+}
+.b-contacts-list li {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	width: calc(50% - 24px);
+}
 .b-contacts-right {
 	float: none;
 	width: 100%;
 }
 .b-contacts-desc {
 	width: 100%;
-	max-width: 500px;
 	margin: 0;
 }
 
@@ -431,9 +439,8 @@ body {
 	padding-bottom: 17px;
 	margin-bottom: 20px;
 }
-.b-more-tabs.visible {
-	display: inline-block;
-	width: auto;
+.b-tab-wool {
+	width: calc(100%/4 - 16px);
 }
 .b-show-more {
 	bottom: 0;
@@ -555,6 +562,25 @@ body {
 .b-footer-bottom-right {
 	width: 100%;
 	margin-top: 30px;
+}
+.b-footer-inputs a {
+	width: auto;
+}
+
+.about-qwestions-form .b-btn {
+	padding: 17px 32px 19px;
+	width: auto;
+}
+.about-qwestions-form .politics {
+	width: calc(100% - 300px);
+}
+
+.b-catalog-list .b-item-card:nth-child(n+4) {
+	margin-top: 0;
+}
+
+.delivery-methods-list {
+	padding: 0 40px;
 }
 
 @media screen and (max-width: 665px){
@@ -837,6 +863,12 @@ body {
 	}
 }
 
+@media screen and (max-width: 600px){
+	.b-tab-wool {
+		width: calc(100%/3 - 12px);
+	}
+}
+
 @media screen and (max-width: 550px){
 	.b-section-item {
 		float: none;
@@ -873,6 +905,16 @@ body {
 	    margin-bottom: 20px;
 	}
 
+	.b-blog-filter li {
+		width: calc(100%/3 - 24px);
+	}
+
+	.b-contacts-list li {
+		display: block;
+		width: 100%;
+		margin-right: auto;
+		max-width: 350px;
+	}
 }
 
 @media screen and (max-width: 500px){
@@ -933,6 +975,13 @@ body {
 		display: block;
 		width: 100%;
 		margin-top: 5px;
+		text-align: left;
+	}
+
+	.b-footer-top-menu, .b-footer-bottom-menu {
+		display: inline-block;
+		vertical-align: top;
+		width: calc(50% - 3px);
 		text-align: left;
 	}
 }
@@ -1103,6 +1152,13 @@ body {
 		height: 59px;
 		background-size: contain;
 	}
+	.b-tab-wool {
+		width: calc(50% - 4px);
+	}
+
+	.b-blog-filter li {
+		width: calc(50% - 14px);
+	}
 }
 
 @media screen and (max-width: 374px){
@@ -1140,5 +1196,11 @@ body {
 	}
 	.b-order-totals {
 	    padding: 12px 16px;
+	}
+
+	.b-footer-top-menu, .b-footer-bottom-menu {
+		display: block;
+		width: 100%;
+		text-align: center;
 	}
 }

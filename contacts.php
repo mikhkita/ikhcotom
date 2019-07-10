@@ -9,7 +9,7 @@
 					<span>Контакты</span>
 				</li>
 			</ul>
-			<h2 class="b-title">Контакты</h2>
+			<h2 class="b-title b-title-left">Контакты</h2>
 			<div class="b-contacts clearfix">
 				<div class="b-contacts-left">
 					<ul class="b-contacts-list">

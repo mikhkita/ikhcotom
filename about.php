@@ -75,7 +75,7 @@
 					<!-- VK Widget -->
 					<div id="vk_groups"></div>
 					<script type="text/javascript">
-					VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, color3: '77BE32', width: 'auto'}, 118479740);
+					VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, color3: '77BE32', width: 'auto', height: '390'}, 118479740);
 					</script>
 				</div>
 				<div class="about-qwestions-form">

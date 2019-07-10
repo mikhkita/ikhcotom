@@ -290,14 +290,12 @@
 						<label class="b-btn b-tab-wool" for="wool-5">Хлопок</label>
 						<input class="wool-input" name="wool-type" type="radio" id="wool-6" value="6">
 						<label class="b-btn b-tab-wool" for="wool-6">Вискоза</label>
-						<div class="b-more-tabs">
-							<input class="wool-input" name="wool-type" type="radio" id="wool-7" value="7">
-							<label class="b-btn b-tab-wool" for="wool-7">Кашемир</label>
-							<input class="wool-input" name="wool-type" type="radio" id="wool-8" value="8">
-							<label class="b-btn b-tab-wool" for="wool-8">Хлопок</label>
-							<input class="wool-input" name="wool-type" type="radio" id="wool-9" value="9">
-							<label class="b-btn b-tab-wool" for="wool-9">Вискоза</label>
-						</div>
+							<input class="wool-input b-more-tabs" name="wool-type" type="radio" id="wool-7" value="7">
+							<label class="b-btn b-tab-wool b-more-tabs" for="wool-7">Кашемир</label>
+							<input class="wool-input b-more-tabs" name="wool-type" type="radio" id="wool-8" value="8">
+							<label class="b-btn b-tab-wool b-more-tabs" for="wool-8">Хлопок</label>
+							<input class="wool-input b-more-tabs" name="wool-type" type="radio" id="wool-9" value="9">
+							<label class="b-btn b-tab-wool b-more-tabs" for="wool-9">Вискоза</label>
 						<div class="b-show-more">смотреть больше</div>
 					</div>
 						
@@ -317,14 +315,12 @@
 						<label class="b-btn b-tab-wool" for="lenght-5">500-800</label>
 						<input class="lenght-input" name="lenght" type="radio" id="lenght-6" value="6">
 						<label class="b-btn b-tab-wool" for="lenght-6">800-1200</label>
-						<div class="b-more-tabs">
-							<input class="lenght-input" name="lenght" type="radio" id="lenght-7" value="7">
-							<label class="b-btn b-tab-wool" for="lenght-7">250-500</label>
-							<input class="lenght-input" name="lenght" type="radio" id="lenght-8" value="8">
-							<label class="b-btn b-tab-wool" for="lenght-8">500-800</label>
-							<input class="lenght-input" name="lenght" type="radio" id="lenght-9" value="9">
-							<label class="b-btn b-tab-wool" for="lenght-9">800-1200</label>
-						</div>
+							<input class="lenght-input b-more-tabs" name="lenght" type="radio" id="lenght-7" value="7">
+							<label class="b-btn b-tab-wool b-more-tabs" for="lenght-7">250-500</label>
+							<input class="lenght-input b-more-tabs" name="lenght" type="radio" id="lenght-8" value="8">
+							<label class="b-btn b-tab-wool b-more-tabs" for="lenght-8">500-800</label>
+							<input class="lenght-input b-more-tabs" name="lenght" type="radio" id="lenght-9" value="9">
+							<label class="b-btn b-tab-wool b-more-tabs" for="lenght-9">800-1200</label>
 						<div class="b-show-more">смотреть больше</div>
 					</div>
 						

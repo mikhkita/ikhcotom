@@ -203,7 +203,7 @@ $(document).ready(function(){
 
     $(".b-show-more").click(function(){
         $(this).addClass("hidden");
-        $(this).prev(2).addClass("visible");
+        $(this).parents('.filter-list').find('.b-more-tabs').addClass("visible");
     });
 
     $(".b-item-cards.slick-slider").find(".b-item-card").each(function(){
@@ -507,7 +507,8 @@ $(document).ready(function(){
 
     $('.delivery-methods-list').slick({
         infinite: true,
-        arrows: false,
+        prevArrow: '<div class="b-product-arrows icon-arrow-left-bold"></div>',
+        nextArrow: '<div class="b-product-arrows icon-arrow-right-bold"></div>',
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
