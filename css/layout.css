@@ -153,6 +153,21 @@
 .icon-close:before {
   content: "\e917";
 }
+.icon-link-arrow{
+	display: inline-block;
+	width: 10px;
+	padding-left: 6px;
+}
+.icon-link-arrow:before{
+	content: "\e918";	
+	position: absolute;
+	font-size: 8px;
+	top: 55%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 
 html,
 body {
@@ -1118,6 +1133,13 @@ h3.b-title{
 				}
 					.b-footer-inputs .politics a:hover{
 						color: rgba(86,69,49,0.50);
+						border-bottom: unset;
+					}
+					.b-footer-inputs .politics a:after{
+						display: none;
+					}
+					.b-footer-inputs .politics a{
+						border-bottom: 1px solid;
 					}
 				.underlined{
 					position: relative;
@@ -1232,7 +1254,6 @@ h3.b-title{
 					font-family: DINPro-Light;
 					font-size: 12px;
 					color: rgba(86,69,49,0.50);
-					text-decoration: underline;
 				}
 						.b-subscribe .politics a:hover{
 							text-decoration: none;
@@ -3305,11 +3326,12 @@ h3.b-title{
 	font-size: 18px;
 	font-family: 'DINPro-Regular';
 	padding-bottom: 2px;
+	border-bottom: 1px solid;
 }
 .review-more-a:hover{
-	color: #979797;
+	color: #77BE32;
 }
-.review-more-a::after {
+/*.review-more-a::after {
 	content: '';
 	display: block;
 	width: 100%;
@@ -3321,7 +3343,7 @@ h3.b-title{
 }
 .review-more-a:hover:after {
 	display: none;
-}
+}*/
 .b-detail-review .review-more-a{
 	display: none;
 }
@@ -3381,14 +3403,15 @@ h3.b-title{
 	margin-bottom: 0;
 }
 .delivery-info-list li a {
-	display: inline-block;
+	display: inline;
 	position: relative;
 	padding-bottom: 2px;
+	border-bottom: 1px solid;
 	font-family: 'DINPro-Medium';
 	color: #564531;
 	font-size: 16px;
 }
-.delivery-info-list li a::after {
+/*.delivery-info-list li a::after {
 	content: '';
 	display: block;
 	width: 100%;
@@ -3397,7 +3420,7 @@ h3.b-title{
 	left: 0;
 	bottom: 0;
 	background-color: #564531;
-}
+}*/
 .delivery-info-list li a:hover:after {
 	display: none;
 }
@@ -3629,7 +3652,7 @@ h3.b-title{
 	height: 1px;
 	position: absolute;
 	left: 0;
-	bottom: 0px;
+	bottom: 3px;
 	background-color: #564531;
 }
 .about-info-text p a:hover:after {
@@ -3689,6 +3712,9 @@ h3.b-title{
 	vertical-align: top;
 	margin-right: 20px;
 	width: calc(50% - 12px);
+}
+#vk_widget, #vk_groups {
+    width: 100%!important;
 }
 .about-qwestions-form {
 	display: inline-block;

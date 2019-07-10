@@ -75,7 +75,13 @@
 					<!-- VK Widget -->
 					<div id="vk_groups"></div>
 					<script type="text/javascript">
-					VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, color3: '77BE32', width: 'auto', height: '390'}, 118479740);
+						function VK_Widget_Init(){
+				            document.getElementById('vk_groups').innerHTML = "";
+				            VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, color3: '77BE32', width: 'auto', height: '390'}, 118479740);
+				        };
+				        window.addEventListener('load', VK_Widget_Init, false);
+				        window.addEventListener('resize', VK_Widget_Init, false);
+					
 					</script>
 				</div>
 				<div class="about-qwestions-form">

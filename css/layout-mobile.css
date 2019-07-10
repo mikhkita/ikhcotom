@@ -135,7 +135,6 @@ body {
 }
 .delivery-info-list li a {
 	padding: 0;
-	text-decoration: underline;
 }
 .delivery-info-list li a:hover {
 	text-decoration: none;
@@ -918,11 +917,28 @@ body {
 }
 
 @media screen and (max-width: 500px){
+	.payment-list-text{
+		font-size: 18px;
+		display: inline-block;
+		margin-left: 15px;
+		width: calc(100% - 110px);
+		vertical-align: middle;
+	}
 	.payment-list li {
+		text-align: left;
 		display: block;
 		margin: 0 auto 26px;
-		max-width: 218px;
+		width: 100%;
+		max-width: 100%;
+		/*max-width: 218px;*/
 	}
+		.payment-list-image{
+			width: 80px;
+			height: 80px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-bottom: 0;
+		}
 	.payment-list li:last-child {
 		margin: 0 auto 26px;
 	}
@@ -1157,7 +1173,10 @@ body {
 	}
 
 	.b-blog-filter li {
-		width: calc(50% - 14px);
+		width: calc(50% - 8px);
+	}
+	.b-blog-filter li:nth-child(2n){
+		margin-right: 0;
 	}
 }
 
